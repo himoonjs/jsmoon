@@ -14,9 +14,16 @@ class NewVisitorTest(unittest.TestCase):
         # User goes to check Moon's homepage
         self.browser.get('http://localhost:8000')
 
-        # User notices the page title and header mention Jungsoo Moon
+        # User notices the page title mentions Jungsoo Moon
+        # and header mentions I am Jungsoo Moon
         self.assertIn('Jungsoo Moon', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('I am Jungsoo Moon', header_text)
+
+        # User can clicks About
+
         self.fail('Finish the test!')
+
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
