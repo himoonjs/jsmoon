@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <title>Jungsoo Moon - {% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/static/base.css" rel="stylesheet" media="screen">
     </head>
 
     <body>
@@ -12,12 +15,17 @@
                 <a href="{% url 'about' %}">About</a>
                 <a href="mailto:himoonjs@gmail.com">Contact</a>
             {% endblock %}
-
-        <div>
-            {% block body_block %}This is default content of body_bock.{% endblock %}
         </div>
 
         <hr />
+
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="text-center">
+            {% block body_block %}This is default content of body_bock.{% endblock %}
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>
