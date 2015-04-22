@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Jungsoo Moon - {% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            {% block header_block %}
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="mailto:himoonjs@gmail.com">Contact</a>
+            {% endblock %}
+
+        <div>
+            {% block body_block %}This is default content of body_bock.{% endblock %}
+        </div>
+
+        <hr />
+
+    </body>
+</html>

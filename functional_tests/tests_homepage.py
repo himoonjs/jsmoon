@@ -2,6 +2,7 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 import unittest
 
+
 class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
@@ -21,6 +22,6 @@ class NewVisitorTest(LiveServerTestCase):
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('I am Jungsoo Moon', header_text)
 
-        # User can clicks About
+        # User can clicks About page
 
         self.fail('Finish the test!')
