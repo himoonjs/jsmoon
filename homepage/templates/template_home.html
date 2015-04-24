@@ -1,15 +1,37 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 
-{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+        <title>Jungsoo Moon - home</title>
+    </head>
 
-{% block title %}Home{% endblock %}
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-right">
+                            <a href="{% url 'about' %}">About</a>&nbsp;
+                            <a href="mailto:himoonjs@gmail.com">Contact</a>
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <p>Hello, I'm Jungsoo Moon</p>
+                        <a class="btn btn-default" href="#" role="button">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-{% block header_block %}
-    <a href="{% url 'about' %}">About</a>&nbsp;
-    <a href="mailto:himoonjs@gmail.com">Contact</a>
-{% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
 
-{% block body_block %}
-<p>Hello, I'm Jungsoo Moon</p>
-<a class="btn btn-default" href="#" role="button">Link</a>
-{% endblock %}
+    </body>
+</html>
