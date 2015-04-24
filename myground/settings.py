@@ -37,6 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage',
+#==================================== Comment out before collectstatic and deployment
+#==================================== and change .css link in base.html =============
+    'dev_bootstrap',
+#====================================================================================
 )
 
 MIDDLEWARE_CLASSES = (
