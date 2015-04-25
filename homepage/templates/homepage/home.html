@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Home{% endblock %}
+
+{% block header_block %}
+    <a href="{% url 'about' %}">About</a>&nbsp;
+    <a href="mailto:himoonjs@gmail.com">Contact</a>
+{% endblock %}
+
+{% block body_block %}
+<p>Hello, I'm Jungsoo Moon</p>
+<a class="btn btn-default" href="#" role="button">Link</a>
+{% endblock %}

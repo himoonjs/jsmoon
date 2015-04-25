@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+        <title>Jungsoo Moon - {% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-right">
+                        {% block header_block %}{% endblock %}
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        {% block body_block %}This is default content of body_bock.{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
