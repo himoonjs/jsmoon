@@ -1,4 +1,7 @@
 node_modules
+bootstrap-theme.css
+bootstrap-theme.css.map
+bootstrap-theme.min.css
 db.sqlite3
 __pycache__
 *.pyc
