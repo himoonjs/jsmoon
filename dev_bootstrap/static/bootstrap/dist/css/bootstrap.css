@@ -1428,7 +1428,7 @@ html
 }
 body
 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Coming Soon', cursive, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 17px;
     line-height: 1.42857143;
 
@@ -1448,14 +1448,14 @@ a
 {
     text-decoration: none;
 
-    color: #552a00;
+    color: #337ab7;
 }
 a:hover,
 a:focus
 {
     text-decoration: underline;
 
-    color: #a25000;
+    color: #23527c;
 }
 a:focus
 {
@@ -4348,7 +4348,7 @@ fieldset[disabled] .btn-danger.active
 {
     font-weight: normal;
 
-    color: #552a00;
+    color: #337ab7;
     border-radius: 0;
 }
 .btn-link,
@@ -4373,7 +4373,7 @@ fieldset[disabled] .btn-link
 {
     text-decoration: underline;
 
-    color: #a25000;
+    color: #23527c;
     background-color: transparent;
 }
 .btn-link[disabled]:hover,
@@ -5126,7 +5126,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 .nav .open > a:hover,
 .nav .open > a:focus
 {
-    border-color: #552a00;
+    border-color: #337ab7;
     background-color: #eee;
 }
 .nav .nav-divider
@@ -6085,7 +6085,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 
     text-decoration: none;
 
-    color: #552a00;
+    color: #337ab7;
     border: 1px solid #ddd;
     background-color: #fff;
 }
@@ -6108,7 +6108,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 .pagination > li > a:focus,
 .pagination > li > span:focus
 {
-    color: #a25000;
+    color: #23527c;
     border-color: #ddd;
     background-color: #eee;
 }
@@ -6363,7 +6363,7 @@ a.badge:focus
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge
 {
-    color: #552a00;
+    color: #337ab7;
     background-color: #fff;
 }
 .list-group-item > .badge
@@ -6456,7 +6456,7 @@ a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active
 {
-    border-color: #552a00;
+    border-color: #337ab7;
 }
 .thumbnail .caption
 {
@@ -7633,7 +7633,7 @@ button.close
 }
 .tooltip
 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Coming Soon', cursive, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 15px;
     font-weight: normal;
     line-height: 1.4;
@@ -7777,7 +7777,7 @@ button.close
 }
 .popover
 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Coming Soon', cursive, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 17px;
     font-weight: normal;
     line-height: 1.42857143;
@@ -8239,103 +8239,6 @@ button.close
         bottom: 20px;
     }
 }
-.clearfix:before,
-.clearfix:after,
-.dl-horizontal dd:before,
-.dl-horizontal dd:after,
-.container:before,
-.container:after,
-.container-fluid:before,
-.container-fluid:after,
-.row:before,
-.row:after,
-.form-horizontal .form-group:before,
-.form-horizontal .form-group:after,
-.btn-toolbar:before,
-.btn-toolbar:after,
-.btn-group-vertical > .btn-group:before,
-.btn-group-vertical > .btn-group:after,
-.nav:before,
-.nav:after,
-.navbar:before,
-.navbar:after,
-.navbar-header:before,
-.navbar-header:after,
-.navbar-collapse:before,
-.navbar-collapse:after,
-.pager:before,
-.pager:after,
-.panel-body:before,
-.panel-body:after,
-.modal-footer:before,
-.modal-footer:after
-{
-    display: table;
-
-    content: ' ';
-}
-.clearfix:after,
-.dl-horizontal dd:after,
-.container:after,
-.container-fluid:after,
-.row:after,
-.form-horizontal .form-group:after,
-.btn-toolbar:after,
-.btn-group-vertical > .btn-group:after,
-.nav:after,
-.navbar:after,
-.navbar-header:after,
-.navbar-collapse:after,
-.pager:after,
-.panel-body:after,
-.modal-footer:after
-{
-    clear: both;
-}
-.center-block
-{
-    display: block;
-
-    margin-right: auto;
-    margin-left: auto;
-}
-.pull-right
-{
-    float: right !important;
-}
-.pull-left
-{
-    float: left !important;
-}
-.hide
-{
-    display: none !important;
-}
-.show
-{
-    display: block !important;
-}
-.invisible
-{
-    visibility: hidden;
-}
-.text-hide
-{
-    font: 0/0 a;
-
-    color: transparent;
-    border: 0;
-    background-color: transparent;
-    text-shadow: none;
-}
-.hidden
-{
-    display: none !important;
-}
-.affix
-{
-    position: fixed;
-}
 @-ms-viewport
 {
     width: device-width;
@@ -8617,5 +8520,132 @@ button.close
     {
         display: none !important;
     }
+}
+a.homepage_nav
+{
+    font-size: 25px;
+
+    text-decoration: none;
+
+    color: #e83e42;
+}
+a.homepage_nav:hover,
+a.homepage_nav:focus
+{
+    text-decoration: none;
+
+    color: #c2171b;
+}
+a.homepage_nav:focus
+{
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+body.homepage_body
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.row
+{
+    padding-bottom: 100px;
+}
+.clearfix:before,
+.clearfix:after,
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after,
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after,
+.btn-toolbar:before,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:before,
+.btn-group-vertical > .btn-group:after,
+.nav:before,
+.nav:after,
+.navbar:before,
+.navbar:after,
+.navbar-header:before,
+.navbar-header:after,
+.navbar-collapse:before,
+.navbar-collapse:after,
+.pager:before,
+.pager:after,
+.panel-body:before,
+.panel-body:after,
+.modal-footer:before,
+.modal-footer:after
+{
+    display: table;
+
+    content: ' ';
+}
+.clearfix:after,
+.dl-horizontal dd:after,
+.container:after,
+.container-fluid:after,
+.row:after,
+.form-horizontal .form-group:after,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:after,
+.nav:after,
+.navbar:after,
+.navbar-header:after,
+.navbar-collapse:after,
+.pager:after,
+.panel-body:after,
+.modal-footer:after
+{
+    clear: both;
+}
+.center-block
+{
+    display: block;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+.pull-right
+{
+    float: right !important;
+}
+.pull-left
+{
+    float: left !important;
+}
+.hide
+{
+    display: none !important;
+}
+.show
+{
+    display: block !important;
+}
+.invisible
+{
+    visibility: hidden;
+}
+.text-hide
+{
+    font: 0/0 a;
+
+    color: transparent;
+    border: 0;
+    background-color: transparent;
+    text-shadow: none;
+}
+.hidden
+{
+    display: none !important;
+}
+.affix
+{
+    position: fixed;
 }
 /*# sourceMappingURL=bootstrap.css.map */

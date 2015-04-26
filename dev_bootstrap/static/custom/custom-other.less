@@ -1,0 +1,28 @@
+// Links
+
+// ----------homepage app
+
+a.homepage_nav {
+  color: @homepage-navlink;
+  text-decoration: none;
+  font-size: 25px;
+
+  &:hover,
+  &:focus {
+    color: darken(@homepage-navlink, 15%);
+    text-decoration: none;
+  }
+
+  &:focus {
+    .tab-focus();
+  }
+}
+
+body.homepage_body {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.row {
+  padding-bottom: 100px;
+}
