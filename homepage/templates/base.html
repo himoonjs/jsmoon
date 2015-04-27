@@ -2,11 +2,11 @@
 
 <html lang="en">
     <head>
-        <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/static/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
         <title>Jungsoo Moon - {% block title %}{% endblock %}</title>
     </head>
 
@@ -19,13 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center">
-                        {% block body_block %}This is default content of body_bock.{% endblock %}
-                    </div>
-                </div>
-            </div>
+                {% block body_block %}This is default content of body_bock.{% endblock %}
         </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

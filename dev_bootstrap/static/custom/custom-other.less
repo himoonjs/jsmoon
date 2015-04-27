@@ -2,6 +2,19 @@
 
 // ----------homepage app
 
+
+.homepage_body {
+
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+}
+
+.row {
+  padding-bottom: 50px;
+}
+
+
 a.homepage_nav {
   color: @homepage-navlink;
   text-decoration: none;
@@ -18,11 +31,19 @@ a.homepage_nav {
   }
 }
 
-body.homepage_body {
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
 
-.row {
-  padding-bottom: 100px;
+a.homepage_body {
+  color: @homepage-bodylink;
+  text-decoration: none;
+  font-size: 20px;
+
+  &:hover,
+  &:focus {
+    color: darken(@homepage-bodylink, 15%);
+    text-decoration: none;
+  }
+
+  &:focus {
+    .tab-focus();
+  }
 }

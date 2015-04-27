@@ -8521,6 +8521,15 @@ button.close
         display: none !important;
     }
 }
+.homepage_body
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.row
+{
+    padding-bottom: 50px;
+}
 a.homepage_nav
 {
     font-size: 25px;
@@ -8542,14 +8551,26 @@ a.homepage_nav:focus
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
-body.homepage_body
+a.homepage_body
 {
-    padding-top: 20px;
-    padding-bottom: 10px;
+    font-size: 20px;
+
+    text-decoration: none;
+
+    color: #51a500;
 }
-.row
+a.homepage_body:hover,
+a.homepage_body:focus
 {
-    padding-bottom: 100px;
+    text-decoration: none;
+
+    color: #2b5900;
+}
+a.homepage_body:focus
+{
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
 }
 .clearfix:before,
 .clearfix:after,

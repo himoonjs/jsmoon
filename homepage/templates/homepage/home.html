@@ -5,11 +5,33 @@
 {% block title %}Home{% endblock %}
 
 {% block header_block %}
-    <a href="{% url 'about' %}" class="homepage_nav">About</a>&nbsp;&nbsp;
-    <a href="mailto:himoonjs@gmail.com" class="homepage_nav">Contact</a>
+    <a class="homepage_nav" href="{% url 'about' %}">About</a>&nbsp;&nbsp;
+    <a class="homepage_nav" href="mailto:himoonjs@gmail.com">Contact</a>
 {% endblock %}
 
 {% block body_block %}
-<p>Hello, I'm Jungsoo Moon</p>
-<a class="btn btn-default" href="#" role="button">Link</a>
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+            <p>I do web things</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="text-center">
+            <a class="homepage_body" href="{% url 'buttons_home' %}">Button experiments</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="text-center">
+            <a class="homepage_body" href="{% url 'buttons_home' %}">Button experiments</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="text-center">
+            <a class="homepage_body" href="{% url 'buttons_home' %}">Button experiments</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
