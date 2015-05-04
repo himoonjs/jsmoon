@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=decive-width">
+        <link href="/static/parallax_style.css" rel="stylesheet" media="screen">
+        <title>parallax</title>
+    </head>
+    <body>
+        <div>
+            <svg width="1500" height="800">
+
+            <rect id="ground" x="10" y="10" width="1300" height="700" stroke="blue" fill="purple"
+            fill-opacity="0.5" stroke-opacity="0.8"/>
+
+            <text id="missed" x="500" y="300" style="fill:black;" font-size="100" opacity="1" display="none">Missed</text>
+
+            <title>Warm moving</title>
+            
+            <path id="warm" stroke="red" stroke-width="15" fill="none" />
+
+                <animate
+                    xlink:href="#warm"
+                    attributeName="d"
+                    dur="1000ms"
+                    repeatCount="indefinite"
+                    values="m 11.428571,63.790776 68.571429,0 68.57143,0 L 220,66.647919 291.42857,63.790776;
+
+                            m 11.428571,63.790776 62.857143,-2.857143 74.285716,-54.2857141 60,57.1428571 82.85714,0;
+
+                            m 11.428571,63.790776 68.571429,0 68.57143,0 L 220,66.647919 291.42857,63.790776;"/>
+
+                <animateMotion
+                    xlink:href="#warm"
+                    dur="10s"
+                    repeatCount="indefinite"
+                    path="m 82.857143,146.64792 c 0,0 225.714287,-80.000001 314.285717,-71.428572 C 485.71429,83.790776 660,198.07649 654.28571,229.50506 648.57143,260.93363 580,563.79078 420,512.3622 260,460.93363 151.42857,529.50506 100,438.07649 48.571429,346.64792 82.857143,146.64792 82.857143,146.64792 Z" 
+                    rotate="auto" />
+
+                <animateTransform 
+                       xlink:href="#warm"
+                       attributeName="transform" 
+                       attributeType="XML"
+                       type="translate"
+                       from="0 0"
+                       to="150 0"
+                       dur="0.5s"
+                       begin="bgwarning.begin"
+                       repeatCount="1"
+                       fill="freeze"
+                       id="warm-run" />
+
+                <animateTransform 
+                       xlink:href="#warm"
+                       attributeName="transform" 
+                       attributeType="XML"
+                       type="translate"
+                       from="150 0"
+                       to="0 0"
+                       dur="1s"
+                       begin="bgwarning.begin + 0.5s"
+                       repeatCount="1"
+                       fill="freeze"
+                       id="warm-walk" />
+
+                <set xlink:href="#warm" attributeName="stroke"
+                    to="blue" begin="click" dur="3s" />
+
+                <animate
+                    xlink:href="#ground"
+                    attributeName="fill"
+                    dur="0.5s"
+                    repeatCount="1"
+                    from="purple"
+                    to="yellow"
+                    begin="click"
+                    values="yellow; yellow"
+                    keyTime="0; 1"
+                    id="bgwarning" />
+
+                <animate
+                    xlink:href="#missed"
+                    attributeName="display"
+                    dur="0.5s"
+                    repeatCount="1"
+                    from="inline"
+                    to="inline"
+                    begin="bgwarning.begin" />
+            </svg>
+        </div>
+    </body>
+</html>

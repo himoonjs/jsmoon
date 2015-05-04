@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'homepage',
     'buttons',
+    'parallax',
+    'catchme',
     'dev_bootstrap',
 )
 

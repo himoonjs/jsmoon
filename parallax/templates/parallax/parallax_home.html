@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=decive-width">
+        <link href="/static/parallax_style.css" rel="stylesheet" media="screen">
+        <title>parallax</title>
+    </head>
+    <body>
+
+        <div class="debug">
+            <label><input type="checkbox">Debug</label>
+        </div>
+        <div class="demo__info">
+        Pure CSS parallax scroll demo
+        </div>
+
+        <div class="parallax">
+            <div id="group1" class="parallax__group">
+                <div class ="parallax__layer parallax__layer--base">
+                    <div class="title">This is the base layer</div>
+                </div>
+            </div>
+            <div id="group2" class="parallax__group">
+                <div class="parallax__layer parallax__layer--base">
+
+                <svg viewbox="0 0 100 100">
+                <title>moving wall</title>
+                  <path fill="white">
+                    <animate 
+                             attributeName="d" 
+                             dur="6000ms" 
+                             repeatCount="indefinite"
+                             values="M 0.35355339,-0.16623546 68.23580461,0 c 0,0 -3.181981,40.30508646 -9.192389,26.16295046 C 53.386562,11.85458 53.033008,-5.4695363 50.204581,6.9048323 47.376154,19.279201 37.123106,21.754075 36.062446,13.268793 35.001786,4.783512 20.85965,-0.87334224 17.677669,18.925648 14.495689,38.724637 2.4748737,13.622347 1.0606602,6.5512789 -0.35355339,-0.51978885 0.35355339,-0.16623546 0.35355339,-0.16623546 Z;
+
+                                     M 0.35355339,-0.16623546 68.23580461,0 c 0,0 1.767766,-2.12132024 -5.656855,6.71751406 C 53.048982,18.317374 50.05909,5.1731905 49.851028,17.864987 49.497474,39.431744 36.769553,33.77489 35.708893,25.289608 34.648233,16.804327 11.807779,-10.414147 17.677669,18.218541 20.028322,29.68477 3.1819805,20.693415 1.767767,13.622347 0.35355339,6.5512789 0.35355339,-0.16623546 0.35355339,-0.16623546 Z;
+
+                                     M 0.35355339,-0.16623546 68.23580461,0 c 0,0 -3.181981,40.30508646 -9.192389,26.16295046 C 53.386562,11.85458 53.033008,-5.4695363 50.204581,6.9048323 47.376154,19.279201 37.123106,21.754075 36.062446,13.268793 35.001786,4.783512 20.85965,-0.87334224 17.677669,18.925648 14.495689,38.724637 2.4748737,13.622347 1.0606602,6.5512789 -0.35355339,-0.51978885 0.35355339,-0.16623546 0.35355339,-0.16623546 Z;"/>
+                  </path>
+                </svg>
+                    <div class="title">This is the base layer</div>
+                </div>
+                <div class="parallax__layer parallax__layer--back">
+                    <div class="title">This is the background layer</div>
+                </div>
+            </div>
+            <div id="group3" class="parallax__group">
+                <div class="parallax__layer parallax__layer--fore">
+                    <div class="title">This is the foreground layer</div>
+                </div>
+                <div class="parallax__layer parallax__layer--base">
+                    <div class="title">This is the base layer</div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var debugInput = document.querySelector("input");
+            function updateDebugState() {
+                document.body.classList.toggle('debug-on', debugInput.checked);
+            }
+            debugInput.addEventListener("click", updateDebugState);
+            updateDebugState();
+        </script>
+
+    </body>
+</html>
