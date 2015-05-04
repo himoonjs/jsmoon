@@ -1,71 +1,50 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=decive-width">
-        <link href="/static/parallax_style.css" rel="stylesheet" media="screen">
-        <title>parallax</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Catch me if you can</title>
+
+        <style>
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+        </style>
     </head>
     <body>
-        <div>
-            <svg width="1500" height="800">
+        <div class="container" align="center">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="field" width="1450" height="900" align="center">
 
-            <rect id="ground" x="10" y="10" width="1300" height="700" stroke="blue" fill="purple"
-            fill-opacity="0.5" stroke-opacity="0.8"/>
+            <rect id="ground" x="0" y="0" width="1500" height="900" fill="white" />
 
-            <text id="missed" x="500" y="300" style="fill:black;" font-size="100" opacity="1" display="none">Missed</text>
+            <text id="missed" style="fill:black;" font-family="Helvetica" font-size="120" opacity="1" display="none" x="700" y="350" text-anchor="middle">MISSED!</text>
+            <text id="gotcha" style="fill:yellow;" font-family="Helvetica" font-size="120" opacity="1" display="none" x="700" y="350" text-anchor="middle">GOTCHA!</text>
 
-            <title>Warm moving</title>
-            
-            <path id="warm" stroke="red" stroke-width="15" fill="none" />
+
+            <title>Worm moving</title>
+
+            <path id="worm" stroke="black" stroke-width="20" fill="none" />
 
                 <animate
-                    xlink:href="#warm"
+                    xlink:href="#worm"
                     attributeName="d"
                     dur="1000ms"
                     repeatCount="indefinite"
                     values="m 11.428571,63.790776 68.571429,0 68.57143,0 L 220,66.647919 291.42857,63.790776;
-
-                            m 11.428571,63.790776 62.857143,-2.857143 74.285716,-54.2857141 60,57.1428571 82.85714,0;
-
+                            m 11.428571,63.790776 62.857143,-2.857143 0.285716,-54.2857141 60,57.1428571 82.85714,0;
                             m 11.428571,63.790776 68.571429,0 68.57143,0 L 220,66.647919 291.42857,63.790776;"/>
 
                 <animateMotion
-                    xlink:href="#warm"
-                    dur="10s"
+                    xlink:href="#worm"
+                    dur="5s"
                     repeatCount="indefinite"
-                    path="m 82.857143,146.64792 c 0,0 225.714287,-80.000001 314.285717,-71.428572 C 485.71429,83.790776 660,198.07649 654.28571,229.50506 648.57143,260.93363 580,563.79078 420,512.3622 260,460.93363 151.42857,529.50506 100,438.07649 48.571429,346.64792 82.857143,146.64792 82.857143,146.64792 Z" 
+                    path="m 1016.9734,422.83354 c 0.6216,-6.58334 0.8898,-13.1931 0.6034,-19.80645 -0.2864,-6.61334 -1.1271,-13.23024 -2.7233,-19.8278 -1.5962,-6.59755 -3.9479,-13.17578 -7.2558,-19.71179 -3.308,-6.53599 -7.5726,-13.02978 -12.9945,-19.45846 -4.70168,-5.57487 -9.14824,-11.31671 -14.09125,-17.05613 -4.94286,-5.73944 -10.38229,-11.47648 -17.06975,-17.0418 -6.68745,-5.56533 -14.62306,-10.95892 -24.55847,-16.01151 -9.93543,-5.05256 -21.87062,-9.7641 -36.55712,-13.96525 -11.36666,-3.25145 -24.21706,-6.34219 -38.14709,-9.13983 -13.93014,-2.79765 -28.93985,-5.30222 -44.62513,-7.38131 -15.68527,-2.0791 -32.04609,-3.73272 -48.67831,-4.82855 -16.63222,-1.09582 -33.53579,-1.63378 -50.30669,-1.48153 -16.5806,0.1505 -33.23121,0.96027 -49.49933,2.30944 -16.26814,1.3491 -32.15382,3.23761 -47.20452,5.54556 -15.05068,2.30796 -29.26641,5.03538 -42.19468,8.06237 -12.92822,3.027 -24.56901,6.35357 -34.4698,9.8598 -13.25842,4.69531 -22.94223,9.86994 -30.16402,15.35423 -7.22173,5.48432 -11.98141,11.27831 -15.39155,17.21233 -3.41013,5.934 -5.47069,12.00804 -7.29416,18.05244 -1.82348,6.04441 -3.40992,12.05917 -5.87183,17.87465 -2.65963,6.28261 -4.51661,12.5908 -5.67427,18.91268 -1.15764,6.3219 -1.61594,12.65746 -1.47821,18.99486 0.13792,6.33738 0.87154,12.67658 2.09808,19.00571 1.22649,6.32914 2.94575,12.64819 5.0544,18.94529 2.80713,8.3829 4.90812,16.89695 7.35484,25.42554 2.44671,8.52858 5.23915,17.0717 9.42918,25.51273 4.19006,8.44103 9.77767,16.77996 17.8148,24.90017 8.03711,8.12019 18.52364,16.02168 32.51153,23.58781 9.17503,4.96284 19.17105,10.18791 30.27346,15.31899 11.1024,5.1311 23.31124,10.16823 36.91194,14.75521 13.60071,4.587 28.59328,8.72381 45.26322,12.05432 16.6699,3.33052 35.01715,5.85469 55.32718,7.21635 14.14222,0.94816 28.89821,1.12254 43.73375,0.68405 14.83554,-0.4385 29.7507,-1.48986 44.21122,-2.99323 14.46053,-1.50336 28.46646,-3.45873 41.4836,-5.70522 13.01717,-2.24648 25.04556,-4.78407 35.55103,-7.45189 14.98332,-3.80499 26.94795,-8.20061 36.79027,-12.98559 9.84232,-4.78501 17.56261,-9.95936 24.05693,-15.3218 6.4944,-5.36247 11.7631,-10.91299 16.70243,-16.45031 4.9396,-5.53732 9.54969,-11.06143 14.72705,-16.37104 6.0752,-6.23039 11.23298,-12.52514 15.59037,-18.86455 4.3573,-6.33944 7.9141,-12.72353 10.7874,-19.13265 2.8734,-6.40913 5.0632,-12.84329 6.6865,-19.28281 1.6232,-6.43952 2.6799,-12.88442 3.2872,-19.31503 z" 
                     rotate="auto" />
-
-                <animateTransform 
-                       xlink:href="#warm"
-                       attributeName="transform" 
-                       attributeType="XML"
-                       type="translate"
-                       from="0 0"
-                       to="150 0"
-                       dur="0.5s"
-                       begin="bgwarning.begin"
-                       repeatCount="1"
-                       fill="freeze"
-                       id="warm-run" />
-
-                <animateTransform 
-                       xlink:href="#warm"
-                       attributeName="transform" 
-                       attributeType="XML"
-                       type="translate"
-                       from="150 0"
-                       to="0 0"
-                       dur="1s"
-                       begin="bgwarning.begin + 0.5s"
-                       repeatCount="1"
-                       fill="freeze"
-                       id="warm-walk" />
-
-                <set xlink:href="#warm" attributeName="stroke"
-                    to="blue" begin="click" dur="3s" />
 
                 <animate
                     xlink:href="#ground"
@@ -79,6 +58,35 @@
                     keyTime="0; 1"
                     id="bgwarning" />
 
+                <animateTransform 
+                       xlink:href="#worm"
+                       attributeName="transform" 
+                       attributeType="XML"
+                       type="translate"
+                       from="0 0"
+                       to="150 0"
+                       dur="0.5s"
+                       begin="bgwarning.begin"
+                       repeatCount="1"
+                       fill="freeze"
+                       id="worm-run" />
+
+                <animateTransform 
+                       xlink:href="#worm"
+                       attributeName="transform" 
+                       attributeType="XML"
+                       type="translate"
+                       from="150 0"
+                       to="0 0"
+                       dur="1s"
+                       begin="bgwarning.begin + 0.5s"
+                       repeatCount="1"
+                       fill="freeze"
+                       id="worm-walk" />
+
+                <set xlink:href="#worm" attributeName="stroke"
+                    to="red" begin="bgwarning.begin" dur="0.5s" />
+
                 <animate
                     xlink:href="#missed"
                     attributeName="display"
@@ -87,6 +95,40 @@
                     from="inline"
                     to="inline"
                     begin="bgwarning.begin" />
+
+                <animate
+                    xlink:href="#worm"
+                    attributeName="stroke"
+                    dur="0.5s"
+                    repeatCount="1"
+                    from="black"
+                    to="blue"
+                    begin="click"
+                    values="blue; blue"
+                    keyTime="0; 1"
+                    id="wormcaught" />
+
+<!-- Do not put '-' in the id of animation. It doesn't work. -->
+
+                <animate
+                    xlink:href="#ground"
+                    attributeName="fill"
+                    dur="0.5s"
+                    repeatCount="1"
+                    from="purple"
+                    to="green"
+                    begin="wormcaught.begin"
+                    values="green; green"
+                    keyTime="0; 1" />
+
+                <animate
+                    xlink:href="#gotcha"
+                    attributeName="display"
+                    dur="0.5s"
+                    repeatCount="1"
+                    from="inline"
+                    to="inline"
+                    begin="wormcaught.begin" />
             </svg>
         </div>
     </body>
