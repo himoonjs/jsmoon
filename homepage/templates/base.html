@@ -25,12 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('.hover').bind('touchstart touchend', function(e) {
-                e.preventDefault();
-                $(this).toggleClass('hover_effect');
-            });
-        });
+        document.addEventListener("touchstart", function(){}, true);
     </script>
 
     </body>
