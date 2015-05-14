@@ -13,15 +13,35 @@
                 padding: 0;
                 overflow: hidden;
             }
+
+            @media (min-width: 600px) and (max-width: 1200px) {
+                #wrapper {
+                    margin-top: 5vh;
+                    margin-bottom: 5vh;
+                }
+            }
+
+            @media (max-width: 600px) {
+
+                #wrapper {
+                    -ms-transform: rotate(90deg); /* IE 9 */
+                    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+                    transform: rotate(90deg) scale(1.5);
+                    margin-top: 28.7vh;
+                }
+
+            }
+
+
         </style>
     </head>
     <body>
-        <div>
+        <div id="wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="field" viewBox="0 0 1440 900">
 
                 <title>Catch me if you can</title>
 
-                <rect id="ground" x="0" y="0" width="1440" height="900" fill="white" />
+                <rect id="ground" x="0" y="0" width="1440" height="900" fill="transparent" />
 
                 <text id="missed" style="fill:black;" font-family="Helvetica" font-size="120" opacity="1" display="none" x="720" y="350" text-anchor="middle">MISSED!</text>
                 <text id="gotcha" style="fill:yellow;" font-family="Helvetica" font-size="120" opacity="1" display="none" x="720" y="350" text-anchor="middle">GOTCHA!</text>
