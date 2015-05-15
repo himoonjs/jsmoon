@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
         <title>Ravintola Korea House</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
         <style>
             html,
             body{
@@ -25,13 +25,18 @@
                 color: black;
                 text-align: center;
                 padding: 45px 5px 0px 5px;
-                font-size: 20px;
-                font-family: 'Economica', sans-serif;
-                letter-spacing: 3px;
+                font-size: 25px;
+                font-family: 'Roboto Condensed', sans-serif;
+                letter-spacing: 5px;
+                word-spacing: 35px;
             }
 
+            #nav a {
+                color : black;
+                text-decoration: none;
+            }
 
-            #logo {
+            #logowrapper {
                 width: 90vw;
                 text-align: center;
                 margin: 0 auto;
@@ -54,7 +59,7 @@
                 margin: 0 auto;
                 background-color: none;
                 font-size: 25px;
-                font-family: 'Economica', sans-serif;
+                font-family: 'Roboto Condensed', sans-serif;
                 line-height: 80%;
                 padding-bottom:55px; 
             }
@@ -104,9 +109,15 @@
         #taegeuk {
           transform-origin: 252px 267px;
           -webkit-transform-origin: 50% 50%;
-          -webkit-animation: rotate 1.8s cubic-bezier(.49,.05,.32,1.04) 1;
           animation: rotate 1.8s cubic-bezier(.49,.05,.32,1.04) 1;
+          -webkit-animation: rotate 1.8s cubic-bezier(.49,.05,.32,1.04) 1;
 
+        }
+
+        @keyframes rotate {
+          0%   {transform: rotate(0deg);} 
+          77%  {transform: rotate(-360deg);} 
+          100% {transform: rotate(0deg);}
         }
 
         @-webkit-keyframes rotate {
@@ -115,11 +126,6 @@
           100% {-webkit-transform: rotate(0deg);}
         }
 
-        @keyframes rotate {
-          0%   {transform: rotate(0deg);} 
-          77%  {transform: rotate(-360deg);} 
-          100% {transform: rotate(0deg);}
-        }
 
         #taegeukbeat {
           transform-origin: 252px 267px;
@@ -133,7 +139,6 @@
           90%  {-webkit-transform: scale(1,1);}           
           95%  {-webkit-transform: scale(1.03,1.03);}
           100%  {-webkit-transform: scale(1,1);}
-
         }
 
         @keyframes scale {
@@ -141,17 +146,58 @@
           90%  {transform: scale(1,1);}           
           95%  {transform: scale(1.03,1.03);}
           100%  {transform: scale(1,1);}
+        }
+
+        @media (max-width: 700px) {
+
+            #nav {
+                font-size: 20px;
+                letter-spacing: 2px;
+                word-spacing: 20px;
+            }    
+
+        }
 
         </style>
     </head>
     <body>
         <div id="wrapper">
         <div id="nav">
-        HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MENU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONTACT 
+        <a href=#>HOME</a>
+        <a href=#>MENU</a>
+        <a href=#>INFO</a>
         </div>
-        <div id="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="0 0 500 500">
+        <div id="logowrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logo" viewBox="0 0 500 500">
                 <defs>
+                    <style>
+
+                        #logo {
+                            width: 500px;
+                            height: 500px;
+                        }
+
+                        @media (max-width: 700px) {
+                            #logo {
+                                width: 250px;
+                                height: 250px;
+                            }
+
+                            #taegeuk {
+                              -moz-transform: translate(-252px,-267px);
+                            }
+
+                            @-moz-keyframes rotate {
+                              0%   {-moz-transform: translate(-252px,-267px) rotate(0deg);} 
+                              77%  {-moz-transform: translate(-252px,-267px) rotate(-360deg);} 
+                              100% {-moz-transform: translate(-252px,-267px) rotate(0deg);}
+                            }
+
+                        }
+
+                    </style>
+
+
                     <linearGradient id="a"><stop offset="0" stop-color="#00f"/><stop offset="1" stop-color="#00f" stop-opacity="0"/></linearGradient>
 
                     <linearGradient xlink:href="#a" id="b" x1="682.083" y1="-665.735" x2="669.852" y2="-665.018" gradientUnits="userSpaceOnUse">
