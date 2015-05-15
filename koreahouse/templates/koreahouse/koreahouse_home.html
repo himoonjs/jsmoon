@@ -13,6 +13,7 @@
                 margin: 0;
                 padding: 0;
                 height:100%;
+                font-family: 'Roboto Condensed', sans-serif;
             }
 
             #wrapper {
@@ -21,12 +22,11 @@
             }
 
             #nav {
-                background-color: white;
+                background-color: none;
                 color: black;
                 text-align: center;
                 padding: 45px 5px 0px 5px;
                 font-size: 25px;
-                font-family: 'Roboto Condensed', sans-serif;
                 letter-spacing: 5px;
                 word-spacing: 35px;
             }
@@ -34,6 +34,10 @@
             #nav a {
                 color : black;
                 text-decoration: none;
+            }
+
+            #nav a:hover {
+                color : blue;
             }
 
             #logowrapper {
@@ -59,9 +63,13 @@
                 margin: 0 auto;
                 background-color: none;
                 font-size: 25px;
-                font-family: 'Roboto Condensed', sans-serif;
                 line-height: 80%;
                 padding-bottom:55px; 
+            }
+
+            #underthelogo #slogan {
+                font-size: 40px;
+                font-weight: bold;
             }
 
             #footer {
@@ -73,7 +81,6 @@
                 bottom:0;
                 left:0;
                 font-family: Georgia, serif;
-
             }
 
             #copyright {
@@ -95,6 +102,14 @@
                 text-align: right;
             }
 
+            #jungsoomoon a {
+                color : white;
+                text-decoration: none;
+            }
+
+            #jungsoomoon a:hover {
+                color : gray;
+            }
 
             #logotexteng {
                 font-family: Georgia, serif;
@@ -103,7 +118,7 @@
 
             #logotextkor {
                 font-size: 45px;
-                font-family: Batang;
+                font-family: Batang, Gungsuh;
             }
 
         #taegeuk {
@@ -148,13 +163,46 @@
           100%  {transform: scale(1,1);}
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 640px) {
 
             #nav {
                 font-size: 20px;
                 letter-spacing: 2px;
                 word-spacing: 20px;
+                padding: 35px 5px 0px 5px;
             }    
+
+            #underthelogo {
+                margin: 0 auto;
+                font-size: 15px;
+                line-height: 80%;
+                padding-bottom:35px; 
+            }
+
+            #underthelogo #slogan {
+                font-size: 30px;
+                font-weight: bold;
+                line-height: 100%;
+            }
+
+            #footer {
+                height: 35px;
+                font-family: Georgia, serif;
+                font-size: 10px;
+            }
+
+            #copyright {
+                top: 0;
+                left: 10px;
+                text-align: left;
+            }
+
+            #jungsoomoon {
+                top: 0;
+                left: 0;
+                z-index: 10;
+                text-align: right;
+            }
 
         }
 
@@ -177,7 +225,7 @@
                             height: 500px;
                         }
 
-                        @media (max-width: 700px) {
+                        @media (max-width: 640px) {
                             #logo {
                                 width: 250px;
                                 height: 250px;
@@ -271,11 +319,11 @@
                         한국관
                         <animate attributeName="startOffset"
                                     from="100%"
-                                    to ="5%" 
+                                    to ="5.3%" 
                                     begin="2.4s" 
                                     dur="0.2s" 
                                     repeatCount="1"
-                                    values="100%; 25%; 5%"
+                                    values="100%; 25%; 5.3%"
                                     keyTimes="0; 0.35; 1"
                                     fill="freeze"
                                     />
@@ -321,13 +369,13 @@
             </svg>
         </div>
         <div id="underthelogo">
-            <span style="font-size:40px;font-weight:bold;">Suomen ainoa korealainen ravintola</span>
+            <span id="slogan">Suomen ainoa korealainen ravintola</span>
             <p>Mariankatu 19, 00170, Helsinki</p>
             <p>+358 9 135 7158</p>
         </div>
         <div id="footer">
             <div id="copyright"><p>© KOREA HOUSE</p></div>
-            <div id="jungsoomoon"><p>Website by Jungsoo Moon&nbsp;&nbsp;</p></div>
+            <div id="jungsoomoon"><p><a href="http://jsmoon.com" target="_blank">Website by Jungsoo Moon&nbsp;&nbsp;&nbsp;</a></p></div>
         </div>
     </body>
 </html>
