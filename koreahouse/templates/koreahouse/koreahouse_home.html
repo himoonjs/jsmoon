@@ -605,8 +605,8 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
 
         if (!Modernizr.smil) {
             $(document).ready(function(){
-                $("#blue").attr("fill-opacity", "1");
-                $("#red").attr("fill-opacity", "1");
+                $("#blue").attr("fill", "gray");
+                $("#red").attr("fill", "green");
                 $("#yellow").attr("fill-opacity", "1");
             });
         }
