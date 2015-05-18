@@ -223,6 +223,11 @@
                 text-align: right;
             }
 
+            #logo_fallback {
+                width: 250px;
+                height: 250px;
+            }
+
         }
 
         </style>
@@ -606,6 +611,7 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
         if (!Modernizr.smil) {
             $(document).ready(function(){
                 $("#logo").remove();
+                $("#logowrapper").html("<img src='/static/images/logo_fallback.png' alt='fallback logo' id='logo_fallback' height='500px' width='500px'>")
             });
         }
 
