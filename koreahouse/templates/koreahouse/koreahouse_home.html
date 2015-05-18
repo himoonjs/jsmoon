@@ -605,11 +605,12 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
 
         if (!Modernizr.smil) {
             $(document).ready(function(){
-                $("#blue").attr("fill", "gray");
-                $("#red").attr("fill", "green");
+                $("#blue").attr("fill-opacity", "1");
+                $("#red").attr("fill-opacity", "1");
                 $("#yellow").attr("fill-opacity", "1");
             });
         }
+
 
         </script>
     </head>
