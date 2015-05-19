@@ -87,6 +87,7 @@
                 font-family: 'Roboto Condensed', sans-serif;
                 letter-spacing: 0px;
                 word-spacing: 0px;
+                display: none;
             }
 
             #note {
@@ -293,6 +294,10 @@
             $(document).ready(function(){
                 $("#logo").remove();
                 $("#logowrapper").html("<img src='/static/images/logo_fallback.png' alt='fallback logo' id='logo_fallback' height='500px' width='500px'>");
+                $("#notewrapper").fadeIn();
+                $("#notewrapper").click(function(){
+                    $("#notewrapper").fadeOut();
+                });
             });
         }
 
@@ -310,7 +315,7 @@
             Your brower doesn't support this website properly.<br>Try Chrome, Firefox or Safari for better experience.
             </div>
             <div id="closenote">
-            &#215;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" style="color:white;">&#215;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </div>
         <a href=#>HOME</a>
