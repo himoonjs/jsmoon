@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Korea House INFO</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/koreahouse_style.css">
+        <style>
+
+        #infowrapper {
+            width: 50vw;
+            text-align: center;
+            margin: 0 auto;
+            background-color: none;
+            padding-top: 50px;
+            overflow: hidden;
+        }
+
+        #info {
+        width: 20vw;
+        height: 500px;
+        float:left;
+        background-color: none;
+        padding-top: 10px;
+        }
+
+        #map {
+            overflow:hidden;
+            background-color: none;
+            padding-top: 40px;
+        }
+        #infohead {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 15px;
+        }
+        </style>
+    </head>
+ <body>
+        <div id="wrapper">
+        <div id="nav">
+        <div id="notewrapper">
+            <div id="note">
+            Your brower doesn't support this website properly. Try Chrome, Firefox or Safari for better experience.
+            </div>
+            <div id="note_mobile">
+            Your brower doesn't support this website properly.<br>Try Chrome, Firefox or Safari for better experience.
+            </div>
+            <div id="closenote">
+            <a href="#" style="color:white;">&#215;&nbsp;&nbsp;&nbsp;</a>
+            </div>
+        </div>
+        <a href="{% url 'koreahouse_home' %}">HOME</a>
+        <a href=#>MENU</a>
+        <a href="{% url 'koreahouse_info' %}">INFO</a>
+        </div>
+        
+        <div id="infowrapper">
+            <div id="info">
+            <p id="infohead">OPEN</p>
+            <p>Ma-Pe 11-23</p>
+            <p>La 12-23</p>
+            <p>Su - Closed</p>
+            <br>
+            <p id="infohead">LUNCH</p>
+            <p>Ma-Pe 11-14</p>
+            <br>
+            <br>
+            <p style="text-align:left;padding-left:15px;"><span style="font-weight:bold;">Tel:</span> +358 9 135 7158</p>
+            <p style="text-align:left;padding-left:15px;"><span style="font-weight:bold;">Email:</span> perhe6363@gmail.com</p>
+            </div>
+            <div id="map">
+<iframe width="400" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Korea%20House%2C%20Helsinki%2C%20Finland&key=AIzaSyCNq2nT5qFRcplb9J_cccBYnBkXiD2Cnmk"></iframe>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="copyright"><p>© KOREA HOUSE</p></div>
+            <div id="copyright_mobile"><p>&nbsp;&nbsp;&nbsp;© KOREA HOUSE</p></div>
+            <div id="jungsoomoon"><p><a href="http://jsmoon.com" target="_blank">Website by Jungsoo Moon&nbsp;&nbsp;&nbsp;</a></p></div>
+        </div>
+    </body>
+</html>
