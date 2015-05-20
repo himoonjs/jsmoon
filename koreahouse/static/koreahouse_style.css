@@ -211,7 +211,7 @@ animation: scale 2s ease-out 1.2s infinite alternate;
 100%  {transform: scale(1,1);}
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
 
 #nav {
     font-size: 20px;

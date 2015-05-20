@@ -14,7 +14,7 @@
         <style>
 
         #infowrapper {
-            width: 50vw;
+            width: 700px;
             text-align: center;
             margin: 0 auto;
             background-color: none;
@@ -30,17 +30,109 @@
         padding-top: 10px;
         }
 
-        #map {
-            overflow:hidden;
+        #info_left_mobile {
+            display: none;
+            width: 160px;
+            float:left;
             background-color: none;
-            padding-top: 40px;
+            padding-top: 10px;
         }
+
+        #info_right_mobile {
+            display: none;
+            width: 160px;
+            overflow: hidden;
+            background-color: none;
+            padding-top: 10px;
+        }
+
+        #info_bottom_mobile {
+            display: none;
+            width: 100%;
+            float:left;
+            background-color: none;
+            padding-top: 10px;
+        }
+
+        #map {
+            position: relative;
+            padding-bottom: 50%;
+            height: 0;
+            overflow:hidden;
+            background-color: #D9D9D9;
+            margin-top: 55px;
+        }
+
+        #map iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; !important;
+            height: 100%; !important;
+        }
+
         #infohead {
             font-size: 25px;
             font-weight: bold;
             text-align: left;
             padding-left: 15px;
         }
+
+        @media (max-width: 700px) {
+
+        #infowrapper {
+            padding-top: 10px;
+            width: 320px;
+            height: 550px;
+            overflow: hidden;
+        }
+
+        #info {
+            display: none;
+        }
+
+        #info_left_mobile {
+            display: block;
+        }
+
+        #info_right_mobile {
+            display: block;
+        }
+
+        #info_bottom_mobile {
+            display: block;
+        }
+
+        #infohead_mobile {
+            font-size: 15px;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        #infocontent_mobile {
+            font-size: 13px;
+        }
+
+        #map {
+            position: relative;
+            padding-bottom: 0;
+            width: 300px;
+            height: 300px;
+            overflow:hidden;
+            background-color: #D9D9D9;
+            margin-top: 25px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #map iframe {
+            width: 300px;
+            height: 300px;
+        }
+
+        }
+
         </style>
     </head>
  <body>
@@ -72,12 +164,33 @@
             <p id="infohead">LUNCH</p>
             <p>Ma-Pe 11-14</p>
             <br>
-            <br>
             <p style="text-align:left;padding-left:15px;"><span style="font-weight:bold;">Tel:</span> +358 9 135 7158</p>
             <p style="text-align:left;padding-left:15px;"><span style="font-weight:bold;">Email:</span> perhe6363@gmail.com</p>
             </div>
+            <div id="info_left_mobile">
+            <p id="infohead_mobile">OPEN</p>
+            <span id="infocontent_mobile">
+            <p>Ma-Pe 11-23</p>
+            <p>La 12-23</p>
+            <p>Su - Closed</p>
+            </span>
+            <br>
+            </div>
+            <div id="info_right_mobile">
+            <p id="infohead_mobile">LUNCH</p>
+            <span id="infocontent_mobile">
+            <p>Ma-Pe 11-14</p>
+            </span>
+            <br>
+
+            </div>
             <div id="map">
 <iframe width="400" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Korea%20House%2C%20Helsinki%2C%20Finland&key=AIzaSyCNq2nT5qFRcplb9J_cccBYnBkXiD2Cnmk"></iframe>
+            </div>
+            <div id="info_bottom_mobile">
+            <span id="infocontent_mobile">
+            <p><span style="font-weight:bold;">Tel:</span> +358 9 135 7158 &nbsp; <span style="font-weight:bold;">Email:</span> perhe6363@gmail.com</p>
+            </span>
             </div>
         </div>
 
