@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Korea House MENU</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,700,400' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+        <script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.localscroll-1.2.7-min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/koreahouse_style.css">
+        <style>
+
+        #menuwrapper {
+            width: 700px;
+            text-align: center;
+            margin: 0 auto;
+            background-color: none;
+            padding-top: 25px;
+            overflow: hidden;
+        }
+
+        #menu {
+            width: 160px;
+            float:left;
+            background-color: none;
+        }
+
+        #div_menu {
+            border: 1px solid black;
+            padding: 10px;
+            width: 600px;
+            height: 550px;
+            margin: 0 auto;
+            overflow: scroll;
+        }
+     
+        .menu_box {
+     
+            color: black;
+            width: 400px;
+            margin: 0 auto 15px auto;
+        }
+     
+        #menu_head {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #food_name {
+            text-align: left;
+        }
+
+        #food_name_bold {
+            font-weight: bold;
+        }
+
+        #food_description {
+            padding-left: 50px;
+            text-align: left;
+            background-color: none;
+            font-style: italic;
+            font-weight: lighter;
+        }
+
+        #starters {
+            background: none;
+        }
+     
+        #main {
+            background: red;
+        }
+     
+        #lunch {
+            background: gray;
+        }
+
+
+        @media (max-width: 700px) {
+
+        #menuwrapper {
+            padding-top: 10px;
+            width: 320px;
+            overflow: hidden;
+        }
+
+        }
+
+        </style>
+ 
+        <script>
+    $(document).ready(function()
+    { 
+        $('#nav_menu').localScroll({
+           target:'#div_menu'
+        });
+    });
+        </script>
+
+    </head>
+ <body>
+        <div id="wrapper">
+        <div id="nav">
+            <a href="{% url 'koreahouse_home' %}">HOME</a>
+            <a href="{% url 'koreahouse_menu' %}">MENU</a>
+            <a href="{% url 'koreahouse_info' %}">INFO</a>
+        </div>
+        
+        <div id="menuwrapper">
+ 
+            <div id="nav_menu">
+             
+                <a href="#starters">STARTERS</a>
+                <a href="#main">MAIN</a>
+                <a href="#lunch">LUNCH</a>
+                <a>SALADS</a>
+                <a>DRINKS</a>
+                <a>DESSERTS</a>
+                <a>TAKEAWAY</a>
+
+             
+            </div>
+             
+            <div id="div_menu">
+                <div id="starters" class="menu_box">
+                    <p id="menu_head">STARTERS</p>
+                    <p id="food_name"><span id="food_name_bold">1. Sengsun tygim</span> 생선튀김 6,50 €</p>
+                    <div id="food_description">
+                    Paistettuja kalaa koreahouse kastikkeen kera<br>
+                    Deep-fried fish with koreahouse sauce
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">2. Kimbap</span> 김밥 5,00/9,80 €</p>
+                    <div id="food_description">
+                    Merilevärulla, täytteenä vihanneksia, riisiä, kanamunaa ja tonnikalaa<br>
+                    Rice with various fillings rolled in a seaweed wrap
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">3. Kimchijeon</span> 김치전 5,00/12,50 €</p>
+                    <div id="food_description">
+                    Kimchi omeletti<br>
+                    Pan baked spicy kimchi
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">4. Haemuljeon</span> 해물전 6,00/13,50 €</p>
+                    <div id="food_description">
+                    Mustekala-äyriäis-kasvisomeletti<br>
+                    Pan-baked squid and seafood
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">5. Seutygim</span> 새우튀김 7,50 €</p>
+                    <div id="food_description">
+                    Paistettuja katkaravunpyrstöjä<br>
+                    Deep-fried shrimps
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">6. Mandutygim</span> 만두튀김 5,50 €</p>
+                    <div id="food_description">
+                    Paistettuja taikinanyyttejä sisältää porsaanlihaa ja vihanneksia<br>
+                    Fried dumplings
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">7. Modum tygim</span> 모듬튀김 9,00/17,50 €</p>
+                    <div id="food_description">
+                     Friteerattua katkarapuja, kalaa, taikinanyyttejä, mustekalaa ja vihanneksia<br>
+                    Deep-fried prawns, dumpuling, fish, squid and vegetables
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">9. Tangsuyuk</span> 탕수육 19,00 €</p>
+                    <div id="food_description">
+                    Friteerattua possua makeassa  kastikkessa<br>
+                    Sweet and sour pork
+                    </div>
+                </div>
+                <div id="main" class="menu_box">
+                    <p id="menu_head">MAIN</p>
+                    <p id="food_name"><span id="food_name_bold">20. Nakji bokkeum</span> 낙지볶음 20,50 €</p>
+                    <div id="food_description">
+                    Paistettua mustekalaa ja vihanneksia chilikastike marinadilla<br>
+                    Fried octopus in chillisauce marinade
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">21. Ojingo bokkeum</span> 오징어볶음 19,50 €</p>
+                    <div id="food_description">
+                    Paistettua kalmaria chilikastike marinadilla<br>
+                    Fried squid in chillisauce marinade
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">22. Yeonneoyori</span> 연어요리 18,50 €</p>
+                    <div id="food_description">
+                    Paistettua lohta soija kastikkeella tai chilimarinadissa<br>
+                    Fried salmon with soya sauce
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">23. Dyaejinbulgogi</span> 돼지불고기 15,50 €</p>
+                    <div id="food_description">
+                    Paistettua porsaanlihaa ja vihanneksia chili- tai soijakastikeella<br>
+                    Fried pork and vegetables in chilly sauce or soya sauce
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">24. Jeyuk bokkeum</span> 제육볶음 16,50 €</p>
+                    <div id="food_description">
+                    Paistettua kimchiä ja porsaanlihaa ja tofu<br> 
+                    Fried kimchi and pork with tofu
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">25. Kanpunggi</span> 깐풍기 16,50 €</p>
+                    <div id="food_description">
+                    Friteerattua kanaa makeahkolla chilimarinadikastikkeella päällä pähkinää<br>
+                    Deep-fried chiken in a sweet spicy marinade
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">26. Jabchebap</span> 잡채밥 15,00 €</p>
+                    <div id="food_description">
+                    Bataattinuudeleita ja naudanlihaa erilaisten vihanneslisukkeiden kera<br>
+                    Mixed dish of noodles, vegetables & sliced beef
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">28. Bulgogi</span> 불고기 19,50 €</p>
+                    <div id="food_description">
+                    Ohueksi leikattua naudanlihaa jossa makeahko marinadi<br>
+                    Thin sliced beef and vegetables stir fried in our special blend of oriental sauce
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">29. Dakbulgogi</span> 닭불고기 16,50 €</p>
+                    <div id="food_description">
+                    Paistettua kanaa ja vihanneksia chili- tai soijakastikeella<br>
+                    Stir fried chicken and vegetables with chili sauce or soya sauce
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">9. Tangsuyuk</span> 탕수육 19,00 €</p>
+                    <div id="food_description">
+                    Friteerattua possua makeassa  kastikkessa<br>
+                    Sweet and sour pork
+                    </div>
+                </div>
+                <div id="lunch" class="menu_box">
+                    <p id="menu_head">LUNCH</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="footer">
+            <div id="copyright"><p>© KOREA HOUSE</p></div>
+            <div id="copyright_mobile"><p>&nbsp;&nbsp;&nbsp;© KOREA HOUSE</p></div>
+            <div id="jungsoomoon"><p><a href="http://jsmoon.com" target="_blank">Website by Jungsoo Moon&nbsp;&nbsp;&nbsp;</a></p></div>
+        </div>
+    </body>
+</html>

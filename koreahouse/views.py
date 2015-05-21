@@ -5,3 +5,6 @@ def koreahouse_home_page(request):
 
 def koreahouse_info_page(request):
     return render(request, 'koreahouse/koreahouse_info.html')
+
+def koreahouse_menu_page(request):
+    return render(request, 'koreahouse/koreahouse_menu.html')
