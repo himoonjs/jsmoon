@@ -22,6 +22,21 @@
             background-color: none;
             padding-top: 25px;
             overflow: hidden;
+            font-size: 16px;
+        }
+
+        #nav_menu_deco {
+            font-size: 16px;
+            word-spacing: 12px;
+        }
+
+        #nav_menu a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #nav_menu a:hover {
+            color: red;
         }
 
         #menu {
@@ -31,25 +46,32 @@
         }
 
         #div_menu {
-            border: 1px solid black;
-            padding: 10px;
-            width: 600px;
+            border-top: 8px solid black;
+            width: 485px;
             height: 550px;
-            margin: 0 auto;
+            margin: 10px auto 0 auto;
             overflow: scroll;
         }
      
         .menu_box {
-     
             color: black;
-            width: 400px;
-            margin: 0 auto 15px auto;
+            width: 485px;
+            padding-top: 8px;
+            margin: 0 auto 60px auto;
+            background-color: green;
         }
      
         #menu_head {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             text-align: center;
+            background:#F5F5F5;
+        }
+
+        #menu_subhead {
+            font-size: 20px;
+            text-align: center;
+            font-style: italic;
         }
 
         #food_name {
@@ -73,21 +95,49 @@
         }
      
         #main {
-            background: red;
+            background: none;
         }
      
         #lunch {
-            background: gray;
+            background: none;
         }
 
 
         @media (max-width: 700px) {
 
-        #menuwrapper {
-            padding-top: 10px;
-            width: 320px;
-            overflow: hidden;
-        }
+            #menuwrapper {
+                padding-top: 10px;
+                width: 320px;
+                font-size: 12px;
+            }
+
+            #nav_menu_deco {
+                font-size: 14px;
+                word-spacing: 10px;
+            }
+
+            #div_menu {
+                border-top: 8px solid black;
+                width: 280px;
+                height: 300px;
+                margin: 10px auto 0 auto;
+                overflow: scroll;
+            }
+            .menu_box {
+                color: black;
+                width: 280px;
+                padding-top: 8px;
+                margin: 0 auto 60px auto;
+                background-color: green;
+            }
+
+            #menu_head {
+                font-size: 18px;
+            }
+
+            #menu_subhead {
+                font-size: 16px;
+            }
 
         }
 
@@ -114,15 +164,15 @@
         <div id="menuwrapper">
  
             <div id="nav_menu">
-             
+                <span id="nav_menu_deco">
                 <a href="#starters">STARTERS</a>
                 <a href="#main">MAIN</a>
                 <a href="#lunch">LUNCH</a>
-                <a>SALADS</a>
-                <a>DRINKS</a>
-                <a>DESSERTS</a>
-                <a>TAKEAWAY</a>
-
+                <a href="#salads">SALADS</a>
+                <a href="#drinks">DRINKS</a>
+                <a href="#desserts">DESSERTS</a>
+                <a href="#takeaway">TAKEAWAY</a>
+                <span>
              
             </div>
              
@@ -170,6 +220,7 @@
                     Sweet and sour pork
                     </div>
                 </div>
+
                 <div id="main" class="menu_box">
                     <p id="menu_head">MAIN</p>
                     <p id="food_name"><span id="food_name_bold">20. Nakji bokkeum</span> 낙지볶음 20,50 €</p>
@@ -217,14 +268,284 @@
                     Paistettua kanaa ja vihanneksia chili- tai soijakastikeella<br>
                     Stir fried chicken and vegetables with chili sauce or soya sauce
                     </div>
-                    <p id="food_name"><span id="food_name_bold">9. Tangsuyuk</span> 탕수육 19,00 €</p>
+
+                    <p id="menu_subhead">HOT POT</p>
+                    <p id="food_name"><span id="food_name_bold">30. Kimchichigae</span> 김치찌개 17,50 €</p>
                     <div id="food_description">
-                    Friteerattua possua makeassa  kastikkessa<br>
-                    Sweet and sour pork
+                    Kimchi & porsaanlihakeitto sisältää tofua ja vihanneksia<br>
+                    Kimchi stew with pork
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">31. Dyaenjangchigae</span> 된장찌개 15,50 €</p>
+                    <div id="food_description">
+                    Korealainen soijapapu keitto sisältää tofua ja vihanneksia<br>
+                    Korean soyabean stew
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">32. Sundubuchigae</span> 순두부찌개 16,20 €</p>
+                    <div id="food_description">
+                    Pehmeä tofukeitto sisältää äyriäisiä ja kanamunaa<br>
+                    Soft tofu stew with mixed seafood 
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">33. Sengsun tang</span> 생선탕 17,20 €</p>
+                    <div id="food_description">
+                    Kalaa- ja äyriäiskeitto sisältää tofua ja vihanneksia<br>
+                    Fish and mixed seafood stew with rice
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">34. Heamultang</span> 해물탕 (min. 2 henkilölle / min. order for 2 persons) 22,00 € -pp</p>
+                    <div id="food_description">
+                    Äyriäiskeitto, riisiä ja kimchiä<br>
+                    Mixed seafood stew
+                    </div>
+                    <p id="menu_subhead">KOREAHOUSE SPECIAL DINNER</p>
+                    <p id="food_name"><span id="food_name_bold">40. Koreahouse-A</span> 2 henkilölle / for 2 persons 49,00 €</p>
+                    <div id="food_description">
+                    Alkuruoat-paistettuja taikinanyyttejä, kalaa, pääruoat-bulgogi(naudanliha), porsaanlihaa, riisiä ja jääteöä<br>
+                    Deep-fried dumplings, fish, Main-beef, pork, rice and ice-cream
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">41. Koreahouse-B</span> 3 henkilölle / for 3 persons 73,50 €</p>
+                    <div id="food_description">
+                    Alkuruoat-paistettuja taikinanyyttejä, kalaa, pääruoat-bulgogi(naudanliha), porsaanlihaa, kanaa, riisiä ja jääteöä<br>
+                    Deep-fried dumplings, fish, Main-beef, pork, chiken, rice and ice-cream
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">42. Koreahouse-C</span> 4 henkilölle / for 4 persons 98,00 €</p>
+                    <div id="food_description">
+                    Alkuruoat-paistettuja taikinanyyttejä, kalaa, pääruoat-bulgogi(naudanliha), porsaanlihaa, kanaa, tofu keitto, riisiä ja jääteöä
+                    Deep-fried dumplings, fish, Main-beef, pork, chiken, tofu stew, rice and ice-cream
+                    </div>
+
+                    <p id="food_name"><span id="food_name_bold">43.Samkyeupsal</span> 삼겹살 a 19,50 € -pp</p>
+                    <div id="food_description">
+                    Paistettua porsaan kylkiviipale chillikastikeessa<br>
+                    Grilled pork belly with chili sauce
+                    </div>
+
+                    <p id="menu_subhead">BULGOGI ON THE TABLE</p>
+                    <p id="food_name"><span id="food_name_bold">44. Bulgogi atera(set)</span> 불고기 세트 (min. 2 henkilölle / min. order for 2 persons) 26,00 € -pp</p>
+                    <div id="food_description">
+                    Ohueksi leikattua naudanlihaa: marinadi(sis. riisia, salaatti, kimchi)<br>
+                    Specially marinated thin sliced beef(inc. rice, salad, kimchi)
                     </div>
                 </div>
+
                 <div id="lunch" class="menu_box">
                     <p id="menu_head">LUNCH</p>
+                    <p id="food_name"><span id="food_name_bold">A. Bibimbap</span> 비빔밥 10,50 €</p>
+                    <div id="food_description">
+                    Keitettyä riisiä kasvisten kanssa<br>
+                    Boiled rice with assorted mixtures of vegetables
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">B. Seu bokkumbap</span> 새우볶음밥 9,50 €</p>
+                    <div id="food_description">
+                    Paistettua riisiä katkarapujen kanssa<br>
+                    Fried rice with vegetables and shrimp
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">C. Kimbap</span> 김밥 9,50 €</p>
+                    <div id="food_description">
+                    Merilevärulla, täytteenä vihanneksia, riisiä ja tonnikalaa<br>
+                    Rice with various fillings rolled in a seaweed wrap
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">D. Dubu yachae bokkeum</span> 두부야채볶음 9,20 €</p>
+                    <div id="food_description">
+                    Paistettua tofua ja vihanneksia soija kastikkeella<br>
+                    Fried tofu and vegetables with soya sauce
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">E. Kimchi bokeumbap</span> 김치볶음밥 9,50 €</p>
+                    <div id="food_description">
+                    Friteerattuariisiä kimchin kanssa<br>
+                    Fried rice with kimchi
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">F. Sengsun tygim</span> 생선튀김 9,20 €</p>
+                    <div id="food_description">
+                    Friteerattua kalaa koreahouse kastikkeen kera<br>
+                    Deep-fried fish with koreahouse sauce
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">G. Dakbulgogi</span> 닭불고기 12,50 €</p>
+                    <div id="food_description">
+                    Friteerattua kanaa & makeahko marinadi<br>
+                    Stir fried chicken and vegetables with soya sauce
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">H. Dyaejinbulgogi</span> 돼지불고기 12,50 €</p>
+                    <div id="food_description">
+                    Friteerattua porsaanlihaa ja vihanneksia chilikastikke marinadissa<br>
+                    Fried pork and vegetables in chilly sauce marinade
+                    </div>                    
+                    <p id="food_name"><span id="food_name_bold">I. Bulgogi</span> 불고기 15,50 €</p>
+                    <div id="food_description">
+                    Ohueksi leikattua naudanlihaa jossa makeahko marinadi<br>
+                    Thin sliced beef and vegetables stir fried in our special blend of oriental sauce
+                    </div>
+                </div>
+
+                <div id="salads" class="menu_box">
+                    <p id="menu_head">SALADS</p>
+                    <p id="menu_subhead">KEITTIO / SOUP</p>
+                    <p id="food_name"><span id="food_name_bold">10. Dyaenjang guk</span> 된장국 6,00 €</p>
+                    <div id="food_description">
+                    Korealainen soijapapukeitto<br>
+                    Korean soyabean soup
+                    </div>  
+                    <p id="food_name"><span id="food_name_bold">11. Mandu guk</span> 만두국 6,00 €</p>
+                    <div id="food_description">
+                    Taikinaannyyttikeitto<br>
+                    Dumpling soup
+                    </div>
+
+                    <p id="menu_subhead">SALAATIT / SIDE DISHES</p>
+                    <p id="food_name"><span id="food_name_bold">12. Kimchi</span> 김치 5,00 €</p>
+                    <div id="food_description">
+                    Korealainen soijapapukeitto<br>
+                    Korean soyabean soup
+                    </div> 
+                    <p id="food_name"><span id="food_name_bold">13. Oimuchim</span> 오이무침 5,70 €</p>
+                    <div id="food_description">
+                    Korealaisittain maustettu tulinen kurkku salaatti<br>
+                    Cucumber salad with mixed korean spices
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">15. Ojingo muchim</span> 오징어무침 10,70 €</p>
+                    <div id="food_description">
+                    Korealaisittain maustettu tulinen kurkku ja kalmari salaatti<br>
+                    Cucumber and squid salad with mixed korean spices
+                    </div>  
+                    <p id="food_name"><span id="food_name_bold">16. Sangchu</span> 상추 4,70 €</p>
+                    <div id="food_description">
+                    Salaatti<br>
+                    Salad
+                    </div>  
+                    <p id="food_name"><span id="food_name_bold">17. Samjang + manul</span> 쌈장과 마늘 3,50 €</p>
+                    <div id="food_description">
+                    Soyapapukastike + valkosipuli + kirvelevää<br>
+                    Soyabeansause + garlic + pepper
+                    </div>  
+                </div>
+
+                <div id="drinks" class="menu_box">
+                    <p id="menu_head">DRINKS</p>
+                    <p id="menu_subhead">OLUT / BEER</p>
+                    <p id="food_name"><span id="food_name_bold">Lapin Kulta III</span> 0,3/0,5 l</p>
+                    <p id="food_name"><span id="food_name_bold">Karjala III</span> 0,3 l</p>
+                    <p id="food_name"><span id="food_name_bold">Hite (Korealainen olut)</span> 0,3 l</p>
+                    <p id="food_name"><span id="food_name_bold">Karhu IV</span> 0,3 l</p>
+                    <p id="food_name"><span id="food_name_bold">Kuiva omena siideri</span> Dry apple cider</p>
+                    <p id="food_name"><span id="food_name_bold">Päärynä siideri</span> Perry</p>
+                    
+                    <p id="menu_subhead">VIRVOKKEET / SOFT DRINKS</p>
+                    <p id="food_name"><span id="food_name_bold">Cola</span></p>
+                    <p id="food_name"><span id="food_name_bold">Sprite</span></p>
+                    <p id="food_name"><span id="food_name_bold">Appelsiini mehu / Orange juice</span></p>
+                    <p id="food_name"><span id="food_name_bold">Vichy</span></p>
+                    <p id="food_name"><span id="food_name_bold">Novelle</span></p>
+
+                    <p id="menu_subhead">PUNAVIINIT / RED WINES</p>
+                    <p id="food_name"><span id="food_name_bold">Caldora Sangiovese Trre di chiet</span>(Talon Viini)</p>
+                    <div id="food_description">
+                    Helposti lähestyttävä. Keskitäyteläinen, tasapainoinen, tanniininen
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Spier Discover Red</span>(South Africa)</p>
+                    <div id="food_description">
+                    Spier/Coastal Pinotage, Shiraz<br>
+                    Pyöreä, notkea, hedelmäinen, helposti lähestyttävä, täyteläinen
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Pionero Merlot</span>(Chile)</p>
+                    <div id="food_description">
+                    Vina Morande/Central Valley<br>
+                    Täyteläinen, pehmeä, pitkä, pyöreä, kypsänmarjainen, pippurinen
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Yalumba "Y Series" Merlot</span>(Austrailia)</p>
+                    <div id="food_description">
+                    Täyteläinen, pehmeä, pitkä, kypsänmarjainen, pippurinen
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Bodegas Beronia/Rioja</span>(Spain)</p>
+                    <div id="food_description">
+                    Samettisen pehmeä, hieman kehittynyt, tasapainoinenpitkä, hedelmäinen
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Guigal Gigondas</span>(France)</p>
+                    <div id="food_description">
+                    täyteläisen runsas, robusti, melko pitkä ja hienostynut maku
+                    </div>
+
+
+                    <p id="menu_subhead">VALKOVIINIT / WHITE WINES</p>
+                    <p id="food_name"><span id="food_name_bold">Caldora Trebbiano d Abruzzo</span>(Italia)</p>
+                    <div id="food_description">
+                    Kuiva, täyteläinen, intensiivinen, tasapainoinen
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Spier Discover White</span>(South Africa)</p>
+                    <div id="food_description">
+                    Spier/Coastal Chenin Blanc, Colombard<br>
+                    Kuiva, raikas, hedelmäinen
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Pionero Chardonnay</span>(Chile)</p>
+                    <div id="food_description">
+                    Vina Morande/Central Valley<br>
+                    Kuiva,täytelläinen, raikas, hieman pähkinäinen
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Yalumba "Y Series" Viognier</span>(Austrailia)</p>
+                    <div id="food_description">
+                    Kuiva,keskitäyteläinen,raikkaan hedelmäinen, pitkä, raikas jälkimaku
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">Willm Riesling Grand Cru / Alsace</span>(France)</p>
+                    <div id="food_description">
+                    Puolikuiva, runsas ja mineraalinen, tasapainoisen pehmea ja tyylikas
+                    </div>
+
+                    <p id="menu_subhead">KUOHUVIINIT / SPARKLING WINES</p>
+                    <p id="food_name"><span id="food_name_bold">Mistinguett CAVA Brut</span>(Spain)</p>
+                    <div id="food_description">
+                    Masia Vallformosa/Do Penedes<br>
+                    Kuiva, tasapainoinen, herkullinen, kevyesti hapokas, pyöreä, elegantti
+                    </div>
+                </div>
+
+                <div id="desserts" class="menu_box">
+                    <p id="menu_head">DESSERTS</p>
+                    <p id="food_name"><span id="food_name_bold">Korealaista kakkua / Rice dumpling</span> 5,50 €</p>
+                    <p id="food_name"><span id="food_name_bold">Jäätelöä mansikka-karamelli kastikkeella<br> / Ice cream with strawberry-caramel</span> 4,50/6,0 €</p>
+
+                    <p id="menu_subhead">DESSERT DRINKS</p>
+                    <p id="food_name"><span id="food_name_bold">Irish coffee</span></p>
+                    <p id="food_name"><span id="food_name_bold">Amaretto coffee</span></p>
+                    <p id="food_name"><span id="food_name_bold">Ginseng tea</span></p>
+                    <p id="food_name"><span id="food_name_bold">Kanelimehu / Cinnamon juice</span></p>
+                    <p id="food_name"><span id="food_name_bold">Kahvi / Coffee</span></p>
+                    <p id="food_name"><span id="food_name_bold">Tee / Tea</span></p>
+                </div>
+
+                <div id="takeaway" class="menu_box">
+                    <p id="menu_head">TAKEAWAY</p>
+                    <p id="food_name"><span id="food_name_bold">27. Bibimbap</span> 비빔밥 11,00 €</p>
+                    <div id="food_description">
+                    Keitettyä riisiä kasvisten ja naudanlihan kera<br>
+                    Boiled rice assorted mixture of vegetables and beef
+                    </div> 
+                    <p id="food_name"><span id="food_name_bold">28. Bulgogi</span> 불고기 16,00 €</p>
+                    <div id="food_description">
+                    Ohueksi leikattua naudanlihaa jossa makeahko marinadi<br>
+                    Thin sliced beef and vegetables stir fried in our special blend of oriental sauce
+                    </div> 
+                    <p id="food_name"><span id="food_name_bold">29. Dakbulgogi</span> 닭불고기 13,00 €</p>
+                    <div id="food_description">
+                    Paistettua kanaa & makeahko marinadi<br>
+                    Stir fried chicken and vegetables with soya sauce
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">23. Dyaejinbulgogi</span> 돼지불고기 12,50 €</p>
+                    <div id="food_description">
+                    Paistettua porsaanlihaa ja vihanneksia chilikastikke marinadissa<br>
+                    Fried pork and vegetables in chilly sauce marinade
+                    </div> 
+                    <p id="food_name"><span id="food_name_bold">2. Kimbap</span> 김밥 10,00 €</p>
+                    <div id="food_description">
+                    Merilevärulla, täytteenä vihanneksia, riisiä ja tonnikalaa<br>
+                    Rice with various fillings rolled in a seaweed wrap
+                    </div>
+                    <p id="food_name"><span id="food_name_bold">26. Jabche</span> 잡채 12,50 €</p>
+                    <div id="food_description">
+                    Bataattinuudeleita ja naudanlihaa erilaisten vihanneslisukkeiden kera<br>
+                    Mixed dish of noodles, vegetables & sliced beef
+                    </div>  
+                    <p id="food_name"><span id="food_name_bold">12. Kimchi</span> 김치(500g) 8,00 €</p>
+                    <div id="food_description">
+                    Valmistetaan kiinankaalista ja erilaisista mausteista<br>
+                    Spicy korean pickled cabbage
+                    </div>   
                 </div>
             </div>
 
