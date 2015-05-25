@@ -45,7 +45,8 @@ body{
 
 #logotextkor {
     font-size: 45px;
-    font-family: Batang;
+    font-family: 'KoPub Batang', serif;
+    font-weight: bold;
 }
 
 #underthelogo {
