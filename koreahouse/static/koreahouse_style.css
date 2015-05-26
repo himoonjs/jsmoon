@@ -30,6 +30,7 @@ body{
     color : blue;
 }
 
+/*----------main page----------*/
 
 #logowrapper {
     width: 90vw;
@@ -274,3 +275,255 @@ animation: scale 2s ease-out 1.2s infinite alternate;
 
 }
 
+/*----------menu page----------*/
+
+#menuwrapper {
+    width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: none;
+    padding-top: 25px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+#nav_menu_deco {
+    font-size: 16px;
+    word-spacing: 12px;
+    letter-spacing: 0.5px;
+}
+
+#nav_menu a {
+    color: black;
+    text-decoration: none;
+}
+
+#nav_menu a:hover {
+    color: red;
+}
+
+#div_menu {
+    border-top: 8px solid black;
+    width: 508px;
+    height: 586px;
+    height: 75.3vh;
+    margin: 10px auto 0 auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#div_menu::-webkit-scrollbar { 
+    display: none;
+}
+
+.menu_box {
+    color: black;
+    width: 508px;
+    padding-top: 8px;
+    margin: 0 auto 60px auto;
+}
+
+#menu_head {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    background:#F5F5F5;
+    letter-spacing: 2px;
+}
+
+#menu_subhead {
+    font-size: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+#food_name {
+    text-align: left;
+    padding-right: 14px;
+}
+
+#food_name_bold {
+    font-weight: bold;
+}
+
+#food_name_kor {
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+#food_description {
+    padding-left: 50px;
+    padding-right: 14px;
+    text-align: left;
+    background-color: none;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+@media (max-width: 700px) {
+
+    #menuwrapper {
+        padding-top: 10px;
+        width: 320px;
+        font-size: 12px;
+    }
+
+    #nav_menu_deco {
+        font-size: 14px;
+        word-spacing: 10px;
+    }
+
+    #div_menu {
+        width: 280px;
+        height: 300px;
+        margin: 10px auto 0 auto;
+    }
+
+    .menu_box {
+        color: black;
+        width: 280px;
+        padding-top: 8px;
+        margin: 0 auto 20px auto;
+    }
+
+    #menu_head {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    #menu_subhead {
+        font-size: 16px;
+    }
+
+    #food_name {
+        padding-right: 0px;
+    }
+
+    #food_description {
+        padding-left: 30px;
+        padding-right: 0px;
+    }
+}
+
+/*----------info page----------*/
+
+#infowrapper {
+    width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: none;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+#info {
+width: 280px;
+height: 500px;
+float:left;
+background-color: none;
+padding-top: 10px;
+}
+
+#info_left_mobile {
+    display: none;
+    width: 160px;
+    float:left;
+    background-color: none;
+    padding-top: 10px;
+}
+
+#info_right_mobile {
+    display: none;
+    width: 160px;
+    overflow: hidden;
+    background-color: none;
+    padding-top: 10px;
+}
+
+#info_bottom_mobile {
+    display: none;
+    width: 100%;
+    float:left;
+    background-color: none;
+    padding-top: 10px;
+}
+
+#map {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow:hidden;
+    background-color: #D9D9D9;
+    margin-top: 35px;
+}
+
+#map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+}
+
+#infohead {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+    letter-spacing: 4px;
+}
+
+@media (max-width: 700px) {
+
+#infowrapper {
+    padding-top: 10px;
+    width: 320px;
+    height: 550px;
+    overflow: hidden;
+}
+
+#info {
+    display: none;
+}
+
+#info_left_mobile {
+    display: block;
+}
+
+#info_right_mobile {
+    display: block;
+}
+
+#info_bottom_mobile {
+    display: block;
+}
+
+#infohead_mobile {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+    letter-spacing: 2px;
+}
+
+#infocontent_mobile {
+    font-size: 13px;
+}
+
+#map {
+    position: relative;
+    padding-bottom: 0;
+    width: 300px;
+    height: 300px;
+    overflow:hidden;
+    background-color: #D9D9D9;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#map iframe {
+    width: 300px;
+    height: 300px;
+}
+
+}
