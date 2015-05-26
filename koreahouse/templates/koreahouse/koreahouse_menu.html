@@ -29,6 +29,7 @@
         #nav_menu_deco {
             font-size: 16px;
             word-spacing: 12px;
+            letter-spacing: 0.5px;
         }
 
         #nav_menu a {
@@ -42,16 +43,26 @@
 
         #div_menu {
             border-top: 8px solid black;
-            width: 485px;
+            width: 508px;
             height: 550px;
             margin: 10px auto 0 auto;
             overflow: scroll;
-            -ms-overflow-style: none;
+            scrollbar-face-color: none;
+            scrollbar-shadow-color: none;
+            scrollbar-highlight-color: none;
+            scrollbar-3dlight-color: none;
+            scrollbar-darkshadow-color: none;
+            scrollbar-track-color: none;
+            scrollbar-arrow-color: none;
         }
-     
+ 
+        #div_menu::-webkit-scrollbar { 
+            display: none;
+        }
+
         .menu_box {
             color: black;
-            width: 485px;
+            width: 508px;
             padding-top: 1px;
             margin: 0 auto 60px auto;
         }
@@ -166,7 +177,9 @@
                 <span>
              
             </div>
-             
+            
+            <div class="outer-container">
+            <div class="inner-container">
             <div id="div_menu">
                 <div id="starters" class="menu_box">
                     <p id="menu_head">STARTERS</p>
@@ -539,7 +552,8 @@
                     </div>   
                 </div>
             </div>
-
+            </div>
+            </div>
         </div>
 
         <div id="footer">
@@ -548,5 +562,6 @@
             <div id="jungsoomoon"><p><a href="http://jsmoon.com" target="_blank">Website by Jungsoo Moon&nbsp;&nbsp;&nbsp;</a></p></div>
         </div>
         </div>
+
     </body>
 </html>
