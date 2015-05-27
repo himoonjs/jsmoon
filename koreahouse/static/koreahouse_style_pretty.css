@@ -428,7 +428,7 @@ padding-top: 10px;
     width: 160px;
     float:left;
     background-color: none;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
 #info_right_mobile {
@@ -436,7 +436,7 @@ padding-top: 10px;
     width: 160px;
     overflow: hidden;
     background-color: none;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
 #info_bottom_mobile {
@@ -444,7 +444,7 @@ padding-top: 10px;
     width: 100%;
     float:left;
     background-color: none;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
 #map {
