@@ -423,6 +423,10 @@ background-color: none;
 padding-top: 10px;
 }
 
+#important_note {
+    font-size: 14px;
+}
+
 #info_left_mobile {
     display: none;
     width: 160px;
@@ -483,6 +487,10 @@ padding-top: 10px;
 
 #info {
     display: none;
+}
+
+#important_note {
+    font-size: 11px;
 }
 
 #info_left_mobile {
