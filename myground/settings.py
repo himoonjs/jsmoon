@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'parallax',
     'catchme',
     'koreahouse',
+    'd3',
     'dev_bootstrap',
 )
 

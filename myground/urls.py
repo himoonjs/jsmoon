@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^parallax/', 'parallax.views.parallax_home_page', name='parallax_home'),
     url(r'^catchme/', 'catchme.views.catchme_home_page', name='catchme_home'),
     url(r'^koreahouse/', include('koreahouse.urls')),
+    url(r'^d3/', include('d3.urls')),
     # url(r'^blog/', include('blog.urls')),
     #url(r'^admin/', include(admin.site.urls)),
 )
