@@ -1,72 +1,217 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 
-{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>D3 Page Template</title>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="/static/d3.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <style>
 
-{% block title %}Home{% endblock %}
+            body {
+              font-family: 'Montserrat', sans-serif;
+              margin: 0 auto;
+              position: relative;
+              width: 100%;
+              background-color: white;
+            }
 
-{% block header_block %}
-    <a href="{% url 'about' %}" class="homepage_nav">About</a>&nbsp;&nbsp;
-    <a href="mailto:himoonjs@gmail.com" class="homepage_nav">Contact</a>
-{% endblock %}
+            #thediv {
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+            }
 
-{% block body_block %}
-<div class="row">
-    <div class="col-md-12">
-        <div class="text-center" style="font-size: 23px;">
-            <p>I write stories using code and key frames</p>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="cover-tip">
-            <img src="/static/images/koreanhouse_cover.png" width="300" height="200" alt="Korean House cover" />
-            <a href="http://www.koreahouse.fi" target="_blank">
-                <div class="mask"></div>
-                <div class="content">
-                    <h2>Korea House</h2>
-                    <p>Web design for Korean restaurant in Helsinki, Finland</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="cover-tip">
-            <img src="/static/images/tappara_cover.jpg" width="300" height="200" alt="Tappara cover" />
-            <a href="https://www.youtube.com/watch?v=1fujTwUKjBI" target="_blank">
-                <div class="mask"></div>
-                <div class="content">
-                    <h2>Tappara Pelaajaesittely</h2>
-                    <p>Motion graphics for player introduction videos of Finnish Ice Hockey team Tappara(season 2013-2014)</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="cover-tip">
-            <img src="/static/images/allwillbequiet_cover.png" width="300" height="200" alt="all will be quiet cover" />
-            <a href="https://www.youtube.com/watch?t=190&v=BHeM2D0-tBY" target="_blank">
-                <div class="mask"></div>
-                <div class="content">
-                    <h2>What I’m Meant To Be</h2>
-                    <p>Concept design and post-production for a music video of Finnish band All Will Be Quiet</p>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="cover-tip">
-            <img src="/static/images/catchme_cover.png" alt="Catch me cover" />
-            <a href="{% url 'catchme_home' %}">
-                <div class="mask"></div>
-                <div class="content">
-                    <h2>Catch me if you can</h2>
-                    <p>Simple web game using SVG animation with SMIL</p>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-{% endblock %}
+            #thediv_myname {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                padding-top: 10%;
+                font-size: 65px;
+                font-weight: bold;
+            }
+
+            #thediv_description {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 30px;
+            }
+
+            #thediv_contact {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            #strangeButton {
+                display: none;
+            }
+
+            svg {
+                position: absolute;
+                padding-top: 280px;
+                padding-top: 28%;
+            }
+
+            path#menu1 {
+                fill: #FFFAAB;
+            }
+            path#menu1:hover {
+                fill: #FFF664;
+            }
+
+            path#menu2 {
+                fill: #AB67EC;
+            }
+            path#menu2:hover {
+                fill: #930FFF;
+            }
+
+            path#menu3 {
+                fill: #FF6F64;
+            }
+            path#menu3:hover {
+                fill: #FF003B;
+            }
+
+            path#menu4 {
+                fill: #C4FA79;
+            }
+            path#menu4:hover {
+                fill: #5FFF00;
+            }
+            path#menu5 {
+                fill: #61C0E9;
+            }
+            path#menu5:hover {
+                fill: #4B91FF;
+            }
+        </style>
+
+        <button id="strangeButton" onclick="transition()">Update</button>
+        <script>
+            var width = $(window).width();
+
+            var n = 5, // number of layers
+                m = 200, // number of samples per layer
+                stack = d3.layout.stack().offset("wiggle"),
+                layers0 = stack(d3.range(n).map(function() { return bumpLayer(m); })),
+                layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
+
+            var height = 300;
+
+            var x = d3.scale.linear()
+                .domain([0, m - 1])
+                .range([0, width]);
+
+            var y = d3.scale.linear()
+                .domain([0, d3.max(layers0.concat(layers1), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
+                .range([height, 0]);
+
+            var area = d3.svg.area()
+                .x(function(d) { return x(d.x); })
+                .y0(function(d) { return y(d.y0); })
+                .y1(function(d) { return y(d.y0 + d.y); });
+
+            var thediv = d3.select("body").append("div")
+                .attr("id", "thediv")
+                .html("<span id='thediv_myname'>Jungsoo Moon</span><br/><span id='thediv_description'>I write stories using code and key frames</span><br/><span id='thediv_contact'>E-mail: himoonjs@gmail.com / Phone: +358 40 4455865</span>");
+
+
+            var svg = d3.select("body").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+            
+            var menuCount = 0;
+
+            var paths = svg.selectAll("path")
+                .data(layers0)
+              .enter().append("path")
+                .attr("d", area)
+                .attr("class", "paths")
+                .attr("id", function(d) {
+                    menuCount += 1;
+                    return "menu" + menuCount;
+                });
+
+            var menu1 = d3.select("#menu1")
+                .on("click", function() {
+                    transition();
+                    d3.select("#thediv")
+                        .html("<span id='thediv_text'>Hello Moon</span>")
+                        .style("background-color", "#E5DB3D"); 
+                });
+
+            var menu2 = d3.select("#menu2")
+                .on("click", function() {
+                    transition();
+                    d3.select("#thediv")
+                        .html("<span id='thediv_text'>OK Moon</span>")
+                        .style("background-color", "#E8D3F4"); 
+                });
+
+            var menu3 = d3.select("#menu3")
+                .on("click", function() {
+                    transition();
+                    d3.select("body")
+                        .style("background-color", "#FF6186");
+                });
+
+            var menu4 = d3.select("#menu4")
+                .on("click", function() {
+                    transition();
+                    d3.select("body")
+                        .style("background-color", "#8CD152");
+                });
+
+            var menu5 = d3.select("#menu5")
+                .on("click", function() {
+                    transition();
+                    d3.select("body")
+                        .style("background-color", "#6AA4FF");
+                });
+
+            function transition() {
+              d3.selectAll("path")
+                  .data(function() {
+                    layers0 = stack(d3.range(n).map(function() { return bumpLayer(m); })),
+                    layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
+                    var d = layers1;
+                    layers1 = layers0;
+                    return layers0 = d;
+                  })
+                .transition()
+                  .duration(500)
+                  .ease("elastic")
+                  .attr("d", area);
+            }
+
+            // Inspired by Lee Byron's test data generator.
+            function bumpLayer(n) {
+
+              function bump(a) {
+                var x = 1 / (.1 + Math.random()),
+                    y = 2 * Math.random() - .5,
+                    z =  3 / (.1 + Math.random());
+                for (var i = 0; i < n; i++) {
+                  var w = (i / n - y) * z;
+                  a[i] += x * Math.exp(-w * w);
+                }
+              }
+
+              var a = [], i;
+              for (i = 0; i < n; ++i) a[i] = 0;
+              for (i = 0; i < 5; ++i) bump(a);
+              return a.map(function(d, i) { return {x: i, y: Math.max(0, d)}; });
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

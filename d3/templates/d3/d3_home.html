@@ -6,25 +6,96 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>D3 Page Template</title>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="/static/d3.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <style>
 
             body {
-              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-              margin: auto;
+              font-family: 'Montserrat', sans-serif;
+              margin: 0 auto;
               position: relative;
-              width: 960px;
+              width: 100%;
+              background-color: white;
             }
 
-            button {
-              position: absolute;
-              right: 10px;
-              top: 10px;
+            #thediv {
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
             }
 
+            #thediv_myname {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                padding-top: 10%;
+                font-size: 65px;
+                font-weight: bold;
+            }
+
+            #thediv_description {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 30px;
+            }
+
+            #thediv_contact {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            #strangeButton {
+                display: none;
+            }
+
+            svg {
+                position: absolute;
+                padding-top: 280px;
+                padding-top: 28%;
+            }
+
+            path#menu1 {
+                fill: #FFFAAB;
+            }
+            path#menu1:hover {
+                fill: #FFF664;
+            }
+
+            path#menu2 {
+                fill: #AB67EC;
+            }
+            path#menu2:hover {
+                fill: #930FFF;
+            }
+
+            path#menu3 {
+                fill: #FF6F64;
+            }
+            path#menu3:hover {
+                fill: #FF003B;
+            }
+
+            path#menu4 {
+                fill: #C4FA79;
+            }
+            path#menu4:hover {
+                fill: #5FFF00;
+            }
+            path#menu5 {
+                fill: #61C0E9;
+            }
+            path#menu5:hover {
+                fill: #4B91FF;
+            }
         </style>
-        <button onclick="transition()">Update</button>
+
+        <button id="strangeButton" onclick="transition()">Update</button>
         <script>
+            var width = $(window).width();
 
             var n = 5, // number of layers
                 m = 200, // number of samples per layer
@@ -32,8 +103,7 @@
                 layers0 = stack(d3.range(n).map(function() { return bumpLayer(m); })),
                 layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
 
-            var width = 960,
-                height = 500;
+            var height = 300;
 
             var x = d3.scale.linear()
                 .domain([0, m - 1])
@@ -43,33 +113,81 @@
                 .domain([0, d3.max(layers0.concat(layers1), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
                 .range([height, 0]);
 
-            var color = d3.scale.linear()
-                .range(["#aad", "#556"]);
-
             var area = d3.svg.area()
                 .x(function(d) { return x(d.x); })
                 .y0(function(d) { return y(d.y0); })
                 .y1(function(d) { return y(d.y0 + d.y); });
 
+            var thediv = d3.select("body").append("div")
+                .attr("id", "thediv")
+                .html("<span id='thediv_myname'>Jungsoo Moon</span><br/><span id='thediv_description'>I write stories using code and key frames</span><br/><span id='thediv_contact'>E-mail: himoonjs@gmail.com / Phone: +358 40 4455865</span>");
+
+
             var svg = d3.select("body").append("svg")
                 .attr("width", width)
                 .attr("height", height);
+            
+            var menuCount = 0;
 
-            svg.selectAll("path")
+            var paths = svg.selectAll("path")
                 .data(layers0)
               .enter().append("path")
                 .attr("d", area)
-                .style("fill", function() { return color(Math.random()); });
+                .attr("class", "paths")
+                .attr("id", function(d) {
+                    menuCount += 1;
+                    return "menu" + menuCount;
+                });
+
+            var menu1 = d3.select("#menu1")
+                .on("click", function() {
+                    transition();
+                    d3.select("#thediv")
+                        .html("<span id='thediv_text'>Hello Moon</span>")
+                        .style("background-color", "#E5DB3D"); 
+                });
+
+            var menu2 = d3.select("#menu2")
+                .on("click", function() {
+                    transition();
+                    d3.select("#thediv")
+                        .html("<span id='thediv_text'>OK Moon</span>")
+                        .style("background-color", "#E8D3F4"); 
+                });
+
+            var menu3 = d3.select("#menu3")
+                .on("click", function() {
+                    transition();
+                    d3.select("body")
+                        .style("background-color", "#FF6186");
+                });
+
+            var menu4 = d3.select("#menu4")
+                .on("click", function() {
+                    transition();
+                    d3.select("body")
+                        .style("background-color", "#8CD152");
+                });
+
+            var menu5 = d3.select("#menu5")
+                .on("click", function() {
+                    transition();
+                    d3.select("body")
+                        .style("background-color", "#6AA4FF");
+                });
 
             function transition() {
               d3.selectAll("path")
                   .data(function() {
+                    layers0 = stack(d3.range(n).map(function() { return bumpLayer(m); })),
+                    layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
                     var d = layers1;
                     layers1 = layers0;
                     return layers0 = d;
                   })
                 .transition()
-                  .duration(2500)
+                  .duration(500)
+                  .ease("elastic")
                   .attr("d", area);
             }
 
@@ -79,7 +197,7 @@
               function bump(a) {
                 var x = 1 / (.1 + Math.random()),
                     y = 2 * Math.random() - .5,
-                    z =  1 / (.1 + Math.random());
+                    z =  3 / (.1 + Math.random());
                 for (var i = 0; i < n; i++) {
                   var w = (i / n - y) * z;
                   a[i] += x * Math.exp(-w * w);
@@ -95,6 +213,5 @@
         </script>
     </head>
     <body>
-        <a href="{% url 'd3_chapter_05' %}">D3 First</a>
     </body>
 </html>
