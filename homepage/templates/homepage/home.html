@@ -67,10 +67,14 @@
             #email {
             }
 
+            #svgWrapper {
+            }
+
             svg {
                 position: absolute;
-                padding-top: 400px;
+            /*    padding-top: 400px;*/
                 pointer-events: none;
+                z-index: -1;
             }
 
             svg path {
@@ -114,9 +118,6 @@
 
             @media (max-width: 700px) {
 
-                svg { 
-                    padding-top: 300px;
-                }
 
                 #thediv_myname {
                     padding-top: 18%;
@@ -146,7 +147,8 @@
 
         <button id="strangeButton" onclick="transition()">Update</button>
         <script>
-            var width = $(window).width();
+            var browserWidth = $(window).width();
+            var browserHeight = $(window).height();
 
             var n = 5, // number of layers
                 m = 200, // number of samples per layer
@@ -158,7 +160,7 @@
 
             var x = d3.scale.linear()
                 .domain([0, m - 1])
-                .range([0, width]);
+                .range([0, browserWidth]);
 
             var y = d3.scale.linear()
                 .domain([0, d3.max(layers0.concat(layers1), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
@@ -173,14 +175,26 @@
                 .attr("id", "thediv")
                 .html("<span id='thediv_myname'>Jungsoo Moon</span><br/><span id='thediv_description'>I write stories with code and key frames</span><span id='thediv_description_mobile'>I write stories<br/>with code and key frames</span><br/><span id='thediv_contact'><img class='icons' src='/static/images/envelop.svg'><span id='email'> himoonjs@gmail.com</span> <img class='icons' src='/static/images/phone.svg'> +358 40 4455865</span>");
 
-
             var svg = d3.select("body").append("svg")
-                .attr("width", width)
-                .attr("height", height);
+                .attr("width", browserWidth)
+                .attr("height", browserHeight)
+                .attr("id", "svg")
+                .style("stroke", "white")
+                .style("stroke-width", "5px");
+
+            var pathsWrapper = d3.select("#svg").append("g")
+                .attr("id", "pathsWrapper")
+                .attr("transform", "translate(0, 400)");
+
+                if (browserWidth < "700") {
+                    var pathsWrapper = d3.select("#svg").append("g")
+                                        .attr("id", "pathsWrapper")
+                                        .attr("transform", "translate(0, 150)");
+                }
 
             var menuCount = 0;
 
-            var paths = svg.selectAll("path")
+            var paths = pathsWrapper.selectAll("path")
                 .data(layers0)
               .enter().append("path")
                 .attr("d", area)
@@ -195,7 +209,9 @@
                     transition(450);
                     d3.select("#thediv")
                         .html("<span id='thediv_text'>Hello Moon</span>")
-                        .style("background-color", "#E5DB3D"); 
+                        .style("background-color", "#E5DB3D");
+                    d3.select("svg")
+                        .style("stroke", "#E5DB3D");
                 });
 
             var menu2 = d3.select("#menu2")
@@ -203,7 +219,9 @@
                     transition(450);
                     d3.select("#thediv")
                         .html("<span id='thediv_text'>OK Moon</span>")
-                        .style("background-color", "#E8D3F4"); 
+                        .style("background-color", "#E8D3F4");
+                    d3.select("svg")
+                        .style("stroke", "#E8D3F4"); 
                 });
 
             var menu3 = d3.select("#menu3")
@@ -211,6 +229,8 @@
                     transition(450);
                     d3.select("body")
                         .style("background-color", "#FF6186");
+                    d3.select("svg")
+                        .style("stroke", "#FF6186");
                 });
 
             var menu4 = d3.select("#menu4")
@@ -218,6 +238,8 @@
                     transition(450);
                     d3.select("body")
                         .style("background-color", "#8CD152");
+                    d3.select("svg")
+                        .style("stroke", "#8CD152");
                 });
 
             var menu5 = d3.select("#menu5")
@@ -225,6 +247,8 @@
                     transition(450);
                     d3.select("body")
                         .style("background-color", "#6AA4FF");
+                    d3.select("svg")
+                        .style("stroke", "#6AA4FF");
                 });
 
             function transition(duration) {
