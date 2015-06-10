@@ -114,6 +114,10 @@
 
             @media (max-width: 700px) {
 
+                svg { 
+                    padding-top: 150px;
+                }
+
                 #thediv_myname {
                     padding-top: 18%;
                     font-size: 30px;
@@ -172,8 +176,7 @@
 
             var svg = d3.select("body").append("svg")
                 .attr("width", width)
-                .attr("height", height)
-                .html("<defs><style>svg { padding-top: 400px; } @media (max-width: 700px) { svg { padding-top: 300px; padding-top: 50%;  }</style></defs>");
+                .attr("height", height);
 
             var menuCount = 0;
 
