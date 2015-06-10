@@ -319,7 +319,13 @@
                 layers0 = stack(d3.range(n).map(function() { return bumpLayer(m); })),
                 layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
 
-            var height = 300;
+                if (browserWidth < "700" ) {
+                    var height = 250;
+                } else {
+                    var height = 300;
+                }
+
+            //var height = 300;
 
             var x = d3.scale.linear()
                 .domain([0, m - 1])
