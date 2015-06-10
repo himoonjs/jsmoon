@@ -21,8 +21,8 @@
 
             #thediv {
                 position: absolute;
-                width: 100vw;
-                height: 100vh;
+                width: 100%;
+                height: 100%;
             }
 
             #thediv_myname {
@@ -39,6 +39,13 @@
                 margin: 0 auto;
                 text-align: center;
                 font-size: 30px;
+            }
+
+            #thediv_description_mobile {
+                display: none;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 16px;
             }
 
             #thediv_contact {
@@ -68,6 +75,7 @@
 
             svg path {
                 pointer-events: visible;
+                cursor: pointer;
             }
 
             path#menu1 {
@@ -103,6 +111,37 @@
             path#menu5:hover {
                 fill: #4B91FF;
             }
+
+            @media (max-width: 700px) {
+                svg {
+                    padding-top: 150px;
+                    padding-top: 50%;      
+                }
+
+                #thediv_myname {
+                    padding-top: 18%;
+                    font-size: 30px;
+                    line-height: 70%;
+                }
+
+                #thediv_description {
+                    display: none;
+                }
+
+                #thediv_description_mobile {
+                    display: block;
+                }
+
+                #thediv_contact {
+                    font-size: 12px;
+                }
+
+                .icons {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+
         </style>
 
         <button id="strangeButton" onclick="transition()">Update</button>
@@ -132,13 +171,13 @@
 
             var thediv = d3.select("body").append("div")
                 .attr("id", "thediv")
-                .html("<span id='thediv_myname'>Jungsoo Moon</span><br/><span id='thediv_description'>I write stories using code and key frames</span><br/><span id='thediv_contact'><img class='icons' src='/static/images/envelop.svg'><span id='email'> himoonjs@gmail.com</span> <img class='icons' src='/static/images/phone.svg'> +358 40 4455865</span>");
+                .html("<span id='thediv_myname'>Jungsoo Moon</span><br/><span id='thediv_description'>I write stories with code and key frames</span><span id='thediv_description_mobile'>I write stories<br/>with code and key frames</span><br/><span id='thediv_contact'><img class='icons' src='/static/images/envelop.svg'><span id='email'> himoonjs@gmail.com</span> <img class='icons' src='/static/images/phone.svg'> +358 40 4455865</span>");
 
 
             var svg = d3.select("body").append("svg")
                 .attr("width", width)
                 .attr("height", height);
-            
+
             var menuCount = 0;
 
             var paths = svg.selectAll("path")
