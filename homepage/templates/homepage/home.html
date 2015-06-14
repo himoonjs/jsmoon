@@ -11,40 +11,44 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <style>
 
-            body {
-              font-family: 'Montserrat', sans-serif;
+            html, body {
               margin: 0 auto;
-              position: relative;
-              width: 100%;
-              background-color: white;
+              padding: 0;
+              height: 100%; /* needed for container min-height */
+
+              font-family: 'Montserrat', sans-serif;
             }
 
             #thediv {
-                position: absolute;
+                position: relative; /* needed for footer positioning*/
+                margin: 0 auto; /* center, not in IE5 */
                 width: 100%;
-                height: 100%;
+                height: auto !important; /* real browsers */
+                height: 100%; /* IE6: treaded as min-height*/
+
+                min-height: 100%; /* real browsers */
+            }
+
+            #content {
+                padding: 7em 1em 30em;
+                text-align:center;
+                z-index: 1;
             }
 
             #thediv_myname {
-                display: block;
-                margin: 120px auto 0 auto;
-                margin: 10% auto 0 auto;
-                text-align: center;
                 font-size: 65px;
                 font-weight: bold;
             }
 
             #thediv_description {
                 display: block;
-                margin: 0 auto;
-                text-align: center;
+                padding: 0.5em 1em 0em;
                 font-size: 30px;
             }
 
             #thediv_description_mobile {
                 display: none;
-                margin: 0 auto;
-                text-align: center;
+                padding: 0.5em 1em 0em;
                 font-size: 16px;
             }
 
@@ -64,12 +68,34 @@
                 display: none;
             }
 
+            #svgdiv {
+                position:absolute;
+                width:100%;
+                bottom:3em; /* stick to bottom */
+                /*background:#ddd;*/
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            svg {
+
+                pointer-events: none;
+                z-index: -1;
+                
+            }
+
+            svg path {
+    
+                pointer-events: visible;
+                cursor: pointer;
+
+            }
+
             .thediv_project_image {
                 display: block;
+                margin: 0 auto;
                 width: 800px;
                 height: 100px;
-                margin: 120px auto 0 auto;
-                margin: 10% auto 0 auto;
                 background-size: 800px 100px;
             }
 
@@ -133,7 +159,12 @@
             }
 
             .thediv_project_button {
-                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                z-index: 10;
                 width: 180px;
                 height: 50px;
                 margin: 0 auto;
@@ -191,18 +222,6 @@
                 color: black;
             }
 
-            svg {
-                position: absolute;
-            /*    padding-top: 400px;*/
-                pointer-events: none;
-                z-index: -1;
-            }
-
-            svg path {
-                pointer-events: visible;
-                cursor: pointer;
-            }
-
             path#menu1 {
                 fill: #FFFAAB;
             }
@@ -242,8 +261,6 @@
                 .thediv_project_image {
                     width: 300px;
                     height: 40px;
-                    margin: 30px auto 0 auto;
-                    margin: 8.5% auto 0 auto;
                     background-size: 300px 40px;
                 }
 
@@ -280,12 +297,14 @@
 
             @media (max-width: 700px) {
 
+                #content {
+                    padding:3em 0em 15em;
+                    text-align:center;
+                    z-index: 0;
+                }
 
                 #thediv_myname {
-                    margin: 48px auto 0 auto;
-                    margin: 12% auto 0 auto;
                     font-size: 30px;
-                    line-height: 70%;
                 }
 
                 #thediv_description {
@@ -304,6 +323,15 @@
                     width: 10px;
                     height: 10px;
                 }
+
+                #svgdiv {
+                    position:absolute;
+                    width:100%;
+                    bottom:0; /* stick to bottom */
+                    /*background:#ddd;*/
+                    pointer-events: none;
+                    z-index: 0;
+                }
             }
 
         </style>
@@ -320,12 +348,12 @@
                 layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
 
                 if (browserWidth < "700" ) {
-                    var height = 250;
-                } else {
                     var height = 300;
+                    var scaleRangeValue = 50;
+                } else {
+                    var height = 450;
+                    var scaleRangeValue = 100;
                 }
-
-            //var height = 300;
 
             var x = d3.scale.linear()
                 .domain([0, m - 1])
@@ -333,7 +361,7 @@
 
             var y = d3.scale.linear()
                 .domain([0, d3.max(layers0.concat(layers1), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
-                .range([height, 50]);
+                .range([height - scaleRangeValue, scaleRangeValue]);
 
             var area = d3.svg.area()
                 .x(function(d) { return x(d.x); })
@@ -342,23 +370,22 @@
 
             var thediv = d3.select("body").append("div")
                 .attr("id", "thediv")
-                .html("<span id='thediv_myname'>Jungsoo Moon</span><br/><span id='thediv_description'>I write stories with code and key frames</span><span id='thediv_description_mobile'>I write stories<br/>with code and key frames</span><br/><span id='thediv_contact'><img class='icons' src='/static/images/envelop.svg'><span id='email'> himoonjs@gmail.com</span> <img class='icons' src='/static/images/phone.svg'> +358 40 4455865</span>");
+                .html("<div id='content'><span id='thediv_myname'>Jungsoo Moon</span><br/><span id='thediv_description'>I write stories with code and key frames</span><span id='thediv_description_mobile'>I write stories<br/>with code and key frames</span><br/><span id='thediv_contact'><img class='icons' src='/static/images/envelop.svg'><span id='email'> himoonjs@gmail.com</span> <img class='icons' src='/static/images/phone.svg'> +358 40 4455865</span></div><div id='svgdiv'></div>");
 
-            var svg = d3.select("body").append("svg")
+            var svg = d3.select("#svgdiv").append("svg")
                 .attr("width", browserWidth)
-                .attr("height", browserHeight)
+                .attr("height", height)
                 .attr("id", "svg")
                 .style("stroke", "white")
                 .style("stroke-width", "5px");
 
             var pathsWrapper = d3.select("#svg").append("g")
-                .attr("id", "pathsWrapper")
-                .attr("transform", "translate(0, 400)");
+                .attr("id", "pathsWrapper");
 
                 if (browserWidth < "700") {
                     var pathsWrapper = d3.select("#svg").append("g")
-                                        .attr("id", "pathsWrapper")
-                                        .attr("transform", "translate(0, 130)");
+                                        .attr("id", "pathsWrapper");
+                                        
                 }
 
             var menuCount = 0;
@@ -378,7 +405,7 @@
                     transition(450);
                     d3.select("body")
                         .style("background-color", "#E5DB3D");
-                    d3.select("#thediv")
+                    d3.select("#content")
                         .html("<div class='thediv_project_image catchme'><span class='thediv_project_title catchme'>Catch Me If You Can</span></div><br/><span class='thediv_project_description'>Simple web game utilizing SVG animation with SMIL</span><br/><div class='thediv_project_button catchme'><a class='thediv_project_link' target='_blank' href='http://jsmoon.com/catchme/'>Check it out</a></div>");
                     d3.select("svg")
                         .style("stroke", "#E5DB3D");
@@ -389,7 +416,7 @@
                     transition(450);
                     d3.select("body")
                         .style("background-color", "#E8D3F4");
-                    d3.select("#thediv")
+                    d3.select("#content")
                         .html("<div class='thediv_project_image allwillbe'><span class='thediv_project_title allwillbe'>All Will Be Quiet</span></div><br/><span class='thediv_project_description'>Concept and post-production for a music video of All Will Be Quiet</span><br/><div class='thediv_project_button allwillbe'><a class='thediv_project_link' target='_blank' href='https://www.youtube.com/watch?t=190&v=BHeM2D0-tBY'>Check it out</a></div>");
                     d3.select("svg")
                         .style("stroke", "#E8D3F4"); 
@@ -400,7 +427,7 @@
                     transition(450);
                     d3.select("body")
                         .style("background-color", "#FF6186");
-                    d3.select("#thediv")
+                    d3.select("#content")
                         .html("<div class='thediv_project_image koreahouse'><span class='thediv_project_title koreahouse'>Korea House</span></div><br/><span class='thediv_project_description'>Web design for Korean restaurant in Helsinki, Finland</span><br/><div class='thediv_project_button koreahouse'><a class='thediv_project_link' target='_blank' href='http://www.koreahouse.fi'>Check it out</a></div>");
                     d3.select("svg")
                         .style("stroke", "#FF6186");
@@ -411,7 +438,7 @@
                     transition(450);
                     d3.select("body")
                         .style("background-color", "#8CD152");
-                    d3.select("#thediv")
+                    d3.select("#content")
                         .html("<span id='thediv_myname'>Jungsoo Moon</span><br/><span id='thediv_description'>I write stories with code and key frames</span><span id='thediv_description_mobile'>I write stories<br/>with code and key frames</span><br/><span id='thediv_contact'><img class='icons' src='/static/images/envelop.svg'><span id='email'> himoonjs@gmail.com</span> <img class='icons' src='/static/images/phone.svg'> +358 40 4455865</span>");
                     d3.select("svg")
                         .style("stroke", "#8CD152");
@@ -422,7 +449,7 @@
                     transition(450);
                     d3.select("body")
                         .style("background-color", "#6AA4FF");
-                    d3.select("#thediv")
+                    d3.select("#content")
                         .html("<div class='thediv_project_image tappara'><span class='thediv_project_title tappara'>TAPPARA</span></div><br/><span class='thediv_project_description'>Motion graphics for Finnish Ice Hockey team Tappara(2013-2014)</span><br/><div class='thediv_project_button tappara'><a class='thediv_project_link' target='_blank' href='https://www.youtube.com/watch?v=1fujTwUKjBI/'>Check it out</a></div>");
                     d3.select("svg")
                         .style("stroke", "#6AA4FF");
