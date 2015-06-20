@@ -23,6 +23,7 @@
           width: 100%;
           height: 100%;
           position: absolute;
+          z-index: 1;
         }
 
         svg text {
@@ -41,8 +42,24 @@
           right: 0;
           margin-left: auto;
           margin-right: auto;
-          z-index: 3;
           background-color: yellow;
+          overflow-y: auto;
+        }
+
+        #div_top_title {
+          background-color: blue;
+        }
+
+        #div_bottom_title {
+          background-color: green;
+        }
+
+        #div_top {
+          z-index: 2;
+        }
+
+        #div_bottom {
+          z-index: 2;
         }
 
         .button {
@@ -59,6 +76,28 @@
 
         #myPortfolio_button:hover {
           fill: yellow;
+        }
+
+        #plus_button_top:hover {
+          fill: gray;
+          cursor: pointer;
+        }
+
+        #plus_button_bottom:hover {
+          fill: gray;
+          cursor: pointer;
+        }
+
+        #plus_sign_top {
+          pointer-events: none;
+        }
+
+        #plus_sign_bottom {
+          pointer-events: none;
+        }
+
+        .headline {
+          font-size: 25px;
         }
 
         @media (max-width: 820px) {
@@ -79,6 +118,13 @@
             width: 50px;
             height: 25px;
           }
+
+          .headline {
+            font-size: 17px;
+          }
+
+
+
 
         }
 
@@ -142,9 +188,12 @@
               .attr("stroke-width", 10)
               .attr("stroke", "black");
             d3.select("#div_top")
-              .html("<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet arcu efficitur nulla facilisis malesuada. Mauris lacus eros, dapibus in aliquam in, faucibus non est. Quisque massa magna, iaculis vel elit at, bibendum ullamcorper elit. Suspendisse potenti. Sed ut sapien ut nulla bibendum maximus eget non ante. Fusce malesuada lacus sed metus molestie, eget interdum lacus facilisis. Praesent mollis scelerisque neque finibus efficitur. Vivamus varius viverra risus pharetra eleifend. Sed eget sapien ac lacus dignissim luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. </span>");
+              .html("<span class='headline'>My Stroy</span><br /><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet arcu efficitur nulla facilisis malesuada. Mauris lacus eros, dapibus in aliquam in, faucibus non est. Quisque massa magna, iaculis vel elit at, bibendum ullamcorper elit. Suspendisse potenti. Sed ut sapien ut nulla bibendum maximus eget non ante. Fusce malesuada lacus sed metus molestie, eget interdum lacus facilisis. Praesent mollis scelerisque neque finibus efficitur. Vivamus varius viverra risus pharetra eleifend. Sed eget sapien ac lacus dignissim luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. </span>");
             d3.select("#div_bottom")
               .text("Story");
+            checking_top();
+            checking_bottom();
+
           });
 
       var myStory_text = svg.append("text")
@@ -175,6 +224,8 @@
               .text("CV");
             d3.select("#div_bottom")
               .text("CV");
+            checking_top();
+            checking_bottom();
           });
 
       var myCv_text = svg.append("text")
@@ -205,6 +256,8 @@
               .text("PP");
             d3.select("#div_bottom")
               .text("PP");
+            checking_top();
+            checking_bottom();
           });
 
 
@@ -227,21 +280,37 @@
           .style("stroke-width", "10")
           .call(transition);
 
+      var div_top_title = d3.select("body").append("div")
+                    .attr("class", "div")
+                    .attr("id", "div_top_title")
+                    .style("width", width - width/3.8 * 2 + "px")
+                    .style("height", height - height/1.05 + "px")
+                    .style("margin-top", height/6.7 + "px")
+                    .html("<span class='headline'>My Stroy</span>");
+
       var div_top = d3.select("body").append("div")
                     .attr("class", "div")
                     .attr("id", "div_top")
                     .style("width", width - width/3.8 * 2 + "px")
-                    .style("height", height - height/1.2 + "px")
-                    .style("margin-top", height/6.7 + "px")
-                    .html("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet arcu efficitur nulla facilisis malesuada. Mauris lacus eros, dapibus in aliquam in, faucibus non est. Quisque massa magna, iaculis vel elit at, bibendum ullamcorper elit. Suspendisse potenti. Sed ut sapien ut nulla bibendum maximus eget non ante. Fusce malesuada lacus sed metus molestie.");
+                    .style("height", height - height/1.138 + "px")
+                    .style("margin-top", height/5 + "px")
+                    .html("<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet arcu efficitur nulla facilisis malesuada. Mauris lacus eros, dapibus in aliquam in, faucibus non est. Quisque massa magna, iaculis vel elit at, bibendum ullamcorper elit. Suspendisse potenti. Sed ut sapien ut nulla bibendum maximus eget non ante. Fusce malesuada lacus sed metus molestie, eget interdum lacus facilisis. Praesent mollis scelerisque neque finibus efficitur. Vivamus varius viverra risus pharetra eleifend. Sed eget sapien ac lacus dignissim luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</span><div id='div_top_end'></div>");
+
+      var div_bottom_title = d3.select("body").append("div")
+                    .attr("class", "div")
+                    .attr("id", "div_bottom_title")
+                    .style("width", width - width/4.7 * 2 + "px")
+                    .style("height", height - height/1.05 + "px")
+                    .style("margin-top", height/3 + "px")
+                    .html("<span class='headline'>My Stroy</span>");
 
       var div_bottom = d3.select("body").append("div")
                     .attr("class", "div")
                     .attr("id", "div_bottom")
                     .style("width", width - width/4.7 * 2 + "px")
-                    .style("height", height - height/1.95 + "px")
-                    .style("margin-top", height/3 + "px")
-                    .text("Story");
+                    .style("height", height - height/1.75 + "px")
+                    .style("margin-top", height/2.6 + "px")
+                    .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel sodales tortor, at convallis tortor. Cras tincidunt at libero eget pellentesque. Integer at feugiat felis. Maecenas semper velit et aliquam blandit. Nullam ultricies posuere dui quis rutrum. Ut aliquet pellentesque dui, vel interdum nisi volutpat nec. Proin id lacus eu enim gravida placerat et nec velit. Nullam tristique risus diam, nec aliquet mauris molestie eu. Donec rhoncus magna sed odio iaculis dictum. Nunc feugiat ligula sit amet erat dignissim congue. Vivamus ullamcorper velit eget risus hendrerit vestibulum. Cras ac nisl in velit volutpat commodo. Cras sollicitudin arcu purus, eu faucibus est vestibulum vel. Aliquam nisl nisi, sagittis vitae elementum vitae, lacinia eget odio. Nulla dignissim ut eros id tristique. Etiam tincidunt nunc urna, ac aliquet orci efficitur et. Nullam non lectus nibh. Nam eget nisi enim. Nulla facilisi. Vivamus at odio erat. Etiam eget velit ut ante aliquet ultrices eu a eros. Nam egestas eleifend pharetra. Nunc efficitur laoreet eros, ut pharetra sem condimentum a. Fusce quis imperdiet felis.Maecenas bibendum sem sit amet urna varius, faucibus tempus ante viverra. Mauris massa sem, ultricies vel urna dictum, efficitur scelerisque nibh. In vestibulum, mi id vulputate cursus, tellus massa sagittis nibh, nec iaculis felis diam nec nisl. Pellentesque maximus purus et risus venenatis pharetra. Praesent mattis tortor sodales mi placerat sagittis. Nulla lacinia hendrerit tincidunt. Cras commodo massa ut dignissim eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel sodales tortor, at convallis tortor. Cras tincidunt at libero eget pellentesque. Integer at feugiat felis. Maecenas semper velit et aliquam blandit. Nullam ultricies posuere dui quis rutrum. Ut aliquet pellentesque dui, vel interdum nisi volutpat nec. Proin id lacus eu enim gravida placerat et nec velit. Nullam tristique risus diam, nec aliquet mauris molestie eu. Donec rhoncus magna sed odio iaculis dictum. Nunc feugiat ligula sit amet erat dignissim congue. Vivamus ullamcorper velit eget risus hendrerit vestibulum. Cras ac nisl in velit volutpat commodo. Cras sollicitudin arcu purus, eu faucibus est vestibulum vel. Aliquam nisl nisi, sagittis vitae elementum vitae, lacinia eget odio. Nulla dignissim ut eros id tristique. Etiam tincidunt nunc urna, ac aliquet orci efficitur et. Nullam non lectus nibh. Nam eget nisi enim. Nulla facilisi. Vivamus at odio erat. Etiam eget velit ut ante aliquet ultrices eu a eros. Nam egestas eleifend pharetra. Nunc efficitur laoreet eros, ut pharetra sem condimentum a. Fusce quis imperdiet felis.Maecenas bibendum sem sit amet urna varius, faucibus tempus ante viverra. Mauris massa sem, ultricies vel urna dictum, efficitur scelerisque nibh. In vestibulum, mi id vulputate cursus, tellus massa sagittis nibh, nec iaculis felis diam nec nisl. Pellentesque maximus purus et risus venenatis pharetra. Praesent mattis tortor sodales mi placerat sagittis. Nulla lacinia hendrerit tincidunt. Cras commodo massa ut dignissim eleifend.");
 
 
       var toLamia = svg.append("text")
@@ -308,6 +377,147 @@
       d3.select(window).on('resize', resize); 
 
       resize();
+
+
+
+      function checking_top() {
+
+        var div_top = document.querySelector('#div_top');
+        var checking_div_top = div_top.offsetHeight < div_top.scrollHeight;
+        var plus_button_top_exist = document.getElementById("plus_button_top");
+
+        if( checking_div_top && !plus_button_top_exist ){
+           // your element have overflow
+          //div.style.background = "blue";
+
+              if ( $(window).width() <= 820) {
+
+                svg.append("circle")
+                    .attr("id", "plus_button_top")
+                    .attr("cx", width/1.4)
+                    .attr("cy", height/6.1)
+                    .attr("r", 10)
+                    .attr("fill", "black")
+                    .on("click", function() {
+                      $("#div_top").animate({ scrollTop: $("#div_top")[0].scrollHeight }, 1000);
+                    });
+
+                svg.append("text")
+                    .attr("id", "plus_sign_top")
+                    .attr("x", width/1.4)
+                    .attr("y", height/5.85)
+                    .attr("font-weight", "bold")
+                    .attr("font-size", 20)
+                    .attr("fill", "white")
+                    .attr("text-anchor", "middle")
+                    .text("+");
+
+                  } else {
+
+                svg.append("circle")
+                    .attr("id", "plus_button_top")
+                    .attr("cx", width/1.4)
+                    .attr("cy", height/5.9)
+                    .attr("r", 10)
+                    .attr("fill", "black")
+                    .on("click", function() {
+                      $("#div_top").animate({ scrollTop: $("#div_top")[0].scrollHeight }, 1000);
+                    });
+
+                svg.append("text")
+                    .attr("id", "plus_sign_top")
+                    .attr("x", width/1.4)
+                    .attr("y", height/5.65)
+                    .attr("font-weight", "bold")
+                    .attr("font-size", 20)
+                    .attr("fill", "white")
+                    .attr("text-anchor", "middle")
+                    .text("+");
+                  }
+
+        }
+
+        else if ( checking_div_top && plus_button_top_exist ) {
+
+        }
+
+        else {
+          d3.select("#plus_button_top").remove();
+          d3.select("#plus_sign_top").remove();
+        }
+
+      }
+
+      function checking_bottom() {
+
+        var div_bottom = document.querySelector('#div_bottom');
+        var checking_div_bottom = div_bottom.offsetHeight < div_bottom.scrollHeight;
+        var plus_button_bottom_exist = document.getElementById("plus_button_bottom");
+
+        if( checking_div_bottom && !plus_button_bottom_exist ){
+           // your element have overflow
+          //div.style.background = "blue";
+
+              if ( $(window).width() <= 820) {
+
+                svg.append("circle")
+                    .attr("id", "plus_button_bottom")
+                    .attr("cx", width/1.31)
+                    .attr("cy", height/2.87)
+                    .attr("r", 10)
+                    .attr("fill", "black")
+                    .on("click", function() {
+                      $("#div_bottom").animate({ scrollTop: $("#div_bottom")[0].scrollHeight }, 1000);
+                    });
+
+                svg.append("text")
+                    .attr("id", "plus_sign_bottom")
+                    .attr("x", width/1.31)
+                    .attr("y", height/2.813)
+                    .attr("font-weight", "bold")
+                    .attr("font-size", 20)
+                    .attr("fill", "white")
+                    .attr("text-anchor", "middle")
+                    .text("+");
+
+                  } else {
+
+                svg.append("circle")
+                    .attr("id", "plus_button_bottom")
+                    .attr("cx", width/1.31)
+                    .attr("cy", height/2.82)
+                    .attr("r", 10)
+                    .attr("fill", "black")
+                    .on("click", function() {
+                      $("#div_bottom").animate({ scrollTop: $("#div_bottom")[0].scrollHeight }, 1000);
+                    });
+
+                svg.append("text")
+                    .attr("id", "plus_sign_bottom")
+                    .attr("x", width/1.31)
+                    .attr("y", height/2.765)
+                    .attr("font-weight", "bold")
+                    .attr("font-size", 20)
+                    .attr("fill", "white")
+                    .attr("text-anchor", "middle")
+                    .text("+");
+                  }
+
+        }
+
+        else if ( checking_div_bottom && plus_button_bottom_exist ) {
+
+        }
+
+        else {
+          d3.select("#plus_button_bottom").remove();
+          d3.select("#plus_sign_bottom").remove();
+        }
+
+    }
+
+      checking_top();
+      checking_bottom();
 
       $(window).resize(function(){
         window.location.replace( window.location.href );
