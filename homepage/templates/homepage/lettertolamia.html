@@ -43,6 +43,7 @@
           margin-left: auto;
           margin-right: auto;
           overflow-y: auto;
+          -ms-overflow-style: none;
         }
 
         #div_top_title {
@@ -56,10 +57,18 @@
           font-size: 16px;
         }
 
+        #div_top::-webkit-scrollbar {
+          display: none;
+        }        
+
         #div_bottom {
           z-index: 2;
           font-size: 16px;
         }
+
+        #div_bottom::-webkit-scrollbar {
+          display: none;
+        }       
 
         .button {
           cursor: pointer;
@@ -234,9 +243,9 @@
                   .attr("stroke", "black");
             }
             d3.select("#div_top")
-              .html("<span id='headline_myStory'>My Story</span><br /><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet arcu efficitur nulla facilisis malesuada. Mauris lacus eros, dapibus in aliquam in, faucibus non est. Quisque massa magna, iaculis vel elit at, bibendum ullamcorper elit. Suspendisse potenti. Sed ut sapien ut nulla bibendum maximus eget non ante. Fusce malesuada lacus sed metus molestie, eget interdum lacus facilisis. Praesent mollis scelerisque neque finibus efficitur. Vivamus varius viverra risus pharetra eleifend. Sed eget sapien ac lacus dignissim luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. </span>");
+              .html("<span>Interactivity is what brought me to the world of the Web. Motion graphics and 3d animation that are confined in rendered video formats couldn’t satisfy my passion to create joyful user experience that comes with immediate interaction with the users. However, I wouldn’t give up dynamic motions that I had achieved with the rendered videos. Nor would I want to design dull web pages. So? I am bringing vibrant rhythm to the Web.</span>");
             d3.select("#div_bottom")
-              .text("Story");
+              .html("<span>Seeing from LAMIA’s works, I am sure that I would be able to take part of interesting projects and learn a lot from it, if I can work as an intern along with experienced LAMIA team members. <br /><br />I am applying for an internship place for Web designer at the moment but my ultimate goal is to become professional front-end Web developer. Because I really do think Web design should be done with strong understanding of Web technologies, especially right now when there are so many things you can experiment with. To be honest, playing with new technologies is a lot of fun itself. You wouldn’t read through tons of documentation if it weren’t for the fun you can have later with it, would you? <br /><br />For me, new technologies are not the limit where I set boundaries of design possibilities but inspiration for creative design. In fact, I often start projects with interesting results of what I happened to discover while playing with code and continue to build upon them. Web design is indeed where art and technology meet together.<br /><br />I believe people working at LAMIA share this idea with me, which means working with them would be awesome experience. Let me continue my story with LAMIA and be part of LAMIA’s story.<br /><br /><span id='thankYou'>Thank you!</span></span>");
             checking_top();
             checking_bottom();
 
