@@ -229,7 +229,12 @@
                   .attr("stroke", "white");
             }
             d3.select("body")
-              .style("background-color", "black");
+              .style("background-color", "black")
+              .style("-webkit-transition", "background-color 500ms ease-out")
+              .style("-moz-transition", "background-color 500ms ease-out")
+              .style("-o-transition", "background-color 500ms ease-out")
+              .style("-ms-transition", "background-color 500ms ease-out")
+              .style("transition", "background-color 500ms ease-out");
             d3.select("#line")
               .style("stroke", "white");
             d3.select("#toLamia")
