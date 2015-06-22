@@ -6,9 +6,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Letter to LAMIA</title>
       <link href='http://fonts.googleapis.com/css?family=Cabin:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
       <script type="text/javascript" src="/static/d3.min.js"></script>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-      <link rel="stylesheet" type="text/css" href="/static/lettertolamia_style.css">
       <style>
 
         body {
@@ -55,8 +55,10 @@
         }
 
         #div_top {
+          font-family: 'Roboto Slab', serif;
+          font-weight: 300;
           z-index: 2;
-          font-size: 16px;
+          font-size: 14px;
         }
 
         #div_top::-webkit-scrollbar {
@@ -64,8 +66,10 @@
         }        
 
         #div_bottom {
+          font-family: 'Roboto Slab', serif;
+          font-weight: 300;
           z-index: 2;
-          font-size: 16px;
+          font-size: 14px;
         }
 
         #div_bottom::-webkit-scrollbar {
@@ -121,6 +125,7 @@
         }
 
         #left_sided {
+          font-family: 'Cabin', sans-serif;
           font-style: italic;
           color: #B8BDBE;
         }
@@ -137,7 +142,7 @@
           width: 120px;
           margin: 0 auto;
           color: black;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: bolder;
         }
 
@@ -180,18 +185,18 @@
           }
 
           #div_top {
-            font-size: 13px;
+            font-size: 11px;
           }
 
           #div_bottom {
-            font-size: 13px;
+            font-size: 11px;
           }
 
           #toMyPP_button {
             padding: 5px 10px 5px 10px;
             border: solid #FF1A73 5px;
             width: 85px;
-            font-size: 12px;
+            font-size: 10px;
           }
 
         }
@@ -309,7 +314,7 @@
               .html("<span id='headline'>Our Story, Yay!</span>");
             d3.select("#div_bottom")
               .style("color", "black")
-              .html("<span>Seeing from LAMIA’s works, I am sure that I would be able to take part of interesting projects and learn a lot from it, if I can work as an intern along with experienced LAMIA team members. <br /><br />I am applying for an internship place for Web designer at the moment but my ultimate goal is to become professional <strong>front-end Web developer</strong>. Because I really do think Web design should be done with strong understanding of <strong>Web technologies</strong>, especially right now when there are so many things you can experiment with. To be honest, playing with new technologies is a lot of fun itself. You wouldn’t read through tons of documentation if that weren’t for the fun you can have later with it, would you? <br /><br />For me, new technologies are not the limit where I set boundaries of design possibilities but <strong>inspiration for creative design</strong>. In fact, I often start projects with interesting results of what I happened to discover while playing with code and continue to build upon them. Web design is indeed where <strong>art and technology</strong> meet together.<br /><br />I believe people working at LAMIA share this idea with me, which means working with them would be awesome experience. Let me continue <strong>my story with LAMIA</strong> and also <strong>be part of LAMIA’s story</strong>.<br /><br /><span id='thankyou'>Thank you!</span></span>");
+              .html("<span>Seeing from LAMIA’s works, I am sure that I would be able to take part of interesting projects and learn a lot from it, if I can work as an intern along with experienced LAMIA team members. <br /><br />I am applying for an internship place for Web designer at the moment but my ultimate goal is to become professional <strong>Front-end Web developer</strong>. Because I really do think Web design should be done with strong understanding of <strong>Web technologies</strong>, especially now when there are so many things you can experiment with. Playing with new technologies is a lot of fun itself. To be honest, I wouldn’t read through tons of documentation if that weren’t for the fun I can have with that later. <br /><br />For me, new technologies are not boundaries that I am afraid of stepping in but <strong>inspiration for creative design</strong>. In fact, I often start projects with interesting results of what I happened to discover while playing with code and continue to build upon them. Web design is indeed where <strong>art and technology meet together</strong>.<br /><br />I believe people working at LAMIA share this idea with me, which means working with them would be awesome experience. I earnestly want not only to continue <strong>my story with LAMIA</strong> but also want <strong>to be part of LAMIA’s story</strong>.<br /><br /><span id='thankyou'>Thank you!</span></span>");
             checking_top();
             checking_bottom();
 
@@ -374,7 +379,7 @@
               .style("border-color", "black")
               .html("<span id='headline'>Personal Info</span>");
             d3.select("#div_top")
-              .html("<span>Jungsoo Moon / 26yr / Male / Made in Korea / Designed by Finland / <br />Kadetintie 5 B 30, Helsinki / himoonjs@gmail.com / 040 4455865</span");
+              .html("<span>Jungsoo Moon / 26yr / Male / Made in Korea / Designed by Finland / Cat lover / Coffee drinker / <br />Kadetintie 5 B 30, Helsinki / himoonjs@gmail.com / 040 4455865</span");
             d3.select("#div_bottom_title")
               .style("border-color", "black")
               .html("<span id='headline'>Education & Work Experience</span>");  
@@ -427,7 +432,12 @@
                   .attr("stroke", "white");
             }
             d3.select("body")
-              .style("background-color", "black");
+              .style("background-color", "black")
+              .style("-webkit-transition", "background-color 500ms ease-out")
+              .style("-moz-transition", "background-color 500ms ease-out")
+              .style("-o-transition", "background-color 500ms ease-out")
+              .style("-ms-transition", "background-color 500ms ease-out")
+              .style("transition", "background-color 500ms ease-out");
             d3.select("#line")
               .style("stroke", "white");
             d3.select("#toLamia")
@@ -514,7 +524,7 @@
                     .style("width", width - width/4.4 * 2 + "px")
                     .style("height", height - height/1.77 + "px")
                     .style("margin-top", height/2.6 + "px")
-                    .html("<span>Seeing from LAMIA’s works, I am sure that I would be able to take part of interesting projects and learn a lot from it, if I can work as an intern along with experienced LAMIA team members. <br /><br />I am applying for an internship place for Web designer at the moment but my ultimate goal is to become professional <strong>front-end Web developer</strong>. Because I really do think Web design should be done with strong understanding of <strong>Web technologies</strong>, especially right now when there are so many things you can experiment with. To be honest, playing with new technologies is a lot of fun itself. You wouldn’t read through tons of documentation if that weren’t for the fun you can have later with it, would you? <br /><br />For me, new technologies are not the limit where I set boundaries of design possibilities but <strong>inspiration for creative design</strong>. In fact, I often start projects with interesting results of what I happened to discover while playing with code and continue to build upon them. Web design is indeed where <strong>art and technology</strong> meet together.<br /><br />I believe people working at LAMIA share this idea with me, which means working with them would be awesome experience. Let me continue <strong>my story with LAMIA</strong> and also <strong>be part of LAMIA’s story</strong>.<br /><br /><span id='thankyou'>Thank you!</span></span>");
+                    .html("<span>Seeing from LAMIA’s works, I am sure that I would be able to take part of interesting projects and learn a lot from it, if I can work as an intern along with experienced LAMIA team members. <br /><br />I am applying for an internship place for Web designer at the moment but my ultimate goal is to become professional <strong>Front-end Web developer</strong>. Because I really do think Web design should be done with strong understanding of <strong>Web technologies</strong>, especially now when there are so many things you can experiment with. Playing with new technologies is a lot of fun itself. To be honest, I wouldn’t read through tons of documentation if that weren’t for the fun I can have with that later. <br /><br />For me, new technologies are not boundaries that I am afraid of stepping in but <strong>inspiration for creative design</strong>. In fact, I often start projects with interesting results of what I happened to discover while playing with code and continue to build upon them. Web design is indeed where <strong>art and technology meet together</strong>.<br /><br />I believe people working at LAMIA share this idea with me, which means working with them would be awesome experience. I earnestly want not only to continue <strong>my story with LAMIA</strong> but also want <strong>to be part of LAMIA’s story</strong>.<br /><br /><span id='thankyou'>Thank you!</span></span>");
 
 
       var toLamia = svg.append("text")
@@ -533,15 +543,7 @@
                         .attr("font-weight", "bold")
                         .attr("text-anchor", "end")
                         .text("From MOON");
-/*
-      var letterDate = svg.append("text")
-                        .attr("id", "letterDate")
-                        .attr("x", width/5.1)
-                        .attr("y", height/1.11)
-                        .attr("font-size", 60)
-                        .attr("font-weight", "bold")
-                        .text("21/06/2015");
-*/
+
       function transition(path) {
         path.transition()
             .duration(3000)
