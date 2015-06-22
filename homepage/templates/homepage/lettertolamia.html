@@ -269,6 +269,8 @@
           })
           .attr("stroke", "black")
           .on("click", function() {
+            $("#div_top").scrollTop(0);
+            $("#div_bottom").scrollTop(0);
             d3.select("#myCv_button")
               .attr("stroke-width", 0);
             d3.select("#myPortfolio_button")
@@ -300,7 +302,7 @@
               .style("border-color", "black")
               .html("<span id='headline'>My Story?</span>");
             d3.select("#div_top")
-              .html("<span><strong>Interactivity</strong> is what brought me to the world of the <strong>Web</strong>. Motion graphics and 3d animation that are confined in rendered video formats couldn’t satisfy my passion to create <strong>joyful user experience</strong> that comes with immediate interaction with the users. However, I wouldn’t give up dynamic motions that I had achieved with the videos. Nor would I want to design dull web pages. So? I am bringing <strong>vibrant rhythm of motion to the Web</strong>.</span>");
+              .html("<span><strong>Interactivity</strong> is what brought me to the world of the <strong>Web</strong>. Motion graphics and 3d animation that are confined in rendered video formats couldn’t satisfy my passion to create <strong>joyful user experience</strong> that comes with immediate interaction with the users. However, I wouldn’t give up dynamic motions that I had achieved with the videos, nor would I want to design dull web pages. So? I am bringing <strong>vibrant rhythm of motion to the Web</strong>.</span>");
             d3.select("#div_bottom_title")
               .style("border-color", "black")
               .html("<span id='headline'>Our Story, Yay!</span>");
@@ -338,6 +340,8 @@
           .attr("height", height/17)
           .attr("fill", "#9CF200")
           .on("click", function() {
+            $("#div_top").scrollTop(0);
+            $("#div_bottom").scrollTop(0);
             d3.select("#myStory_button")
               .attr("stroke-width", 0);
             d3.select("#myPortfolio_button")
@@ -406,6 +410,8 @@
           .attr("height", height/17)
           .attr("fill", "#FF7100")
           .on("click", function() {
+            $("#div_top").scrollTop(0);
+            $("#div_bottom").scrollTop(0);
             d3.select("#myStory_button")
               .attr("stroke-width", 0);
             d3.select("#myCv_button")
@@ -489,7 +495,7 @@
                     .style("width", width - width/3.7 * 2 + "px")
                     .style("height", height - height/1.138 + "px")
                     .style("margin-top", height/5 + "px")
-                    .html("<span><strong>Interactivity</strong> is what brought me to the world of the <strong>Web</strong>. Motion graphics and 3d animation that are confined in rendered video formats couldn’t satisfy my passion to create <strong>joyful user experience</strong> that comes with immediate interaction with the users. However, I wouldn’t give up dynamic motions that I had achieved with the videos. Nor would I want to design dull web pages. So? I am bringing <strong>vibrant rhythm of motion to the Web</strong>.</span>");
+                    .html("<span><strong>Interactivity</strong> is what brought me to the world of the <strong>Web</strong>. Motion graphics and 3d animation that are confined in rendered video formats couldn’t satisfy my passion to create <strong>joyful user experience</strong> that comes with immediate interaction with the users. However, I wouldn’t give up dynamic motions that I had achieved with the videos, nor would I want to design dull web pages. So? I am bringing <strong>vibrant rhythm of motion to the Web</strong>.</span>");
 
       var div_bottom_title = d3.select("body").append("div")
                     .attr("class", "div")
