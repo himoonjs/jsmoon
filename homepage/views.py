@@ -19,3 +19,7 @@ def lettertoanders_page(request):
 
 def lettertosolidangle_page(request):
     return render(request, 'homepage/lettertosolidangle.html')
+
+
+def lettertogreatapes_page(request):
+    return render(request, 'homepage/lettertogreatapes.html')

@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^lettertofraktio/', 'homepage.views.lettertofraktio_page', name='lettertofraktio'),
     url(r'^lettertoanders/', 'homepage.views.lettertoanders_page', name='lettertoanders'),
     url(r'^lettertosolidangle/', 'homepage.views.lettertosolidangle_page', name='lettertosolidangle'),
+    url(r'^lettertogreatapes/', 'homepage.views.lettertogreatapes_page', name='lettertogreatapes'),
     # url(r'^blog/', include('blog.urls')),
     #url(r'^admin/', include(admin.site.urls)),
 )
