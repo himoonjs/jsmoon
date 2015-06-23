@@ -7,3 +7,7 @@ def home_page(request):
 
 def lettertolamia_page(request):
     return render(request, 'homepage/lettertolamia.html')
+
+
+def lettertofraktio_page(request):
+    return render(request, 'homepage/lettertofraktio.html')
