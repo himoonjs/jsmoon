@@ -11,3 +11,7 @@ def lettertolamia_page(request):
 
 def lettertofraktio_page(request):
     return render(request, 'homepage/lettertofraktio.html')
+
+
+def lettertoanders_page(request):
+    return render(request, 'homepage/lettertoanders.html')

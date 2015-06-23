@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^d3/', include('d3.urls')),
     url(r'^lettertolamia/', 'homepage.views.lettertolamia_page', name='lettertolamia'),
     url(r'^lettertofraktio/', 'homepage.views.lettertofraktio_page', name='lettertofraktio'),
+    url(r'^lettertoanders/', 'homepage.views.lettertoanders_page', name='lettertoanders'),
     # url(r'^blog/', include('blog.urls')),
     #url(r'^admin/', include(admin.site.urls)),
 )
