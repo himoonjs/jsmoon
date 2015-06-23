@@ -15,3 +15,7 @@ def lettertofraktio_page(request):
 
 def lettertoanders_page(request):
     return render(request, 'homepage/lettertoanders.html')
+
+
+def lettertosolidangle_page(request):
+    return render(request, 'homepage/lettertosolidangle.html')
