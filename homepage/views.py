@@ -59,3 +59,15 @@ def lettertodescom_page(request):
 
 def lettertowunderdog_page(request):
     return render(request, 'homepage/lettertowunderdog.html')
+
+
+def lettertogenero_page(request):
+    return render(request, 'homepage/lettertogenero.html')
+
+
+def lettertofnx_page(request):
+    return render(request, 'homepage/lettertofnx.html')
+
+
+def lettertowebveistamo_page(request):
+    return render(request, 'homepage/lettertowebveistamo.html')
