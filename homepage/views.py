@@ -35,3 +35,15 @@ def lettertoreaktor_page(request):
 
 def lettertoisobar_page(request):
     return render(request, 'homepage/lettertoisobar.html')
+
+
+def lettertofuturice_page(request):
+    return render(request, 'homepage/lettertofuturice.html')
+
+
+def lettertokorpimedia_page(request):
+    return render(request, 'homepage/lettertokorpimedia.html')
+
+
+def lettertoluotta_page(request):
+    return render(request, 'homepage/lettertoluotta.html')
