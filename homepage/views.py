@@ -47,3 +47,15 @@ def lettertokorpimedia_page(request):
 
 def lettertoluotta_page(request):
     return render(request, 'homepage/lettertoluotta.html')
+
+
+def lettertosc5_page(request):
+    return render(request, 'homepage/lettertosc5.html')
+
+
+def lettertodescom_page(request):
+    return render(request, 'homepage/lettertodescom.html')
+
+
+def lettertowunderdog_page(request):
+    return render(request, 'homepage/lettertowunderdog.html')
