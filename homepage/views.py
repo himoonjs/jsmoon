@@ -23,3 +23,15 @@ def lettertosolidangle_page(request):
 
 def lettertogreatapes_page(request):
     return render(request, 'homepage/lettertogreatapes.html')
+
+
+def lettertocontrast_page(request):
+    return render(request, 'homepage/lettertocontrast.html')
+
+
+def lettertoreaktor_page(request):
+    return render(request, 'homepage/lettertoreaktor.html')
+
+
+def lettertoisobar_page(request):
+    return render(request, 'homepage/lettertoisobar.html')
