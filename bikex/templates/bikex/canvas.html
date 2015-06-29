@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BikeX</title>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/png" href="/static/images/favicon.png">
+        <!--[if IE]><link rel="shortcut icon" href="/static/images/favicon.ico"/><![endif]-->
+        <link href="/static/bikex_style.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="/static/d3.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="text/javascript" src="/static/jquery.easing.1.3.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            #container {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            #myCanvas {
+                width: 100%;
+                overflow: hidden;
+            }
+
+        </style>
+        <script>
+        $(document).ready(function(){
+
+            var browserHeight = $(window).height();
+            $("#container").css("max-height", browserHeight);
+
+        });
+
+        $(window).resize(function(){
+            browserHeight = $(window).height();
+            $("#container").css("max-height", browserHeight);
+        });
+
+        </script>
+
+    </head>
+    <body>
+    <div id="container">
+    <canvas id="myCanvas" width="1960" height="4000" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    </div>
+
+    <script>
+
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+ 
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+ 
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
+// Properties _____________________________________________
+
+var ball = $('#ball');
+var xMin = 0;
+var xMax = $(window).height() - ball.height();
+var pos = 0;
+var dir = 1;
+var speed = 8;
+var fps = 30;
+var interval = 1000 / fps;
+
+
+// Animation Logic ________________________________________
+
+var canvas = document.getElementById('myCanvas');
+canvas.addEventListener('click', function() {
+    draw();
+});
+
+
+var yValue = 0;
+
+function draw() {
+    setTimeout(function() {
+        window.requestAnimationFrame(draw);
+        
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var img = new Image();
+        
+        img.src = '/static/images/bike.jpg';
+
+        setTimeout(function() {
+            //if (yValue < 300) { 
+            //yValue += 5;
+            ctx.drawImage(img, -15650, -9200, img.width * 10, img.height * 10);
+            //}
+        }, interval);
+        
+    }, interval);
+}
+
+//draw();
+        </script>
+    </body>
+</html>

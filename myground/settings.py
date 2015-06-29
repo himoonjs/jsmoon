@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'koreahouse',
     'd3',
     'dev_bootstrap',
+    'bikex',
 )
 
 MIDDLEWARE_CLASSES = (
