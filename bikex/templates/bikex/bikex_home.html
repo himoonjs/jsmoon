@@ -34,14 +34,18 @@
                 overflow: hidden;
             }
 
-            #container_marker {
+            #clipper_marker {
                 width: 100%;
                 overflow: hidden;
-                position: absolute;
+            }
+
+            #container_marker {
+                width: 300%;
             }
 
             #svg_marker {
                 display: none;
+                transform: translate(0px, 0px);
             }
 
         </style>
@@ -54,6 +58,7 @@
         $(document).ready(function(){
 
             $("#container").css("max-height", browserHeight);
+            $("#clipper_marker").css("max-height", browserHeight);
             $("#container_marker").css("max-height", browserHeight);
 
             $("#button_tour").click(function() {
@@ -67,6 +72,7 @@
         $(window).resize(function(){
             browserHeight = $(window).height();
             $("#container").css("max-height", browserHeight);
+            $("#clipper_marker").css("max-height", browserHeight);
             $("#container_marker").css("max-height", browserHeight);
         });
 
@@ -126,7 +132,7 @@
                         var startingX = -14050;
                         var startingY = -8300;
                         zoomOut += 200;
-                        ctx.drawImage(img, startingX + (zoomOut * 1.451), startingY + zoomOut, img.width * 9 - (zoomOut * 1.451), img.height * 9 - zoomOut);
+                        ctx.drawImage(img, startingX + (zoomOut * 1.502), startingY + zoomOut, img.width * 9 - (zoomOut * 1.502), img.height * 9 - zoomOut);
                     }
                 }, interval);
                 
@@ -647,72 +653,99 @@
         </canvas>
 
     </div>
+  <div id="clipper_marker">
     <div id="container_marker">
-        <svg id="svg_marker" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 6757.5 4499.25">
-          <defs
-             id="defs5217" />
-          <sodipodi:namedview
-             id="base"
-             pagecolor="#ffffff"
-             bordercolor="#666666"
-             borderopacity="1.0"
-             inkscape:pageopacity="0.0"
-             inkscape:pageshadow="2"
-             inkscape:zoom="0.5"
-             inkscape:cx="3993.8629"
-             inkscape:cy="3696.7101"
-             inkscape:document-units="px"
-             inkscape:current-layer="layer2"
-             showgrid="false"
-             fit-margin-top="0"
-             fit-margin-left="0"
-             fit-margin-right="0"
-             fit-margin-bottom="0"
-             units="px"
-             inkscape:window-width="1440"
-             inkscape:window-height="851"
-             inkscape:window-x="0"
-             inkscape:window-y="0"
-             inkscape:window-maximized="1" />
-          <metadata
-             id="metadata5220">
-            <rdf:RDF>
-              <cc:Work
-                 rdf:about="">
-                <dc:format>image/svg+xml</dc:format>
-                <dc:type
-                   rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                <dc:title></dc:title>
-              </cc:Work>
-            </rdf:RDF>
-          </metadata>
-          <g
-             inkscape:groupmode="layer"
-             id="layer2"
-             inkscape:label="pic"
-             style="display:inline" />
-          <g
-             inkscape:label="Layer 1"
-             inkscape:groupmode="layer"
-             id="layer1"
-             transform="translate(679.28571,2902.6953)">
-            <rect
-               style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#a3a3a3;stroke-opacity:1"
-               id="marker_seat"
-               width="62"
-               height="62"
-               x="892.71429"
-               y="-2549.4414" />
-            <rect
-               style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#a3a3a3;stroke-opacity:1"
-               id="marker_handle"
-               width="60"
-               height="60"
-               x="2342.7144"
-               y="-2765.4414" />
-          </g>
+        <svg id="svg_marker" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 6375 4245">
+          
+
+  <defs
+     id="defs4747" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.19"
+     inkscape:cx="2230.7217"
+     inkscape:cy="2961.8765"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1440"
+     inkscape:window-height="851"
+     inkscape:window-x="1"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata4750">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(507.85715,2554.1558)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline">
+    <rect
+       style="fill:#363636;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1"
+       id="handle"
+       width="110.52631"
+       height="110.52631"
+       x="4000.7368"
+       y="335.21051" />
+    <rect
+       style="fill:#363636;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1"
+       id="front_wheel"
+       width="100"
+       height="100"
+       x="4097.8701"
+       y="3076.1479" />
+    <rect
+       style="fill:#363636;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1"
+       id="seat"
+       width="136.8421"
+       height="136.8421"
+       x="1478.9473"
+       y="416.1579" />
+    <rect
+       style="fill:#363636;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1"
+       id="rear_wheel"
+       width="126.31579"
+       height="126.31579"
+       x="513.70679"
+       y="2597.2407" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1"
+       id="left_top_corner"
+       width="126.31579"
+       height="126.31579"
+       x="3.830483"
+       y="-0.067497253" />
+  </g>
+
+
         </svg>
     </div>
+  </div>
 
     </body>
 
