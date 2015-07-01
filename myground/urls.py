@@ -28,6 +28,7 @@ urlpatterns = patterns('',
     url(r'^lettertogenero/', 'homepage.views.lettertogenero_page', name='lettertogenero'),
     url(r'^lettertofnx/', 'homepage.views.lettertofnx_page', name='lettertofnx'),
     url(r'^lettertowebveistamo/', 'homepage.views.lettertowebveistamo_page', name='lettertowebveistamo'),
+    url(r'^lettertofrosmo/', 'homepage.views.lettertofrosmo_page', name='lettertofrosmo'),
     # url(r'^blog/', include('blog.urls')),
     #url(r'^admin/', include(admin.site.urls)),
 )

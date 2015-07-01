@@ -40,7 +40,7 @@
             }
 
             #container_marker {
-                width: 300%;
+                width: 100%;
             }
 
             #svg_marker {
@@ -128,12 +128,16 @@
                 img.src = '/static/images/bike.jpg';
 
                 setTimeout(function() {
+                  ctx.drawImage(img, 0, 0);
+
+                  /*
                     if (zoomOut < 7500) { 
                         var startingX = -14050;
                         var startingY = -8300;
                         zoomOut += 200;
                         ctx.drawImage(img, startingX + (zoomOut * 1.502), startingY + zoomOut, img.width * 9 - (zoomOut * 1.502), img.height * 9 - zoomOut);
                     }
+                  */
                 }, interval);
                 
             }, interval);

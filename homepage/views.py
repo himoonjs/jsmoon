@@ -71,3 +71,7 @@ def lettertofnx_page(request):
 
 def lettertowebveistamo_page(request):
     return render(request, 'homepage/lettertowebveistamo.html')
+
+
+def lettertofrosmo_page(request):
+    return render(request, 'homepage/lettertofrosmo.html')
