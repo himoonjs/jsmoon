@@ -5,10 +5,6 @@ def home_page(request):
     return render(request, 'homepage/home.html')
 
 
-#def lettertolamia_page(request):
-#    return render(request, 'homepage/lettertolamia.html')
-
-
 def lettertofraktio_page(request):
     return render(request, 'homepage/lettertofraktio.html')
 
@@ -29,16 +25,8 @@ def lettertocontrast_page(request):
     return render(request, 'homepage/lettertocontrast.html')
 
 
-#def lettertoreaktor_page(request):
-#    return render(request, 'homepage/lettertoreaktor.html')
-
-
 def lettertoisobar_page(request):
     return render(request, 'homepage/lettertoisobar.html')
-
-
-#def lettertofuturice_page(request):
-#    return render(request, 'homepage/lettertofuturice.html')
 
 
 def lettertokorpimedia_page(request):
@@ -55,10 +43,6 @@ def lettertosc5_page(request):
 
 def lettertodescom_page(request):
     return render(request, 'homepage/lettertodescom.html')
-
-
-def lettertowunderdog_page(request):
-    return render(request, 'homepage/lettertowunderdog.html')
 
 
 def lettertogenero_page(request):
