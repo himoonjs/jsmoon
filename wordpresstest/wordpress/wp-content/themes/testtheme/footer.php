@@ -1,21 +1,29 @@
 <footer>
-	<h2 class="screen-reader-text">Footer Information:</h2>
-	<aside class="general left two-thirds">
-	<?php if ( is_active_sidebar( 'footer-left-widget-area' ) ) : ?>
-			<?php dynamic_sidebar( 'footer-left-widget-area' ); ?>
+	<aside class="footer first">
+	<?php if ( is_active_sidebar( 'footer-first-widget-area' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-first-widget-area' ); ?>
 	<?php endif; ?>
 	</aside>
-
-	<aside class="navigate right third">
-		<?php if ( is_active_sidebar( 'footer-right-widget-area' ) ) : ?>
-			<?php dynamic_sidebar( 'footer-right-widget-area' ); ?>
-		<?php endif; ?>
+	
+	<aside class="footer second">
+	<?php if ( is_active_sidebar( 'footer-second-widget-area' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-second-widget-area' ); ?>
+	<?php endif; ?>
 	</aside>
-
-	<div class="push"></div>
-
+	
+	<aside class="footer third">
+	<?php if ( is_active_sidebar( 'footer-third-widget-area' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-third-widget-area' ); ?>
+	<?php endif; ?>
+	</aside>
+	
+	<aside class="footer fourth">
+	<?php if ( is_active_sidebar( 'footer-fourth-widget-area' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-fourth-widget-area' ); ?>
+	<?php endif; ?>
+	</aside>
+	
 </footer>
-</div><!--//#across-->
 <?php wp_footer(); ?>
 </body>
 </html>

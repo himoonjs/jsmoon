@@ -10,7 +10,7 @@
 
 	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 		<h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></h2>
-		<p class="entry-meta">by <?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></p>
+		<p class="entry-meta">by <?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?> in <?php the_category(", ") ?></p>
 
 		<div class="entry-content"><!--//post-->
 			<?php if ( has_post_thumbnail() ) {

@@ -1,3 +1,16 @@
+/*
+Theme Name: Operadoll
+Theme URI: http://jsmoon.com
+Author: Jungsoo Moon
+Author URI: http://jsmoon.com
+Description: Theme for the Operadoll website
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: operadoll, cat, ragdoll, american curl
+*/
+
+
 /* html5reset.css - 01/11/2011 */
 
 html, body, div, span, object, iframe,
@@ -135,8 +148,89 @@ body {
 .span_2_of_3 { width: 66.13%; }
 .span_1_of_3 { width: 32.26%; }
 
+
+/* MENU */
+
+#menu-main-menu {
+    background: #333;
+    height: 30px;
+    width: 100%;
+}
+
+#menu-main-menu > li {
+    float: left;
+    position: relative;
+}
+
+#menu-main-menu ul {
+    background: #444;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+#menu-main-menu a {
+    cursor: pointer;
+    display: block;
+    color: white;
+    line-height: 30px;
+    padding: 0 10px;
+}
+
+#menu-main-menu li { list-style: none; }
+
+a#pull {
+    display: none;
+    color: white;
+    line-height: 30px;
+}
+
+
+@media only screen and (min-width: 481px) {
+    #menu-main-menu li:hover { background: #555; }
+    #menu-main-menu li:hover ul { display: block; }
+}
+
 /*  GO FULL WIDTH BELOW 480 PIXELS */
 @media only screen and (max-width: 480px) {
     .col {  margin: 1% 0 1% 0%; }
     .span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
+    
+    #menu-main-menu {  height: auto; }
+    #menu-main-menu > li {  float: none; width: 100%; }
+    #menu-main-menu a { line-height: 40px; }
+    #menu-main-menu ul { position: relative; }
+
+    #menu-main-menu li.tap { background: #555;  }
+    #menu-main-menu li.tap ul { display: block;  }
+
+    nav#nav {
+        border-bottom: 0;
+    }
+
+    #menu-main-menu {
+        display: none;
+        height: auto;
+    }
+
+    a#pull {
+        display: block;
+        background-color: #283744;
+        width: 100%;
+        position: relative;
+    }
+
+    a#pull:after {
+        content:"";
+        background: url('favicon.ico') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+
 }
+
