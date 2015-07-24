@@ -34,6 +34,7 @@ function operadoll_widgets_init() {
 }
 add_action('init', 'operadoll_widgets_init');
 
+//Disable comment section in the gallery slider
 function filter_media_comment_status( $open, $post_id ) {
     $post = get_post( $post_id );
     if( $post->post_type == 'attachment' ) {
@@ -53,6 +54,7 @@ function modify_jquery() {
 }
 add_action('init', 'modify_jquery');
 
+//helper function to wire proper url for language setting
 function get_relative_permalink( $url ) {
     return str_replace( home_url(), "", $url );
 }

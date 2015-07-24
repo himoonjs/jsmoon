@@ -17,6 +17,7 @@
     <meta property="og:url" content="http://www.operadoll.com/">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+    <script src="<?php echo site_url(); ?>/wp-content/themes/operadoll/js/prefixfree.min.js"></script>
     <?php wp_head(); ?>
     <script>
         // Prevent GALLERY menu from clicking, leading users to select sub menus.
@@ -56,12 +57,12 @@
             </div>
         </div>
         <div class="section group" id="header">
-            <div class="col span_1_of_3" style="background-color:red;">
+            <div class="col span_1_of_3" id="logo_wrapper" style="background-color:red;">
                 <header>
                     <em>Header:</em>
                 </header>
             </div>
-            <div class="col span_2_of_3" style="background-color:orange;">
+            <div class="col span_2_of_3" id="menu_wrapper" style="background-color:orange;">
                 <nav id="nav">
                     <?php wp_nav_menu( array(
                         'theme_location' => 'header-menu',
