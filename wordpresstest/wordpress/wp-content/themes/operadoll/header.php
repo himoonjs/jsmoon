@@ -16,6 +16,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://www.operadoll.com/">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?php echo site_url(); ?>/wp-content/themes/operadoll/js/prefixfree.min.js"></script>
     <?php wp_head(); ?>
@@ -45,24 +47,30 @@
                 }
             }); 
 
+            var URI = window.location.href;
+            if (URI == 'http://localhost:8888/wordpress/en/') {
+                $( "#home_title_current_litters").replaceWith("<p class='home_titles' id='home_title_current_litters'>Current Litters</p>");
+                $( "#home_title_our_cats").replaceWith("<p class='home_titles' id='home_title_our_cats'>Our Cats</p>");
+                $( "#home_title_previous_litters").replaceWith("<p class='home_titles' id='home_title_previous_litters'>Previous Litters</p>");
+            }
+
+
         });
     </script>
 </head>
 <body>
     <div id="container">
-        <div class="section group" id="language_setting">
-            <div class="col span_3_of_3" style="background-color:gray;">
-                <a href="<?php echo str_replace('//', '/', str_replace('/en/', '', '/wordpress' . '/' . get_relative_permalink( get_permalink() ) ) ); ?>">FI</a>
-                <a href="<?php echo str_replace('/en/en/', '/en/', '/wordpress' . '/' . 'en' . get_relative_permalink( get_permalink() ) ); ?>">EN</a>
-            </div>
+        <div id="language_setting">
+            <a href="<?php echo str_replace('//', '/', str_replace('/en/', '', '/wordpress' . '/' . get_relative_permalink( get_permalink() ) ) ); ?>">FI</a>
+            <a href="<?php echo str_replace('/en/en/', '/en/', '/wordpress' . '/' . 'en' . get_relative_permalink( get_permalink() ) ); ?>">EN</a>
         </div>
-        <div class="section group" id="header">
-            <div class="col span_1_of_3" id="logo_wrapper" style="background-color:red;">
+        <div class="section group header">
+            <div class="col span_1_of_3" id="header_logo">
                 <header>
-                    <em>Header:</em>
+                    <em>Operadoll</em>
                 </header>
             </div>
-            <div class="col span_2_of_3" id="menu_wrapper" style="background-color:orange;">
+            <div class="col span_2_of_3" style="background-color:orange;">
                 <nav id="nav">
                     <?php wp_nav_menu( array(
                         'theme_location' => 'header-menu',

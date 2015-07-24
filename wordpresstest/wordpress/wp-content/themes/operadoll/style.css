@@ -115,16 +115,20 @@ input, select {
 
 body {
     font-size: 16px;
+    background-color: white;
 }
 
 .circle {
     text-align: center;
+    font-size: 2.5em;
+    font-family: 'Lobster', cursive;
+    transition: font-size 350ms;
 }
 
 .circle_frame {
     background-repeat: no-repeat;
     background-position: 50%;
-    background-size: 350px auto;
+    background-size: 380px auto;
     border-radius: 50%;
     width: 250px;
     height: 250px;
@@ -133,7 +137,29 @@ body {
     transition: background-size 350ms, width 350ms, height 350ms;
 }
 
+#circle_frame_ragdolls {
+    border: 10px solid hsla(271,19%,75%,0.5);
+}
 
+#circle_frame_american_curls {
+    border: 10px solid hsla(92,82%,25%,0.5);
+}
+
+#circle_frame_current_litters {
+    border: 10px solid hsla(48,82%,83%,0.5);
+}
+
+#circle_frame_our_cats {
+    border: 10px solid hsla(191,82%,85%,0.5);
+}
+
+#circle_frame_previous_litters {
+    border: 10px solid hsla(0,0%,70%,0.5);
+}
+
+.home_titles {
+    margin-top: 0.35em;
+}
 
 
 
@@ -156,6 +182,11 @@ body {
     float:left;
     margin: 1% 0 1% 1.6%;
 }
+
+.header .col {
+    margin: 0% 0 1% 1.6%;
+}
+
 .col:first-child { margin-left: 0; }
 
 /*  GROUPING  */
@@ -166,11 +197,12 @@ body {
 /*  GRID OF THREE  */
 .span_3_of_3 { width: 100%; }
 .span_2_of_3 { width: 66.13%; }
-.span_1_of_3 { width: 30%; }
+.span_1_of_3 { width: 32.26%; }
+.first_row_container .span_1_of_3 { width: 30%; }
 /*  GRID OF TWO  */
 .span_2_of_2 { width: 100%; }
-.span_1_of_2 { width: 32.2%; }
-
+.span_1_of_2 { width: 49.2%; }
+.second_row_container .span_1_of_2 { width: 32.2%;}
 .circle_second_row {
     margin: 1% 0 1% 0.2%;
 }
@@ -184,8 +216,20 @@ body {
 }
 /* MENU */
 
+.header {
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: lighter;
+    background-color: #779BD4;
+}
+
+#language_setting {
+    background-color: #779BD4;
+    width: 100%;
+    text-align: right;
+}
+
 #menu-main-menu {
-    background: #333;
+    background: #779BD4;
     height: 30px;
     width: 100%;
 }
@@ -206,9 +250,10 @@ body {
 #menu-main-menu a {
     cursor: pointer;
     display: block;
-    color: white;
     line-height: 30px;
     padding: 0 10px;
+    text-decoration: none;
+    color: black;
 }
 
 #menu-main-menu li { list-style: none; }
@@ -226,38 +271,47 @@ a#pull {
 }
 
 @media only screen and (max-width: 1200px) {
-    #logo_wrapper.col, #menu_wrapper.col {  margin: 1% 0 1% 0%; }
-    #logo_wrapper.span_1_of_3, #menu_wrapper.span_2_of_3 { width: 100%; }
+    .header .col { margin: 0% 0 0% 0%; }
+    .header .span_1_of_3, .header .span_2_of_3 { width: 100%; }
 }
 
 @media only screen and (max-width: 900px) {
+    .circle {
+        font-size: 2.2em;
+    }
+
     .circle_frame {
         width: 200px;
         height: 200px;
-        background-size: 280px auto;
+        background-size: 310px auto;
     }
 }
 
 @media only screen and (max-width: 730px) {
+    .circle {
+        font-size: 2em;
+    }
+
     .circle_frame {
         width: 150px;
         height: 150px;
-        background-size: 210px auto;
+        background-size: 240px auto;
     }
 }
 
 @media only screen and (max-width: 560px) {
+    .circle {
+        font-size: 1.8em;
+    }
+
     .circle_frame {
         width: 130px;
         height: 130px;
-        background-size: 180px auto;
+        background-size: 210px auto;
     }
 }
 
 @media only screen and (max-width: 820px) {
-    #logo_wrapper.col, #menu_wrapper.col {  margin: 1% 0 1% 0%; }
-    #logo_wrapper.span_1_of_3, #menu_wrapper.span_2_of_3 { width: 100%; }
-
     #menu-main-menu {  height: auto; }
     #menu-main-menu > li {  float: none; width: 100%; }
     #menu-main-menu a { line-height: 40px; }
@@ -299,14 +353,20 @@ a#pull {
     #home_first_row_left { margin-left: 0; }
     #home_second_row_left { margin-left: 0; }
 
-    .col {  margin: 1% 0 1% 0%; }
+    .col {  margin: 1% 0 7% 0%; }
     .span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
+    .first_row_container .span_1_of_3 {
+        width: 100%; 
+    }
     .span_2_of_2, .span_1_of_2 { width: 100%; }
-
+    .second_row_container .span_1_of_2 { width: 100%;}
+    .circle {
+        font-size: 2.1em;
+    }
     .circle_frame {
         width: 190px;
         height: 190px;
-        background-size: 265px auto;
+        background-size: 295px auto;
     }
 
 }
