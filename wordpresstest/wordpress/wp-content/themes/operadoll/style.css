@@ -131,7 +131,7 @@ body {
     background-size: 380px auto;
     border-radius: 50%;
     width: 250px;
-    height: 250px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     transition: background-size 350ms, width 350ms, height 350ms;
@@ -184,7 +184,7 @@ body {
 }
 
 .header .col {
-    margin: 0% 0 1% 1.6%;
+    margin: 1.5% 0 3% 1.6%;
 }
 
 .col:first-child { margin-left: 0; }
@@ -216,10 +216,22 @@ body {
 }
 /* MENU */
 
+#header_wrapper {
+    margin-bottom: 4%;
+}
+
+#svg_logo {
+    display: block;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .header {
     font-family: 'Maven Pro', sans-serif;
-    font-weight: lighter;
+    font-weight: bold;
     background-color: #779BD4;
+    font-size: 1.2em;
 }
 
 #language_setting {
@@ -229,6 +241,7 @@ body {
 }
 
 #menu-main-menu {
+    margin-top: 100px;
     background: #779BD4;
     height: 30px;
     width: 100%;
@@ -253,7 +266,7 @@ body {
     line-height: 30px;
     padding: 0 10px;
     text-decoration: none;
-    color: black;
+    color: #1B3155;
 }
 
 #menu-main-menu li { list-style: none; }
@@ -273,6 +286,12 @@ a#pull {
 @media only screen and (max-width: 1200px) {
     .header .col { margin: 0% 0 0% 0%; }
     .header .span_1_of_3, .header .span_2_of_3 { width: 100%; }
+
+    #menu-main-menu { 
+        margin-top: 50px; 
+        margin-bottom: 20px;
+    }
+
 }
 
 @media only screen and (max-width: 900px) {
@@ -282,7 +301,7 @@ a#pull {
 
     .circle_frame {
         width: 200px;
-        height: 200px;
+        height: 150px;
         background-size: 310px auto;
     }
 }
@@ -294,7 +313,7 @@ a#pull {
 
     .circle_frame {
         width: 150px;
-        height: 150px;
+        height: 100px;
         background-size: 240px auto;
     }
 }
@@ -306,7 +325,7 @@ a#pull {
 
     .circle_frame {
         width: 130px;
-        height: 130px;
+        height: 80px;
         background-size: 210px auto;
     }
 }
@@ -365,7 +384,7 @@ a#pull {
     }
     .circle_frame {
         width: 190px;
-        height: 190px;
+        height: 140px;
         background-size: 295px auto;
     }
 
