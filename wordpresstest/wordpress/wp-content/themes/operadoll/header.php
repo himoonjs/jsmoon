@@ -61,10 +61,6 @@
 <body>
     <div id="container">
     <div id="header_wrapper">
-        <div id="language_setting">
-            <a href="<?php echo str_replace('//', '/', str_replace('/en/', '', '/wordpress' . '/' . get_relative_permalink( get_permalink() ) ) ); ?>">FI</a>
-            <a href="<?php echo str_replace('/en/en/', '/en/', '/wordpress' . '/' . 'en' . get_relative_permalink( get_permalink() ) ); ?>">EN</a>
-        </div>
         <div class="section group header">
             <div class="col span_1_of_3" id="header_logo">
                 <header id="svg_logo_wrapper">
@@ -161,11 +157,15 @@
 
                 </header>
             </div>
-            <div class="col span_2_of_3">
+            <div class="col span_2_of_3" id="nav_wrapper">
+                <div id="language_setting">
+                    <a href="<?php echo str_replace('//', '/', str_replace('/en/', '', '/wordpress' . '/' . get_relative_permalink( get_permalink() ) ) ); ?>">FI</a>
+                    <a href="<?php echo str_replace('/en/en/', '/en/', '/wordpress' . '/' . 'en' . get_relative_permalink( get_permalink() ) ); ?>">EN</a>
+                </div>
                 <nav id="nav">
                     <?php wp_nav_menu( array(
                         'theme_location' => 'header-menu',
-                        'items_wrap' => '<ul id="menu-main-menu">%3$s</ul><a href="#" id="pull">MENU</a>' )
+                        'items_wrap' => '<ul id="menu-main-menu">%3$s</ul><a href="#" id="pull"><div id="pull_menu">MENU</div></a>' )
                     ); ?>
                 </nav>
             </div>
