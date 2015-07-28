@@ -238,10 +238,19 @@ body {
     background-color: #779BD4;
     width: 100%;
     text-align: right;
+    margin-top: 2%;
+}
+
+#language_setting a {
+    text-decoration: none;
+}
+
+#language_setting a:nth-child(2) {
+    margin-right: 7%;
 }
 
 #menu-main-menu {
-    margin-top: 90px;
+    margin-top: 5%;
     background: #779BD4;
     height: 30px;
     width: 100%;
@@ -282,7 +291,7 @@ a#pull {
 
 #pull_menu {
     display: inline-block;
-    padding-left: 10%;
+    padding-left: 12%;
 }
 
 #footer {
@@ -318,13 +327,16 @@ a#pull {
     .sub-menu li {background: #527ABA;}
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1260px) {
     .header .col { margin: 0% 0 0% 0%; }
     .header .span_1_of_3, .header .span_2_of_3 { width: 100%; }
 
+    #language_setting {
+        margin-top: 0%;
+    }
 
     #menu-main-menu { 
-        margin-top: 40px; 
+        margin-top: 15px; 
         margin-bottom: 20px;
         text-align: center;
     }
@@ -378,7 +390,7 @@ a#pull {
     }
 }
 
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 860px) {
     #menu-main-menu {  height: auto; }
     #menu-main-menu > li {  float: none; width: 100%; }
     #menu-main-menu a { line-height: 40px; 
@@ -395,7 +407,10 @@ a#pull {
     #menu-main-menu .sub-menu a:hover { color: white; }
 
     header#svg_logo_wrapper {
-        margin-bottom: 40px; 
+    }
+
+    div#language_setting {
+        margin-bottom: 2%;
     }
 
     nav#nav {
@@ -423,18 +438,22 @@ a#pull {
 
     a#pull:after {
         content:"";
-        background: url('favicon.ico') no-repeat;
-        width: 30px;
-        height: 30px;
+        background: url('menu_icon.svg') no-repeat;
+        width: 40px;
+        height: 40px;
         display: inline-block;
         position: absolute;
-        left: 25%;
+        left: 5%;
+        margin-top: 5px;
     }
 
 }
 
 /*  GO FULL WIDTH BELOW 480 PIXELS */
 @media only screen and (max-width: 480px) {
+    #pull_menu {
+        padding-left: 15%;
+    }
     #home_first_row_left { margin-left: 0; }
     #home_second_row_left { margin-left: 0; }
 

@@ -17,7 +17,7 @@ Template Name: HOME page template
             </div>
             <div class="col span_1_of_3 circle" style="background-color:none;">
                 <div class="circle_frame" id="circle_frame_current_litters" style="background-image: url(<?php echo site_url(); ?>/wp-content/themes/operadoll/images/current_litters.jpg)"></div>
-                <p class="home_titles" id="home_title_current_litters">Nykyinen pentueet</p>
+                <p class="home_titles" id="home_title_current_litters">Pennut</p>
             </div>
         </div>
         <div class="section group second_row_container">
@@ -27,7 +27,7 @@ Template Name: HOME page template
             </div>
             <div class="col span_1_of_2 circle circle_second_row" style="background-color:none;">
                 <div class="circle_frame" id="circle_frame_previous_litters" style="background-image: url(<?php echo site_url(); ?>/wp-content/themes/operadoll/images/previous_litters.jpg)"></div>
-                <p class="home_titles" id="home_title_previous_litters">Edellinen Pentueet</p>
+                <p class="home_titles" id="home_title_previous_litters">Edelliset Pentueet</p>
             </div>
         </div>
 
