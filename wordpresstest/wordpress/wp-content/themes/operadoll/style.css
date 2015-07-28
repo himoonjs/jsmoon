@@ -220,6 +220,9 @@ body {
     margin-bottom: 4%;
 }
 
+header#svg_logo_wrapper {
+}
+
 #svg_logo {
     display: block;
     margin-top: 4%;
@@ -262,7 +265,7 @@ body {
 }
 
 #menu-main-menu ul {
-    background: #444;
+    background: #527ABA;
     display: none;
     position: absolute;
     left: 0;
@@ -311,7 +314,11 @@ a#pull {
 #footer_contact_name { font-weight: lighter; font-size: 19px;}
 #footer_contact_number { font-weight: lighter; font-size: 17px; }
 #footer_contact_email { font-weight: lighter; font-size: 17px; }
+#footer_contact a { color: white; text-decoration: none; }
+#footer_contact a:hover { color: gray; }
 #copyright { padding-top: 10px;}
+#copyright a { color: white; text-decoration: none; }
+#copyright a:hover { color: gray; }
 #copyright_operadoll {margin-top: 3px; font-size: 15px;}
 #copyright_website { margin-top:17px; font-size: 18px; }
 
@@ -327,7 +334,7 @@ a#pull {
     .sub-menu li {background: #527ABA;}
 }
 
-@media only screen and (max-width: 1260px) {
+@media only screen and (max-width: 1200px) {
     .header .col { margin: 0% 0 0% 0%; }
     .header .span_1_of_3, .header .span_2_of_3 { width: 100%; }
 
@@ -346,7 +353,10 @@ a#pull {
         display: inline-block;
     }
 
-
+    #svg_fi, #svg_br {
+        width: 42.91265px;
+        height: 33.86600px;
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -390,7 +400,7 @@ a#pull {
     }
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 790px) {
     #menu-main-menu {  height: auto; }
     #menu-main-menu > li {  float: none; width: 100%; }
     #menu-main-menu a { line-height: 40px; 
@@ -398,9 +408,9 @@ a#pull {
     #menu-main-menu a:hover { color: #1B3155; }
     #menu-main-menu ul { position: relative; }
 
-    #menu-main-menu li.tap { background: #555; }
-    #menu-main-menu li.tap ul { display: block; }
-
+    #menu-main-menu li.tap { }
+    #menu-main-menu li.tap ul { display: block; background-color: #527ABA; }
+    #menu-main-menu li.tap ul a:hover { background-color: #2F466B; }
     #menu-main-menu li:hover { background: #527ABA; }
     #menu-main-menu li:nth-child(6):hover { background: #779BD4; }
 
@@ -475,3 +485,15 @@ a#pull {
 
 }
 
+@media only screen and (max-width: 400px) {
+    #svg_logo {
+        width: 295.03476px;
+        height: 117.13434px;
+    }
+
+    #svg_fi, #svg_br {
+        width: 32.71383px;
+        height: 25.81736px; 
+    }
+
+}
