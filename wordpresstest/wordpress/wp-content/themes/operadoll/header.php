@@ -18,6 +18,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Halant:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?php echo site_url(); ?>/wp-content/themes/operadoll/js/prefixfree.min.js"></script>
     <?php wp_head(); ?>
@@ -49,13 +50,28 @@
 
             var URI = window.location.href;
             if (URI.indexOf("/en/") != -1 ) {
-                $( "#svg_logo_link" ).attr("xlink:href", "http://localhost:8888/wordpress/en/")
+                $( "#svg_logo_link" ).attr("xlink:href", "http://localhost:8888/wordpress/en/");
                 $( "#home_title_current_litters" ).replaceWith("<p class='home_titles' id='home_title_current_litters'>Current Litters</p>");
                 $( "#home_title_our_cats" ).replaceWith("<p class='home_titles' id='home_title_our_cats'>Our Cats</p>");
                 $( "#home_title_previous_litters" ).replaceWith("<p class='home_titles' id='home_title_previous_litters'>Previous Litters</p>");
 
                 $( "#footer_contact_title" ).replaceWith("<p id='footer_contact_title'>CONTACT</p>");
             }
+
+            $( ".wp-caption" ).css("width", "100%");
+            $( ".wp-caption-text" ).wrap("<div class='caption_wrapper'></div>");
+
+            var iframeTag = $( "iframe" );
+            if ( iframeTag.parent().is( "p" ) ) {
+                iframeTag.unwrap();
+            }
+            var imgTag = $( "img" );
+            if ( imgTag.parent().is( "p" ) ) {
+                imgTag.unwrap();
+            }
+            imgTag.wrap("<div class='img_wrapper'></div>");
+            imgTag.addClass( "aligncenter" );
+
         });
     </script>
 </head>
