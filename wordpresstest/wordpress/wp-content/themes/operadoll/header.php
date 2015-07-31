@@ -56,6 +56,15 @@
                 $( "#home_title_previous_litters" ).replaceWith("<p class='home_titles' id='home_title_previous_litters'>Previous Litters</p>");
 
                 $( "#footer_contact_title" ).replaceWith("<p id='footer_contact_title'>CONTACT</p>");
+
+                $( "#ragdolls_description_text" ).replaceWith("<span id='ragdolls_description_text'>The Ragdoll is a cat breed with blue eyes and a distinct colorpoint coat. It is a large and muscular semi-longhair cat with a soft and silky coat.</span>");
+                $( "#ragdolls_read_more" ).replaceWith("<p id='ragdolls_read_more'><br />READ MORE</p>");
+
+                $( "#american_curls_description_text" ).replaceWith("<span id='american_curls_description_text'>The American Curl is a breed of cat characterized by its unusual ears, which curl back from the face toward the center of the back of the skull.</span>");
+                $( "#american_curls_read_more" ).replaceWith("<p id='american_curls_read_more'><br />READ MORE</p>");
+
+                $( "#fun_pics_description_text" ).replaceWith("<span id='fun_pics_description_text'>Funny moments of our lovely cats</span>");
+
             }
 
             $( ".wp-caption" ).css("width", "100%");
@@ -72,6 +81,7 @@
             imgTag.wrap("<div class='img_wrapper'></div>");
             imgTag.addClass( "aligncenter" );
 
+            $( "#gallery_content" ).children("div:last").attr("id", "gallery_circles");
         });
     </script>
 </head>

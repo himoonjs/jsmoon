@@ -111,7 +111,7 @@ input, select {
 h1 { 
     display: block;
     font-size: 2em;
-    margin-top: 0.67em;
+    margin-top: 0;
     margin-bottom: 0.67em;
     margin-left: 0;
     margin-right: 0;
@@ -462,6 +462,42 @@ iframe {
     margin-right: auto;
 }
 
+/* PAGE - gallery */
+
+#gallery_content .tiled-gallery div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gallery_description {
+    float: left;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: auto;
+    display: inline-block;
+    word-wrap: break-word;
+    width: 400px;
+}
+
+#ragdolls_description_text, #american_curls_description_text, #fun_pics_description_text {
+    font-family: 'Halant', serif;
+    font-size: 1.8em;
+    line-height: 130%;
+}
+
+#ragdolls_read_more, #american_curls_read_more {
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+
+#gallery_circles {
+    clear: none;
+    margin: 0;
+}
+
+
 
 /* ======================================== */
 /*             MEDIA QUERY                  */
@@ -471,7 +507,8 @@ iframe {
 @media only screen and (min-width: 481px) {
     #menu-main-menu li:hover ul { display: block; }
     .sub-menu a:hover { background: #2F466B; }
-    .sub-menu li {background: #527ABA;}
+    .sub-menu li { background: #527ABA;}
+    .sub-menu li:nth-child(2) {background: #4068A8;}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -496,6 +533,30 @@ iframe {
     #svg_fi, #svg_br {
         width: 42.91265px;
         height: 33.86600px;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    #gallery_description {
+        float: none;
+        margin-top: 0%;
+        margin-bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 400px;
+    }
+    #ragdolls_description_text, #american_curls_description_text, #fun_pics_description_text {
+        font-family: 'Halant', serif;
+        font-size: 1.6em;
+        line-height: 120%;
+    }
+
+    #ragdolls_read_more, #american_curls_read_more {
+        font-family: 'Maven Pro', sans-serif;
+        font-weight: bold;
+        font-size: 1.1em;
+        text-decoration: underline;
     }
 }
 
@@ -638,6 +699,23 @@ iframe {
         width: 190px;
         height: 140px;
         background-size: 295px auto;
+    }
+
+    /* gallery */
+    #gallery_description {
+        margin-bottom: 7%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    }
+    #ragdolls_description_text, #american_curls_description_text, #fun_pics_description_text {
+        font-size: 1.3em;
+        line-height: 120%;
+    }
+
+    #ragdolls_read_more, #american_curls_read_more {
+        font-size: 1em;
+        text-decoration: underline;
     }
 
 }
