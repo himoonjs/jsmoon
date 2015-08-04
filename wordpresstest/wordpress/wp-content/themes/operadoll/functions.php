@@ -8,8 +8,8 @@ add_action( 'init', 'register_my_menus' );
 
 function operadoll_widgets_init() {
   register_sidebar (array(
-    'name'          => __('Sidebar','operadoll'),
-    'id'            => "sidebar-widget-area",
+    'name'          => __('Previous Litters','operadoll'),
+    'id'            => "previous-litters-widget-area",
     'before_widget' => '<li id="%1$s" class="widget %2$s">',
     'after_widget'  => '</li>',
     'before_title'  => '<h2 class="widgettitle">',
@@ -33,6 +33,8 @@ function operadoll_widgets_init() {
     );
 }
 add_action('init', 'operadoll_widgets_init');
+
+add_theme_support( 'post-thumbnails' );
 
 //Disable comment section in the gallery slider
 function filter_media_comment_status( $open, $post_id ) {
