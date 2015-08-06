@@ -46,7 +46,7 @@ footer,header,hgroup,menu,nav,section {
 nav ul {
     list-style: none;
 }
-
+/*
 blockquote, q {
     quotes: none;
 }
@@ -56,7 +56,7 @@ q:before, q:after {
     content: '';
     content: none;
 }
-
+*/
 a {
     margin: 0;
     padding: 0;
@@ -375,28 +375,28 @@ a#pull {
 #footer_contact_number { font-weight: lighter; font-size: 17px; }
 #footer_contact_email { font-weight: lighter; font-size: 17px; }
 #footer_contact a { color: white; text-decoration: none; }
-#footer_contact a:hover { color: gray; }
+#footer_contact a:hover { color: #FFCF5B; }
 #copyright { padding-top: 10px;}
 #copyright a { color: white; text-decoration: none; }
-#copyright a:hover { color: gray; }
+#copyright a:hover { color: #FFCF5B; }
 #copyright_operadoll {margin-top: 3px; font-size: 15px;}
 #copyright_website { margin-top:17px; font-size: 18px; }
 
 /* PAGE */
 
-#about_container, #current_litters_container, #our_cats_container {
+#about_container, #current_litters_container, #our_cats_container, #menu_previous_litters_container, #previous_litters_container {
     width: 750px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Halant', serif;
-    font-weight: lighter;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
 }
 
-#about_content, #current_litters_content, #our_cats_content {
-    font-size: 1.5em;
+#about_content, #current_litters_content, #our_cats_content, #menu_previous_litters_content, #previous_litters_content {
+    font-size: 1.1em;
 }
 
-#about_content p, #current_litters_content p, #our_cats_content p {
+#about_content p, #current_litters_content p, #our_cats_content p, #menu_previous_litters_content p, #previous_litters_content p {
     line-height: 150%;
     margin-bottom: 1.5em;
 }
@@ -430,6 +430,11 @@ p.wp-caption-text {
     display: block;
 }
 
+#our_cats_content img.size-full, #our_cats_content img.size-large, #our_cats_content img.size-medium, #our_cats_content img.size-thumbnail {
+    max-width: 350px;
+    height: auto;    
+}
+
 img.size-full, img.size-large, img.size-medium, img.size-thumbnail {
     max-width: 512px;
     height: auto;
@@ -445,6 +450,33 @@ blockquote p {
     font-size: 0.9em;
 }
 
+blockquote:before {
+    content: ' ';
+    font-size: 2.5em;
+    background: #ddd;
+    position: relative;
+    bottom: 1.35em;
+    margin-right: 0.5em;
+    display: inline-block;
+
+    background: url(images/musical_note_right.svg) no-repeat;
+    height: 40.57262px;
+    width: 27.67840px;
+}
+
+blockquote:after {
+    content: ' ';
+    font-size: 2.5em;
+    background: #ddd;
+    position: relative;
+    bottom: 0.2em;
+    margin-left: 0.5em;
+    display: inline-block;
+
+    background: url(images/musical_note_left.svg) no-repeat;
+    height: 41.20312px;
+    width: 22.03045px;
+}
 
 img {
     display: block;
@@ -480,8 +512,9 @@ iframe {
 }
 
 #ragdolls_description_text, #american_curls_description_text, #fun_pics_description_text {
-    font-family: 'Halant', serif;
-    font-size: 1.8em;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    font-size: 1.6em;
     line-height: 130%;
 }
 
@@ -497,7 +530,48 @@ iframe {
     margin: 0;
 }
 
+/* PAGE - menu previous litters */
+#menu_previous_litters_content {
 
+}
+#menu_previous_litters_content ul {
+    list-style-type: none;
+    text-align: center;
+
+}
+#menu_previous_litters_content a {
+    text-decoration: none;
+    color: white;
+}
+
+#menu_previous_litters_content a:hover {
+    color: #FFCF5B;
+}
+
+#menu-second-menu .img_wrapper {
+    cursor: default;
+    width: 150px;
+    height: 150px;
+}
+#menu-second-menu .img_wrapper img{
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#menu-second-menu ul {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#menu-second-menu li {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    padding-top: 10px;
+}
 
 /* ======================================== */
 /*             MEDIA QUERY                  */
@@ -547,9 +621,8 @@ iframe {
         width: 400px;
     }
     #ragdolls_description_text, #american_curls_description_text, #fun_pics_description_text {
-        font-family: 'Halant', serif;
-        font-size: 1.6em;
-        line-height: 120%;
+        font-size: 1.4em;
+        line-height: 130%;
     }
 
     #ragdolls_read_more, #american_curls_read_more {
@@ -577,17 +650,17 @@ iframe {
 }
 
 @media only screen and (max-width: 800px) {
-    #about_container, #current_litters_container, #our_cats_container {
+    #about_container, #current_litters_container, #our_cats_container, #menu_previous_litters_container, #previous_litters_container {
         width: auto;
         margin-left: 1.5em;
         margin-right: 1.5em;
     }
 
-    #about_content, #current_litters_content, #our_cats_content {
-        font-size: 1.25em;
+    #about_content, #current_litters_content, #our_cats_content, #menu_previous_litters_content, #previous_litters_content {
+        font-size: 1em;
     }
 
-    #about_content p, #current_litters_content p, #our_cats_content p {
+    #about_content p, #current_litters_content p, #our_cats_content p, #menu_previous_litters_content p, #previous_litters_content p {
         line-height: 140%;
         margin-bottom: 1.4em;
     }
@@ -701,6 +774,12 @@ iframe {
         background-size: 295px auto;
     }
 
+    /* our cats */
+    #our_cats_content img.size-full, #our_cats_content img.size-large, #our_cats_content img.size-medium, #our_cats_content img.size-thumbnail {
+        max-width: 250px;
+        height: auto;    
+    }
+
     /* gallery */
     #gallery_description {
         margin-bottom: 7%;
@@ -710,13 +789,23 @@ iframe {
     }
     #ragdolls_description_text, #american_curls_description_text, #fun_pics_description_text {
         font-size: 1.3em;
-        line-height: 120%;
+        line-height: 130%;
     }
 
     #ragdolls_read_more, #american_curls_read_more {
         font-size: 1em;
         text-decoration: underline;
     }
+
+
+blockquote:before {
+    display: none;
+}
+
+blockquote:after {
+    display: none;
+}
+
 
 }
 @media only screen and (max-width: 560px) {

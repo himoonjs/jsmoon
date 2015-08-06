@@ -1,7 +1,11 @@
 <?php
+
+require_once('custom_nav.php');
+
 function register_my_menus() {
     register_nav_menus(
-        array( 'header-menu' => __( 'Header Menu' ) )
+        array( 'header-menu' => __( 'Header Menu' ),
+               'second-menu' => __( 'Second Menu' ) )
         );
 }
 add_action( 'init', 'register_my_menus' );
@@ -60,5 +64,9 @@ add_action('init', 'modify_jquery');
 function get_relative_permalink( $url ) {
     return str_replace( home_url(), "", $url );
 }
+
+
+
+
 
 ?>

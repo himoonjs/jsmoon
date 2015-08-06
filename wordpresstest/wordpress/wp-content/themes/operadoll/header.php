@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Halant:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script src="<?php echo site_url(); ?>/wp-content/themes/operadoll/js/prefixfree.min.js"></script>
     <?php wp_head(); ?>
@@ -82,6 +82,22 @@
             imgTag.addClass( "aligncenter" );
 
             $( "#gallery_content" ).children("div:last").attr("id", "gallery_circles");
+
+            $( "#menu-second-menu .img_wrapper img" ).each(function() {
+                $(this).removeAttr('width');
+                $(this).removeAttr('height');
+            });
+
+            function getRandomArbitrary(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            $( "#menu-second-menu li").each(function() {
+                $(this).css("background-color", "rgba(" + getRandomInt(10, 41) + ",69,113," + getRandomArbitrary(0.6, 1) + ")");
+            });
+
         });
     </script>
 </head>

@@ -8,10 +8,10 @@ Template Name: PREVIOUS-LITTERS page template
 
         <div class="section group" id="previous_litters_container">
             <div class="col span_3_of_3" id="previous_litters_content">
-                <?php if ( is_active_sidebar( 'previous-litters-widget-area' ) ) : ?>
-                  <div class="bdr grd-vt-main rnd shdw-centered"> 
-                    <?php dynamic_sidebar( 'previous-litters-widget-area' ); ?>
-                  </div>
+                <?php if (have_posts()) :?>
+                    <?php while (have_posts()) : the_post();?>
+                        <?php the_content();?>
+                    <?php endwhile; ?>
                 <?php endif; ?>
             </div>
         </div>
