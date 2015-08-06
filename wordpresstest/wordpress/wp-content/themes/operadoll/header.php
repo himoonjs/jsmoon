@@ -94,7 +94,7 @@
             function getRandomInt(min, max) {
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
-            $( "#menu-second-menu li").each(function() {
+            $( ".link_img_wrapper ").each(function() {
                 $(this).css("background-color", "rgba(" + getRandomInt(10, 41) + ",69,113," + getRandomArbitrary(0.6, 1) + ")");
             });
 

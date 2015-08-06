@@ -570,9 +570,12 @@ iframe {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 25px;
-    padding-top: 10px;
 }
 
+.link_img_wrapper {
+    border-radius: 10px;
+    padding-top: 10px;
+}
 /* ======================================== */
 /*             MEDIA QUERY                  */
 /* ======================================== */
