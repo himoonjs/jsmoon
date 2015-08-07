@@ -193,27 +193,74 @@ body {
     height: 200px;
     margin-left: auto;
     margin-right: auto;
-    transition: background-size 350ms, width 350ms, height 350ms;
+
+    transition: background-size 350ms, width 350ms, height 350ms, border 400ms, box-shadow 250ms, transform 250ms;
+}
+
+.first_row_container a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.second_row_container a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.home_titles a {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
 }
 
 #circle_frame_ragdolls {
     border: 10px solid hsla(271,19%,75%,0.5);
 }
 
+#circle_frame_ragdolls:hover {
+    border: 10px solid hsla(271,19%,75%,1);
+    box-shadow: -10px -5px 0 #AA8BC5;
+    transform: translate(10px, 10px);
+}
+
 #circle_frame_american_curls {
     border: 10px solid hsla(92,82%,25%,0.5);
+}
+
+#circle_frame_american_curls:hover {
+    border: 10px solid hsla(92,82%,25%,1);
+    box-shadow: 10px -5px 0 #1F4200;
+    transform: translate(-10px, 10px);
 }
 
 #circle_frame_current_litters {
     border: 10px solid hsla(48,82%,83%,0.5);
 }
 
+#circle_frame_current_litters:hover {
+    border: 10px solid hsla(48,82%,83%,1);
+    box-shadow: 0px 10px 0 #CCB556;
+    transform: translate(0px, -10px);
+}
+
 #circle_frame_our_cats {
     border: 10px solid hsla(191,82%,85%,0.5);
 }
 
+#circle_frame_our_cats:hover {
+    border: 10px solid hsla(191,82%,85%,1);
+    box-shadow: -10px 5px 0 #6FBFD2;
+    transform: translate(10px, -10px);
+}
+
 #circle_frame_previous_litters {
     border: 10px solid hsla(0,0%,70%,0.5);
+}
+
+#circle_frame_previous_litters:hover {
+    border: 10px solid hsla(0,0%,70%,1);
+    box-shadow: 10px 5px 0 #929191;
+    transform: translate(-10px, -10px);
 }
 
 .home_titles {
@@ -570,6 +617,11 @@ iframe {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 25px;
+}
+
+#menu-second-menu img {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .link_img_wrapper {

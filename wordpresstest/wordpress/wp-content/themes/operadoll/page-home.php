@@ -22,8 +22,10 @@ Template Name: HOME page template
         </div>
         <div class="section group second_row_container">
             <div class="col span_1_of_2 circle circle_second_row" id="home_second_row_left" style="background-color:none;">
+                <a href="http://localhost:8888/wordpress/ragdoll/">
                 <div class="circle_frame" id="circle_frame_ragdolls" style="background-image: url(<?php echo site_url(); ?>/wp-content/themes/operadoll/images/ragdoll.jpg)"></div>
-                <p class="home_titles" id="home_title_ragdolls">Ragdolls</p>
+                </a>
+                <p class="home_titles" id="home_title_ragdolls"><a href="http://localhost:8888/wordpress/ragdoll/">Ragdolls</a></p>
             </div>
             <div class="col span_1_of_2 circle circle_second_row" style="background-color:none;">
                 <div class="circle_frame" id="circle_frame_american_curls" style="background-image: url(<?php echo site_url(); ?>/wp-content/themes/operadoll/images/american_curl.jpg)"></div>
