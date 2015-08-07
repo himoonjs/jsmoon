@@ -95,7 +95,7 @@
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
             $( ".link_img_wrapper ").each(function() {
-                $(this).css("background-color", "rgba(" + getRandomInt(10, 41) + ",69,113," + getRandomArbitrary(0.6, 1) + ")");
+                $(this).css("background-color", "rgba(" + getRandomInt(20, 41) + ",69,113," + getRandomArbitrary(0.5, 0.8) + ")");
             });
 
         });

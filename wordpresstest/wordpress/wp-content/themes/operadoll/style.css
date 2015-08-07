@@ -188,14 +188,17 @@ body {
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 380px auto;
+    background-color: hsla(220, 52%, 36%, 0.13);
+    background-blend-mode: luminosity;
     border-radius: 50%;
     width: 250px;
     height: 200px;
     margin-left: auto;
     margin-right: auto;
 
-    transition: background-size 350ms, width 350ms, height 350ms, border 400ms, box-shadow 250ms, transform 250ms;
+    transition: background-size 350ms, background-color 350ms, width 350ms, height 350ms, border 400ms, box-shadow 250ms, transform 250ms;
 }
+
 
 .first_row_container a {
     text-decoration: none;
@@ -213,8 +216,29 @@ body {
     color: black;
 }
 
+#home_first_row_left a:hover > .circle_frame {
+    background-color: transparent;
+}
+
+#home_first_row_middle a:hover > .circle_frame {
+    background-color: transparent;
+}
+
+#home_first_row_right a:hover > .circle_frame {
+    background-color: transparent;
+}
+
+#home_second_row_left a:hover > .circle_frame {
+    background-color: transparent;
+}
+
+#home_second_row_right a:hover > .circle_frame {
+    background-color: transparent;
+}
+
+
 #circle_frame_ragdolls {
-    border: 10px solid hsla(271,19%,75%,0.5);
+    border: 10px solid hsla(217, 52%, 36%, 0.1);
 }
 
 #circle_frame_ragdolls:hover {
@@ -224,7 +248,7 @@ body {
 }
 
 #circle_frame_american_curls {
-    border: 10px solid hsla(92,82%,25%,0.5);
+    border: 10px solid hsla(220, 52%, 26%, 0.25);
 }
 
 #circle_frame_american_curls:hover {
@@ -234,7 +258,7 @@ body {
 }
 
 #circle_frame_current_litters {
-    border: 10px solid hsla(48,82%,83%,0.5);
+    border: 10px solid hsla(217, 52%, 36%, 0.1);
 }
 
 #circle_frame_current_litters:hover {
@@ -244,7 +268,7 @@ body {
 }
 
 #circle_frame_our_cats {
-    border: 10px solid hsla(191,82%,85%,0.5);
+    border: 10px solid hsla(217, 52%, 36%, 0.1);
 }
 
 #circle_frame_our_cats:hover {
@@ -254,7 +278,7 @@ body {
 }
 
 #circle_frame_previous_litters {
-    border: 10px solid hsla(0,0%,70%,0.5);
+    border: 10px solid hsla(217, 52%, 36%, 0.1);
 }
 
 #circle_frame_previous_litters:hover {
