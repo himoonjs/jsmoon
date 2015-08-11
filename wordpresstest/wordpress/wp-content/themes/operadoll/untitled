@@ -1,2 +1,0 @@
-<a href="<?php echo '/wordpress' . '/' . 'fi' . get_relative_permalink( get_permalink() ); ?>">FI</a>
-<a href="<?php echo '/wordpress' . '/' . 'en' . get_relative_permalink( get_permalink() ); ?>">EN</a>
