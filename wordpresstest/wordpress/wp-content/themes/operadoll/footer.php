@@ -15,5 +15,83 @@
 
     </div>
     <?php wp_footer(); ?>
+    <script>
+        // Prevent GALLERY menu from clicking, leading users to select sub menus.
+        // Solution for problems caused when using :hover on mobile devices.
+        $(document).ready(function(){
+            $( "li.menu-item-has-children" ).children( "a" ).click(function( event ) {
+                event.preventDefault();
+                $(this).parent().toggleClass('tap');
+            });
+
+            $(function() {
+                var pull        = $('#pull');
+                    menu        = $('#menu-main-menu');
+             
+                $(pull).on('click', function(e) {
+                    e.preventDefault();
+                    menu.slideToggle();
+                });
+            });
+
+            $(window).resize(function(){
+                var w = $(window).width();
+                if(w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            }); 
+
+            var URI = window.location.href;
+            if (URI.indexOf("/en/") != -1 ) {
+                $( "#svg_logo_link" ).attr("xlink:href", "http://localhost:8888/wordpress/en/");
+                $( "#home_title_current_litters" ).replaceWith("<p class='home_titles' id='home_title_current_litters'>Current Litters</p>");
+                $( "#home_title_our_cats" ).replaceWith("<p class='home_titles' id='home_title_our_cats'>Our Cats</p>");
+                $( "#home_title_previous_litters" ).replaceWith("<p class='home_titles' id='home_title_previous_litters'>Previous Litters</p>");
+
+                $( "#footer_contact_title" ).replaceWith("<p id='footer_contact_title'>CONTACT</p>");
+
+                $( "#ragdolls_description_text" ).replaceWith("<span id='ragdolls_description_text'>The Ragdoll is a cat breed with blue eyes and a distinct colorpoint coat. It is a large and muscular semi-longhair cat with a soft and silky coat.</span>");
+                $( "#ragdolls_read_more" ).replaceWith("<p id='ragdolls_read_more'><br />READ MORE</p>");
+
+                $( "#american_curls_description_text" ).replaceWith("<span id='american_curls_description_text'>The American Curl is a breed of cat characterized by its unusual ears, which curl back from the face toward the center of the back of the skull.</span>");
+                $( "#american_curls_read_more" ).replaceWith("<p id='american_curls_read_more'><br />READ MORE</p>");
+
+                $( "#fun_pics_description_text" ).replaceWith("<span id='fun_pics_description_text'>Funny moments of our lovely cats</span>");
+
+            }
+
+            $( ".wp-caption" ).css("width", "100%");
+            $( ".wp-caption-text" ).wrap("<div class='caption_wrapper'></div>");
+
+            var iframeTag = $( "iframe" );
+            if ( iframeTag.parent().is( "p" ) ) {
+                iframeTag.unwrap();
+            }
+            var imgTag = $( "img" );
+            if ( imgTag.parent().is( "p" ) ) {
+                imgTag.unwrap();
+            }
+            imgTag.wrap("<div class='img_wrapper'></div>");
+            imgTag.addClass( "aligncenter" );
+
+            $( "#gallery_content" ).children("div:last").attr("id", "gallery_circles");
+
+            $( "#menu-second-menu .img_wrapper img" ).each(function() {
+                $(this).removeAttr('width');
+                $(this).removeAttr('height');
+            });
+
+            function getRandomArbitrary(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            $( ".link_img_wrapper ").each(function() {
+                $(this).css("background-color", "rgb(" + getRandomInt(57, 67) + "," + getRandomInt(84, 104) + "," + getRandomInt(137, 147) + ")");
+            });
+
+        });
+    </script>
 </body>
 </html>
