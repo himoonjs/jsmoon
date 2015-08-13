@@ -4,7 +4,7 @@ from django.shortcuts import render
 def home_page(request):
     return render(request, 'homepage/home.html')
 
-
+'''
 def lettertofraktio_page(request):
     return render(request, 'homepage/lettertofraktio.html')
 
@@ -51,11 +51,12 @@ def lettertogenero_page(request):
 
 def lettertofnx_page(request):
     return render(request, 'homepage/lettertofnx.html')
-
+'''
 
 def lettertowebveistamo_page(request):
     return render(request, 'homepage/lettertowebveistamo.html')
 
-
+'''
 def lettertofrosmo_page(request):
     return render(request, 'homepage/lettertofrosmo.html')
+'''
