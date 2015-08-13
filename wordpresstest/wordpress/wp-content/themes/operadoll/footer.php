@@ -91,6 +91,9 @@
                 $(this).css("background-color", "rgb(" + getRandomInt(57, 67) + "," + getRandomInt(84, 104) + "," + getRandomInt(137, 147) + ")");
             });
 
+            $( "p:contains('Sorry, this entry is only available in')" ).css( "padding-bottom", "35%" );
+            $( "p:contains('Anteeksi, mutta tämä kirjoitus on saatavana ainoastaan näillä kielillä')" ).css( "padding-bottom", "35%" );
+
         });
     </script>
 </body>
