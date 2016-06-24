@@ -187,6 +187,14 @@
                 browserWidth = $(window).width();
                 browserHeight = $(window).height();
 
+                if (browserWidth < "700" ) {
+                    height = 450;
+                    scaleRangeValue = 100;
+                } else {
+                    height = 650;
+                    scaleRangeValue = 100;
+                }
+                
                 x = d3.scale.linear()
                 .domain([0, m - 1])
                 .range([0, browserWidth]);
@@ -200,13 +208,6 @@
                 .y0(function(d) { return y(d.y0); })
                 .y1(function(d) { return y(d.y0 + d.y); });
 
-                if (browserWidth < "700" ) {
-                    height = 450;
-                    scaleRangeValue = 100;
-                } else {
-                    height = 650;
-                    scaleRangeValue = 100;
-                }
 
                 $('#svgdiv svg').css({width: browserWidth, height: browserHeight - 100});
 
