@@ -18,6 +18,7 @@
         <button id="strangeButton" onclick="transition()">Update</button>
 
         <script>
+
             var browserWidth = $(window).width();
             var browserHeight = $(window).height();
 
@@ -28,12 +29,14 @@
                 layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
 
                 if (browserWidth < "700" ) {
-                    var height = 250;
-                    var scaleRangeValue = 50;
-                } else {
                     var height = 450;
                     var scaleRangeValue = 100;
+                } else {
+                    var height = 650;
+                    var scaleRangeValue = 100;
                 }
+
+
 
             var x = d3.scale.linear()
                 .domain([0, m - 1])
@@ -176,9 +179,40 @@
                 transition(1000);
             }, 1500);
 
-            $(window).resize(function(){
-                window.location.replace( window.location.href );
-            });
+            $('#svgdiv svg').css({width: browserWidth, height: browserHeight - 100});
+
+        
+        $(window).resize(function(){
+            
+                browserWidth = $(window).width();
+                browserHeight = $(window).height();
+
+                x = d3.scale.linear()
+                .domain([0, m - 1])
+                .range([0, browserWidth]);
+
+                y = d3.scale.linear()
+                .domain([0, d3.max(layers0.concat(layers1), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
+                .range([height - scaleRangeValue, scaleRangeValue]);
+
+                area = d3.svg.area()
+                .x(function(d) { return x(d.x); })
+                .y0(function(d) { return y(d.y0); })
+                .y1(function(d) { return y(d.y0 + d.y); });
+
+                if (browserWidth < "700" ) {
+                    height = 450;
+                    scaleRangeValue = 100;
+                } else {
+                    height = 650;
+                    scaleRangeValue = 100;
+                }
+
+                $('#svgdiv svg').css({width: browserWidth, height: browserHeight - 100});
+
+                transition(1000);
+
+        });
 
         </script>
     </head>
